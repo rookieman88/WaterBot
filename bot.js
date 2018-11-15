@@ -26,6 +26,14 @@ bot.on('message', message => {
 
       message.channel.send('뭐 귀찮게 왜불러');
     }
+   if(msg === prefix + '워터야 죽어'){
+
+      message.channel.send('응 싫어 ㅅㄱ');
+    }
+    if(msg === prefix + '워터야 숙제해줘'){
+
+      message.channel.send('나 손없어서 못해 ');
+    }
 });
 					 
 bot.login(process.env.BOT_TOKEN);

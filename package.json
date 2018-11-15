@@ -2,9 +2,9 @@
  "name": "Water Bot",
  "description": "Water Bot",
  "version": "0.0.1",
- "main": "chat.js",
+ "main": "bot.js",
  "scripts": {
-  "start": "node chat.js"
+  "start": "node bot.js"
  },
  "dependencies": {
   "discord.js": "11.1.0",

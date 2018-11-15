@@ -12,14 +12,6 @@ bot.on('message', message => {
 
     var prefix = '~';
 
-bot.on('ready', () => {
-    bot.user.setStatus('available') // Can be 'available', 'idle', 'dnd', or 'invisible'
-    bot.user.setPresence({
-        game: {
-            name: '~워터야 도움 쳐봐',
-            type: 0
-        }
-
     if(msg === prefix + '워터야 도움'){
 
       message.channel.send('~명령어 로 많은 커멘드를 사용해보세요!');

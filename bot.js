@@ -5,7 +5,8 @@ var bot = new Discord.Client();
 console.log('봇 실행 완료');
 
 bot.user.setActivity('~워터야 도움', { type: 'ㄱㄱ' })
-
+  .then(presence => console.log(`Activity set to ${presence.game ? presence.game.name : 'none'}`))
+  .catch(console.error);
 bot.on('message', message => {
 
     var sender = message.author;

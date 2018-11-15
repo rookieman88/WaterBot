@@ -4,6 +4,10 @@ var bot = new Discord.Client();
 
 console.log('봇 실행 완료');
 
+client.user.setStatus('~워터야 도움 ')
+  .then(console.log)
+  .catch(console.error);
+
 bot.on('message', message => {
 
     var sender = message.author;

@@ -32,7 +32,7 @@ bot.on('message', message => {
     }
     if(msg === prefix + '워터야 숙제해줘'){
 
-      message.channel.send('나 손없어서 못해 ');
+      message.channel.send('나 손없어서 못해 ㅅㄱ');
     }
 });
 					 

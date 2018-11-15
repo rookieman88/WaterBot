@@ -4,8 +4,6 @@ var bot = new Discord.Client();
 
 console.log('봇 실행 완료');
 
-bot.user.setGame("~워터야 도움 쳐봐");
-
 bot.on('message', message => {
 
     var sender = message.author;
@@ -14,7 +12,13 @@ bot.on('message', message => {
 
     var prefix = '~';
 
-
+bot.on('ready', () => {
+    bot.user.setStatus('available') // Can be 'available', 'idle', 'dnd', or 'invisible'
+    bot.user.setPresence({
+        game: {
+            name: '~워터야 도움 쳐봐',
+            type: 0
+        }
 
     if(msg === prefix + '워터야 도움'){
 

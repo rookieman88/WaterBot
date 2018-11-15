@@ -4,7 +4,7 @@ var bot = new Discord.Client();
 
 console.log('봇 실행 완료');
 
-bot.setGame("~워터야 도움 쳐봐")
+bot.user.setActivity('~워터야 도움', { type: 'ㄱㄱ' })
 
 bot.on('message', message => {
 

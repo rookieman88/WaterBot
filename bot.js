@@ -4,6 +4,8 @@ var bot = new Discord.Client();
 
 console.log('봇 실행 완료');
 
+bot.user.setGame("~워터야 도움 쳐봐");
+
 bot.on('message', message => {
 
     var sender = message.author;
@@ -14,7 +16,7 @@ bot.on('message', message => {
 
 
 
-    if(msg === prefix + '도움'){
+    if(msg === prefix + '워터야 도움'){
 
       message.channel.send('~명령어 로 많은 커멘드를 사용해보세요!');
     }

@@ -8,6 +8,21 @@ bot.on('ready', () => {
 	bot.user.setActivity("~워터야 도움 ㄱㄱ")
 })
 
+bot.on('guildMemberAdd', member => {
+    let channel = member.guild.channels.find('name', '신입');
+    let memberavatar = member.user.avatarURL
+        if (!channel) return;
+        let embed = new Discord.RichEmbed()
+        .setColor('RANDOM')
+        .setThumbnail(memberavatar)
+        .addField(':bust_in_silhouette: | 신입 : ${member}`)
+        .addField(`${member}님! ${member.guild.name}에 오신것을 환영합니다!`)
+        .setFooter(`가입 날자 : `)
+        .setTimestamp()
+
+        channel.sendEmbed(embed);
+});
+
 bot.on('message', message => {
 
     var sender = message.author;
@@ -36,6 +51,21 @@ bot.on('message', message => {
 
       message.channel.send('나 손없어서 못해 ㅅㄱ');
     }
+	
+bot.on('guildMemberRemove', member => {
+    let channel = member.guild.channels.find('name', '신입');
+    let memberavatar = member.user.avatarURL
+        if (!channel) return;
+        let embed = new Discord.RichEmbed()
+        .setColor('RANDOM')
+        .setThumbnail(memberavatar)
+        .addField('${member} 님이 {member.guild.name} 에서 퇴장하셨습니다!')
+        .setFooter(`퇴장 날자 : `)
+        .setTimestamp()
+
+        channel.sendEmbed(embed);
+});
+
 });
 					 
 bot.login(process.env.BOT_TOKEN);

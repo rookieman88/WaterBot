@@ -37,7 +37,7 @@ bot.on('message', message => {
       message.channel.send('나 손없어서 못해 ㅅㄱ');
     }
 bot.on('guildMemberAdd', member => {
-    let channel = member.guild.channels.find('name', '신입');
+    let channel = member.guild.channels.find('name', 'new');
     let memberavatar = member.user.avatarURL
         if (!channel) return;
         let embed = new Discord.RichEmbed()
@@ -52,7 +52,7 @@ bot.on('guildMemberAdd', member => {
 });
 	
 bot.on('guildMemberRemove', member => {
-    let channel = member.guild.channels.find('name', '신입');
+    let channel = member.guild.channels.find('name', 'new');
     let memberavatar = member.user.avatarURL
         if (!channel) return;
         let embed = new Discord.RichEmbed()

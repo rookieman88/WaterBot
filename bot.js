@@ -18,9 +18,13 @@ bot.on('message', message => {
 
       message.channel.send('~명령어 로 많은 커멘드를 사용해보세요!');
     }
-   if(msg === prefix + '안녕'){
+   if(msg === prefix + '워터야 안녕'){
 
       message.channel.send('ㅎㅇㅎㅇ 나는 워터봇이라고 해~');
+    }
+   if(msg === prefix + '워터야'){
+
+      message.channel.send('뭐 귀찮게 왜불러');
     }
 });
 					 

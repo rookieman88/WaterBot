@@ -43,13 +43,13 @@ bot.on('guildMemberAdd', member => {
         let embed = new Discord.RichEmbed()
         .setColor('RANDOM')
         .setThumbnail(memberavatar)
-        .addField(':bust_in_silhouette: | 신입 : ${member}`)
+        .addField(`:bust_in_silhouette: | 신입 : ${member}`)
         .addField(`${member}님! ${member.guild.name}에 오신것을 환영합니다!`)
         .setFooter(`가입 날자 : `)
         .setTimestamp()
 
         channel.sendEmbed(embed);
-})
+});
 	
 bot.on('guildMemberRemove', member => {
     let channel = member.guild.channels.find('name', '신입');
@@ -58,12 +58,12 @@ bot.on('guildMemberRemove', member => {
         let embed = new Discord.RichEmbed()
         .setColor('RANDOM')
         .setThumbnail(memberavatar)
-        .addField('${member} 님이 {member.guild.name} 에서 퇴장하셨습니다!')
+        .addField(`${member} 님이 {member.guild.name} 에서 퇴장하셨습니다!`)
         .setFooter(`퇴장 날자 : `)
         .setTimestamp()
 
         channel.sendEmbed(embed);
-})
+});
 
 });
 					 

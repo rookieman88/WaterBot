@@ -8,6 +8,16 @@ bot.on('ready', () => {
 	bot.user.setActivity("~워터야 도움 ㄱㄱ")
 })
 
+let prefixes = JSON.parse(fs.readFileSync("./prefixes.json, "utf8""))
+
+if(!prefixes[message.guild.id]){
+	prefixes[message.guild.id] = {
+		prefixes: botconfig.prefix;
+	};
+}
+
+let prefix = prefixes[message.guild.id].prefixes;
+
 bot.on('message', message => {
 
     var sender = message.author;

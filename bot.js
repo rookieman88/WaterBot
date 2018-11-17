@@ -1,45 +1,114 @@
-var Discord = require('discord.js');
-
-var bot = new Discord.Client();
-
+const Discord = require('discord.js');
 const botconfig = require("./botconfig.json");
+
+const bot = new Discord.Client();({disableEveryone: true});
 
 console.log('봇 실행 완료');
 
-bot.on('ready', () => {
-	bot.user.setActivity("~워터야 도움 해봐")
-})
+bot.on('ready', async () => {
+	bot.user.setActivity("~워터야 도움 ㄱㄱ");
+});
 
-
-let prefix = prefixes[message.guild.id].prefixes;
-
-bot.on('message', message => {
-
-    var sender = message.author;
-
-    var msg = message.content.toUpperCase();
+bot.on("message", async message => {
+	if(message.author.bot) return;
+	if(message.channel.type === "dm") return;
 	
     let prefix = botconfig.prefix;
+    let messageArray = message.content.split(" ");
+    let cmd = messageArray[0];
+    let args = messageArray.slice(1);
+	
+	if(cmd === `${prefix}추방`){
+		
+		let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+		if(!kUser) return message.channel.send("유저를 찾을 수 없습니다.");
+		let kReason = args.join(" ").slice(22);
+		if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("권한이 없습니다!");
+		if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("그 사람을 추방할 수 없습니다!");
+		
+		let kickEmbed = new Discord.RichEmbed()
+		.setDescription("추방됨")
+		.setColor("#e56b00")
+		.addField("추방된 유저", `${kUser} ID: ${kUser.id}`)
+		.addField("관리자", `<@${message.author.id}>`)
+		.addField("시각", message.createdAt)
+		.addField("사유", kReason);
+		
+		let kickChannel = message.guild.channels.find(`name`, "경고");
+		if(!kickChannel) return message.channel.send("채널을 찾을 수 없습니다. 경고 체널을 만들어주세요!");
+		
+		message.guild.member(kUser).kick(kReason);
+		kickChannel.send(kickEmbed);
+		return;
+	}
+	
+	 if(cmd === `${prefix}차단`){
 
-    if(msg === '${prefix}워터야 도움'){
+    let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+    if(!bUser) return message.channel.send("유저를 찾을 수 없습니다.");
+    let bReason = args.join(" ").slice(22);
+    if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.channel.send("권한이 없습니다!");
+    if(bUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("그 사람을 추방할 수 없습니다!");
 
-      message.channel.send('~명령어 로 많은 커멘드를 사용해보세요!');
+    let banEmbed = new Discord.RichEmbed()
+    .setDescription("차단")
+    .setColor("#bc0000")
+    .addField("차단된 유저", `${bUser} with ID ${bUser.id}`)
+    .addField("관리자", `<@${message.author.id}> with ID ${message.author.id}`)
+    .addField("시각", message.createdAt)
+    .addField("사유", bReason);
+
+    let incidentchannel = message.guild.channels.find(`name`, "경고");
+    if(!incidentchannel) return message.channel.send("채널을 찾을 수 없습니다. 경고 체널을 만들어주세요!");
+
+    message.guild.member(bUser).ban(bReason);
+    incidentchannel.send(banEmbed);
+
+
+    return;
+  }
+	
+	if(cmd === `${prefix}신고`){
+		
+		let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+		if(!rUser) return message.channel.send("유저를 찾을 수 없습니다.");
+		let reason = args.join(" ").slice(22);
+		
+		
+		let reportEmbed = new Discord.RichEmbed()
+		.setDescription("신고")
+		.setColor("#15f153")
+		.addField("신고한 유저", `${rUser} ID: ${rUser.id}`)
+		.addField("시각", message.createdAt)
+		.addField("사유", reason);
+		
+		let reportschannel = message.guild.channels.find(`name`, "신고");
+		if(!reportschannel) return message.channel.send("채널을 찾을 수 없습니다. 신고 체널을 만들어주세요!");
+		
+		 message.delete().catch(O_o=>{});
+		 reportschannel.send(reportEmbed);
+		return;
+	}
+	
+	var msg = message.content.toUpperCase();
+
+   if(msg === '~워터야 도움'){
+      return message.channel.send("~명령어 로 많은 커멘드를 사용해보세요!");
     }
-   if(msg === '${prefix}워터야 안녕'){
-
-      message.channel.send('ㅎㅇㅎㅇ 나는 워터봇이라고 해~');
+   if(msg === '~워터야 안녕'){
+      return message.channel.send("ㅎㅇㅎㅇ 나는 워터봇이라고 해~");
     }
-   if(msg === '${prefix}워터야'){
+   if(cmd === `${prefix}워터야`){
 
-      message.channel.send('뭐 귀찮게 왜불러');
+      return message.channel.send("뭐 귀찮게 왜불러");
     }
-   if(msg === '${prefix}워터야 죽어'){
+   if(msg === '~워터야 죽어'){
 
-      message.channel.send('응 싫어 ㅅㄱ');
+      return message.channel.send("응 싫어 ㅅㄱ");
     }
-    if(msg === '${prefix}워터야 숙제해줘'){
+   if(msg === '~워터야 숙제해줘'){
 
-      message.channel.send('나 손없어서 못해 ㅅㄱ');
+      return message.channel.send("나 손없어서 못해 ㅅㄱ");
     }
 
 });

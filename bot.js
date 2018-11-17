@@ -27,7 +27,24 @@ bot.on('ready', async () => {
 	bot.user.setActivity("~워터야 도움 ㄱㄱ");
 });
 
-
+bot.on('guildMemberAdd', member => {
+	let welcomechannel = member.guild.channels.find('name', '신입');
+    let memberavatar = member.user.avatarURL
+    if (!welcomechannel) return;
+	
+        let welcomembed = new Discord.RichEmbed()
+        .setColor("#2E9AFE")
+        .setThumbnail(memberavatar)
+        .addField(":bust_in_silhouette: | 신입등장! ", `${member}`)
+        .addField("ID :", "**[" + `${member.id}` + "]**")
+		.addField("서버에 오신것을 환영합니다!", "반드시 서버의 규칙을 읽어주세요!")
+		.addField("시각", "가입날자 :")
+		.setTimestamp()
+		
+		
+        welcomechannel.sendEmbed(welcomembed);
+		return;
+});
 
 bot.on("message", async message => {
 	if(message.author.bot) return;

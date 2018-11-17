@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "discord.js": "11.4.2",
-    "request": "2.81.0"
+    "request": "2.81.0",
+    "nodemon": "1.14.11"
   }
 }

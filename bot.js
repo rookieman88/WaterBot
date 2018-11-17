@@ -138,10 +138,6 @@ bot.on("message", async message => {
    if(msg === '~워터야 안녕'){
       return message.channel.send("ㅎㅇㅎㅇ 나는 워터봇이라고 해~");
     }
-   if(cmd === `${prefix}워터야`){
-
-      return message.channel.send("뭐 귀찮게 왜불러");
-    }
    if(msg === '~워터야 죽어'){
 
       return message.channel.send("응 싫어 ㅅㄱ");
@@ -151,6 +147,10 @@ bot.on("message", async message => {
       return message.channel.send("나 손없어서 못해 ㅅㄱ");
     }
 
+   if(cmd === `${prefix}워터야`){
+
+      return message.channel.send("뭐 귀찮게 왜불러");
+    }
 });
 					 
 bot.login(process.env.BOT_TOKEN);

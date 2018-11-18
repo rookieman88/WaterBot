@@ -46,6 +46,24 @@ bot.on('guildMemberAdd', member => {
 		return;
 });
 
+bot.on('guildMemberRemove', member => {
+	let welcomechannel = member.guild.channels.find('name', '신입');
+    let memberavatar = member.user.avatarURL
+    if (!welcomechannel) return;
+	
+        let byembed = new Discord.RichEmbed()
+        .setColor("#2E9AFE")
+        .setThumbnail(memberavatar)
+        .addField(":hand_splayed:  | 퇴장 ", `${member}`)
+        .addField("ID :", "**[" + `${member.id}` + "]**")
+		.addField("시각", "퇴장날자 :")
+		.setTimestamp()
+		
+		
+        welcomechannel.sendEmbed(byembed);
+		return;
+});
+
 bot.on("message", async message => {
 	if(message.author.bot) return;
 	if(message.channel.type === "dm") return;

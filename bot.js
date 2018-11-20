@@ -193,7 +193,7 @@ bot.on("message", async message => {
     }
   if(msg === '워터야 그치'){
 
-      return message.channel.send("안죽어서.");
+      return message.channel.send("ㅇㅇ 그렇지..");
     }
 
 });

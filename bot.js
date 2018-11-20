@@ -191,7 +191,7 @@ bot.on("message", async message => {
 
       return message.channel.send("안죽어서.");
     }
-  if(msg === '워터야 그치'){
+  if(msg === '그치'){
 
       return message.channel.send("ㅇㅇ 그렇지..");
     }

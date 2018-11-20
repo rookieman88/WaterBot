@@ -180,8 +180,18 @@ bot.on("message", async message => {
     }
    if(msg === '워터야 결혼하자'){
 
-      return message.channel.send("진짜야??", "사실 나  너 싫어함 ");
+      return message.channel.send("진짜야?? 사실 나  너 싫어함 ㅅㄱ");
     }
+   if(msg === '워터야 비트박스'){
+
+      return message.channel.send("나 비트박스 겁나 잘함. 북치기박치기북치기박치기북치기박치기북치기박치기북치기박치기북치기박치기북치기박치기북치기박치기북치기박치기북치기박치기북치기박치기북치기박치기북치기박치기북치기박치기북치기박치기북치기박치기북치기박치기북치기박치기");
+
+    }
+  if(msg === '워터야 왜살아'){
+
+      return message.channel.send("진짜야?? 사실 나  너 싫어함 ㅅㄱ");
+    }
+
 });
 					 
 bot.login(process.env.BOT_TOKEN);

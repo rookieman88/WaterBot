@@ -195,7 +195,12 @@ bot.on("message", async message => {
 
       return message.channel.send("ㅇㅇ 그렇지..");
     }
+ 
+    if(msg === 'ㅇㅈ?'){
 
+      return message.channel.send("ㅇㅇㅈ!");
+    }
+	
 });
 					 
 bot.login(process.env.BOT_TOKEN);

@@ -180,7 +180,7 @@ bot.on("message", async message => {
     }
    if(msg === '워터야 결혼하자'){
 
-      return message.channel.send("진짜야??  /n/n사실 나  너 싫어함 ");
+      return message.channel.send("진짜야??", "사실 나  너 싫어함 ");
     }
 });
 					 

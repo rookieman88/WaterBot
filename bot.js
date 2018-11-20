@@ -24,7 +24,7 @@ fs.readdir("./commands/", (err, files) => {
 console.log('봇 실행 완료');
 
 bot.on('ready', async () => {
-	bot.user.setActivity("~워터야 도움 ㄱㄱ");
+	bot.user.setActivity("워터야 도움 ㄱㄱ");
 });
 
 bot.on('guildMemberAdd', member => {
@@ -150,24 +150,37 @@ bot.on("message", async message => {
 	
 	var msg = message.content.toUpperCase();
 
-   if(msg === '~워터야 도움'){
+   if(msg === '워터야 도움'){
       return message.channel.send("~명령어 로 많은 커멘드를 사용해보세요!");
     }
-   if(msg === '~워터야 안녕'){
+   if(msg === '워터야 안녕'){
       return message.channel.send("ㅎㅇㅎㅇ 나는 워터봇이라고 해~");
     }
-   if(msg === '~워터야 죽어'){
+   if(msg === '워터야 죽어'){
 
       return message.channel.send("응 싫어 ㅅㄱ");
     }
-   if(msg === '~워터야 숙제해줘'){
+   if(msg === '워터야 숙제해줘'){
 
       return message.channel.send("나 손없어서 못해 ㅅㄱ");
+    }
+   if(msg === '워터야 뭐해'){
+
+      return message.channel.send("Zzz...Zzz...");
+    }
+	
+   if(msg === '워터야 몇살'){
+
+      return message.channel.send("3.14살");
     }
 
    if(cmd === `${prefix}워터야`){
 
       return message.channel.send("뭐 귀찮게 왜불러");
+    }
+   if(msg === '워터야 결혼하자'){
+
+      return message.channel.send("진짜야??  /n/n사실 나  너 싫어함 ");
     }
 });
 					 

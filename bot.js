@@ -158,7 +158,7 @@ bot.on("message", async message => {
     }
    if(msg === '워터야 죽어'){
 
-      return message.channel.send("응 싫어 ㅅㄱ");
+      return message.channel.send("대한민국 형법 제250조(살인, 존속살해) ① 사람을 살해한 자는 사형, 무기 또는 5년 이상의 징역에 처한다. ②자기 또는 배우자의 직계존속을 살해한 자는 사형, 무기 또는 7년 이상의 징역에 처한다.");
     }
    if(msg === '워터야 숙제해줘'){
 
@@ -189,7 +189,11 @@ bot.on("message", async message => {
     }
   if(msg === '워터야 왜살아'){
 
-      return message.channel.send("진짜야?? 사실 나  너 싫어함 ㅅㄱ");
+      return message.channel.send("안죽어서.");
+    }
+  if(msg === '워터야 그치'){
+
+      return message.channel.send("안죽어서.");
     }
 
 });

@@ -1,20 +1,16 @@
 {
-  "name": "Water",
-  "version": "1.0.2",
-  "description": " WaterParks Superbot Waterbot ",
+  "name": "Water Bot",
+  "version": "1.0.0",
+  "description": "WaterBo~",
   "main": "bot.js",
-  "engines": {
-    "node": "8.12.0"
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "author": "Oasics",
+  "license": "WATERPARK",
   "dependencies": {
-    "apiai": "^4.0.3",
-    "discord.js": "^11.4.2",
-    "ffmpeg-binaries": "^4.0.0",
-    "opusscript": "0.0.6",
-    "random-hex-color": "^1.0.1",
+    "discord.js": "^11.3.0",
     "request": "^2.88.0",
-    "superagent": "^4.0.0",
-    "uws": "^99.0.0",
-    "google-tts-api": "^0.0.4"
-  },
+    "nodemon": "^1.18.7"
+  }
 }

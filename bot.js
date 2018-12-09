@@ -163,15 +163,33 @@ bot.on("message", async message => {
     }
 
    if(msg === '워터야 도움 기본'){
-       return message.channel.send("워터를 부르는 방법 : "워터야" /n -명령어 리스트 /n 안녕 죽어 숙제해줘 뭐해 몇살 비트박스 등.. ");
+       let botembed = new Discord.RichEmbed()
+        .setDescription("기본 도움말")
+        .setColor("#33cc33")
+        .addField("워터를 부르는 방법 :", "워터야")
+        .addField("명령어 리스트", "안녕 죽어 숙제해줘 뭐해 몇살 비트박스 등..")
+        
+        return message.channel.send(botembed);
     }
 
    if(msg === '워터야 도움 관리자'){
-       return message.channel.send("워터를 부르는 방법 : "~" /n -명령어 리스트 /n 추방 차단 경고 삭제 등..");
+      let botembed = new Discord.RichEmbed()
+        .setDescription("관리자용 명령어 도움말")
+        .setColor("#33cc33")
+        .addField("워터를 부르는 방법 :", "~")
+        .addField("명령어 리스트", "추방 차단 경고 삭제 등..")
+        
+        return message.channel.send(botembed);
     }
 	
    if(msg === '워터야 도움 관리자'){
-       return message.channel.send("워터를 부르는 방법 : "워터야 음악" /n -명령어 리스트 /n 아직 만드는중.. 등..");
+      let botembed = new Discord.RichEmbed()
+        .setDescription("관리자용 명령어 도움말")
+        .setColor("#33cc33")
+        .addField("워터를 부르는 방법 :", "워터야 음악")
+        .addField("명령어 리스트", "아직 만드는중..")
+        
+        return message.channel.send(botembed);
     }
 	
    if(msg === '워터야 안녕'){

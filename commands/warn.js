@@ -27,7 +27,7 @@ module.exports.run = async (bot, message, args) => {
   .addField("관리자", `<@${message.author.id}>`)
   .setColor("#fc6400")
   .addField("유저", `<@${wUser.id}>`)
-  .addField("경고를 받은 횟수", warns[wUser.id].warns)
+  .addField("경고를 받은 횟수", warns[wUser.id].warns / 1)
   .addField("사유", reason);
 
   let warnchannel = message.guild.channels.find(`name`, "경고");

@@ -1,13 +1,14 @@
 const Discord = require("discord.js");
 const fs = require("fs");
-let warns = JSON.parse(fs.readFileSync("./warnings.json", "utf8"));
+const ms = require("ms");
+let warns = JSON.parse(fs.readFileSync("./saves/warns.json", "utf8"));
 
 module.exports.run = async (bot, message, args) => {
 
   //!warn @daeshan <reason>
-  if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.reply("권한이 없습니다!");
+  if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("권한이 없습니다!");
   let wUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0])
-  if(!wUser) return message.reply("유저를 찾을 수 없습니다.");
+  if(!wUser) return message.reply("사용법 : ~경고 @사람이름 사유");
   if(wUser.hasPermission("MANAGE_MESSAGES")) return message.reply("그 유저를 경고할 수 없습니다!");
   let reason = args.join(" ").slice(22);
 
@@ -17,7 +18,7 @@ module.exports.run = async (bot, message, args) => {
 
   warns[wUser.id].warns++;
 
-  fs.writeFile("./warnings.json", JSON.stringify(warns), (err) => {
+  fs.writeFile("./saves/warns.json", JSON.stringify(warns), (err) => {
     if (err) console.log(err)
   });
 
@@ -26,7 +27,7 @@ module.exports.run = async (bot, message, args) => {
   .addField("관리자", `<@${message.author.id}>`)
   .setColor("#fc6400")
   .addField("유저", `<@${wUser.id}>`)
-  .addField("경고를 받은 횟수", warns[wUser.id].warns)
+  .addField("경고를 받은 횟수", warns[wUser.id].warns / 4)
   .addField("사유", reason);
 
   let warnchannel = message.guild.channels.find(`name`, "경고");
@@ -44,7 +45,6 @@ module.exports.run = async (bot, message, args) => {
 		.addField("사유", "경고 4회");
 		
 		let warnchannel = message.guild.channels.find(`name`, "경고");
-		if(!warnchannel) return message.channel.send("채널을 찾을 수 없습니다. 경고 체널을 만들어주세요!");
 		
 	warnchannel.send(wEmbed);
 		 

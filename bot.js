@@ -28,7 +28,7 @@ bot.on('ready', async () => {
 });
 
 bot.on('guildMemberAdd', member => {
-	let welcomechannel = member.guild.channels.find('name', '신입');
+	let welcomechannel = member.guild.channels.find('name', '');
     let memberavatar = member.user.avatarURL
     if (!welcomechannel) return;
 	
@@ -47,7 +47,7 @@ bot.on('guildMemberAdd', member => {
 });
 
 bot.on('guildMemberRemove', member => {
-	let welcomechannel = member.guild.channels.find('name', '신입');
+	let welcomechannel = member.guild.channels.find('name', '인사');
     let memberavatar = member.user.avatarURL
     if (!welcomechannel) return;
 	

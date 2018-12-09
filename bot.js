@@ -156,16 +156,30 @@ bot.on("message", async message => {
         .setColor("#33cc33")
         .addField("워터야 도움 기본", "기본적인 명령어를 알려드립니다.")
         .addField("워터야 도움 관리자", "관리자용 명령어를 알려드립니다.")
-        .addField("워터야 도움 음악", "음악봇에 대하여 알려드립니다.");
+        .addField("워터야 도움 음악", "음악봇에 대하여 알려드립니다.")
+	.addField("꼭 필요한 체널입니다.", "#인사 #경고 #신고");
         
         return message.channel.send(botembed);
     }
+
+   if(msg === '워터야 도움 기본'){
+       return message.channel.send("워터를 부르는 방법 : "워터야" /n -명령어 리스트 /n 안녕 죽어 숙제해줘 뭐해 몇살 비트박스 등.. ");
+    }
+
+   if(msg === '워터야 도움 관리자'){
+       return message.channel.send("워터를 부르는 방법 : "~" /n -명령어 리스트 /n 추방 차단 경고 삭제 등..");
+    }
+	
+   if(msg === '워터야 도움 관리자'){
+       return message.channel.send("워터를 부르는 방법 : "워터야 음악" /n -명령어 리스트 /n 아직 만드는중.. 등..");
+    }
+	
    if(msg === '워터야 안녕'){
-      return message.channel.send("ㅎㅇㅎㅇ 나는 워터봇이라고 해~");
+      return message.channel.send("ㅎㅇ");
     }
    if(msg === '워터야 죽어'){
 
-      return message.channel.send("대한민국 형법 제250조(살인, 존속살해) ① 사람을 살해한 자는 사형, 무기 또는 5년 이상의 징역에 처한다. ②자기 또는 배우자의 직계존속을 살해한 자는 사형, 무기 또는 7년 이상의 징역에 처한다.");
+      return message.channel.send("대한민국 형법 제250조 1항 : 사람을 살해한 자는 사형, 무기 또는 5년 이상의 징역에 처한다.");
     }
    if(msg === '워터야 숙제해줘'){
 

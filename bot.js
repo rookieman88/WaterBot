@@ -151,7 +151,14 @@ bot.on("message", async message => {
 	var msg = message.content.toUpperCase();
 
    if(msg === '워터야 도움'){
-      return message.channel.send("~명령어 로 많은 커멘드를 사용해보세요!");
+       let botembed = new Discord.RichEmbed()
+        .setDescription("도움말")
+        .setColor("#33cc33")
+        .addField("워터야 도움 기본", "기본적인 명령어를 알려드립니다.")
+        .addField("워터야 도움 관리자", "관리자용 명령어를 알려드립니다.")
+        .addField("워터야 도움 음악", "음악봇에 대하여 알려드립니다.");
+        
+        return message.channel.send(botembed);
     }
    if(msg === '워터야 안녕'){
       return message.channel.send("ㅎㅇㅎㅇ 나는 워터봇이라고 해~");

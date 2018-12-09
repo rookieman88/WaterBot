@@ -3,7 +3,7 @@ const Discord = require("discord.js");
  module.exports.run = async (bot, message, args) => {
 		
 		let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-		if(!rUser) return message.channel.send("유저를 찾을 수 없습니다.");
+		if(!rUser) return message.channel.send("사용법 : ~신고 @사람이름 ");
 		let reason = args.join(" ").slice(22);
 		
 		

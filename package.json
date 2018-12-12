@@ -1,16 +1,31 @@
 {
-  "name": "Water Bot",
+  "name": "WaterBot",
   "version": "1.0.0",
-  "description": "WaterBo~",
+  "description": "WaterBo",
   "main": "bot.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "gaesori"
   },
+   "keywords": [
+    "discord",
+    "bot",
+    "discordbot"
+  ],
   "author": "Oasics",
   "license": "WATERPARK",
   "dependencies": {
-    "discord.js": "^11.4.2",
-    "request": "^2.88.0",
-    "nodemon": "^1.18.8"
+    "discord.js": "11.4.2",
+    "request": "2.88.0",
+    "nodemon": "1.18.8"
+  },
+   "devDependencies": {
+    "eslint": "^4.0.0",
+    "eslint-config-aqua": "^1.0.0"
+  },
+  "eslintConfig": {
+    "extends": "aqua",
+    "rules": {
+      "no-console": 0
+    }
   }
 }

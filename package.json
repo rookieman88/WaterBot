@@ -6,11 +6,6 @@
   "scripts": {
     "gaesori"
   },
-   "keywords": [
-    "discord",
-    "bot",
-    "discordbot"
-  ],
   "author": "Oasics",
   "license": "WATERPARK",
   "dependencies": {

@@ -1,0 +1,37 @@
+{
+  "name": "waterbo",
+  "version": "0.1.0",
+  "description": "A simple discord bot",
+  "main": "bot.js",
+  "scripts": {
+    "test": ""
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "discordbot"
+  ],
+  "author": "oasics",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^11.4.2",
+    "ffmpeg": "0.0.4",
+    "ffmpeg-binaries": "4.0.0",
+    "opusscript": "0.0.3",
+    "request": "^2.88.0",
+    "require": "^2.4.20",
+    "simple-youtube-api": "^3.0.1",
+    "ytdl-core": "^0.16.2",
+    "nodemon": "1.18.8"
+  },
+  "devDependencies": {
+    "eslint": "^4.0.0",
+    "eslint-config-aqua": "^1.0.0"
+  },
+  "eslintConfig": {
+    "extends": "aqua",
+    "rules": {
+      "no-console": 0
+    }
+  }
+}

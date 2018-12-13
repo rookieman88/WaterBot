@@ -16,7 +16,7 @@ let kUser = message.guild.member(message.mentions.users.first() || message.guild
 		.addField("시각", message.createdAt)
 		.addField("사유", kReason);
 		
-		let kickChannel = message.guild.channels.find(`name`, "");
+		let kickChannel = message.guild.channels.find(`name`, "경고");
 		if(!kickChannel) return message.channel.send("채널을 찾을 수 없습니다. 경고 체널을 만들어주세요!");
 		
 		message.guild.member(kUser).kick(kReason);

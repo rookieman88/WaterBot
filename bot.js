@@ -72,7 +72,7 @@ const apiai = require("apiai");
 
 bot.login(token)
 
-bot.commands = new bot.Collection();
+
 
 
 

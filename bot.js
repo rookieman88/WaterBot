@@ -52,7 +52,7 @@ let prefix = "~"
 
 //cool down----------------------------------
  let cooldown = new Set();
-	let cdseconds = process.env.defaultCooldown || mutf.defaultCooldown || 5;
+	let cdseconds = 5;
 
 
 

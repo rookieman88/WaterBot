@@ -23,8 +23,17 @@ fs.readdir("./commands/", (err, files) => {
 
 console.log('봇 실행 완료');
 
+let statuses = ['워터야 도움 가즈아ㅏㅏ', 'Made by Oasics', '꼬우면 Oasics #7777']
+
 bot.on('ready', async () => {
-	bot.user.setActivity("워터야 도움 ㄱㄱ");
+	setInterval(function() {
+		
+       let status = statuses[Math.floor(Math.random()*statuses.length)];
+		
+        bot.user.setPresence({ activity: { name: status }. status: 'online' });
+		
+
+	}, 10000	
 });
 
 bot.on('guildMemberAdd', member => {

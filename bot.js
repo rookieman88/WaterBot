@@ -32,10 +32,10 @@ const activities_list = [
 
 
 bot.on('ready', () => {
-    setInterval(function() {
-        var actID = Math.floor(Math.random() * Math.floor(activevar.length));
-        bot.user.setActivity(activities_list[index]);;
-    }, 10000)
+     setInterval(() => {
+        const index = Math.floor(Math.random() * (activities_list.length - 1) + 1);
+        bot.user.setActivity(activities_list[index]);
+    }, 10000);
 });
 
 bot.on('guildMemberAdd', member => {

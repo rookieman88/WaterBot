@@ -345,7 +345,7 @@ bot.on("message", async message => {
 					input.channel.send(aiEmb);
 				});
 			}  		
-		}
+		
     
 	
 	

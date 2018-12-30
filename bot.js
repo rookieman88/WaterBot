@@ -26,6 +26,8 @@ fs.readdir("./commands/", (err, files) => {
 	console.log("Dialog1 API: Ready(apiai)");
 	const ai = apiai(muai);
 
+
+
 console.log('봇 실행 완료');
 
 const activities_list = [
@@ -257,6 +259,23 @@ bot.on("message", async message => {
     }
 	
     let chat = "워터야"
+   
+    
+    bot.on("message", async (input) => {
+		if (`${input.author.id}` === `${mu.user.id}`) { return; } // Don't Check Message Itself!
+		if (!input.guild) { // ignore DM
+			input.reply("**Oops!** μBot Can Run **ONLY** __**in SERVER**__ *(not DM)*!").then((thismsg) => thismsg.delete(2000));
+			input.reply("**저런!** 뮤봇은 **__서버에서__만** 명령어 실행이 가능합니다! *(DM 말고...)*").then((thismsg) => thismsg.delete(2000));
+			return;
+		}
+
+		if (input.guild.id === "264445053596991498") { return; }
+
+		
+		
+
+		if (!input.content.startsWith(prefix)) { return; } // Don't log Messages Without Prefix
+		console.log(`${input.author.username.toString()} (${input.author.id.toString()})> ${input.content.toString()}`); // input Logging
 
     if (!input.content.startsWith(chat)) { return; }
 	

@@ -23,16 +23,20 @@ fs.readdir("./commands/", (err, files) => {
 
 console.log('봇 실행 완료');
 
-let statuses = ['워터야 도움 가즈아ㅏㅏ', 'Made by Oasics', '꼬우면 Oasics #7777']
+const activities_list = [
+    "워터야 도움 가즈아ㅏㅏ", 
+    "Made by Oasics",
+    "꼬우면 Oasics #7777", 
+    "2019년 5월 정식출시"
+    ];
 
-bot.on('ready', async () => {
-	setInterval(function() {
-		
-       let status = statuses[Math.floor(Math.random()*statuses.length)];
-		
-        bot.user.setPresence({ activity: { name: status }, status: 'online' });
-		
 
+bot.on("ready", function() {
+    setInterval(function() {
+        var actID = Math.floor(Math.random() * Math.floor(activevar.length));
+        client.user.setActivity(activities);
+    }, 10000)
+});
 	}, 10000)	
 });
 

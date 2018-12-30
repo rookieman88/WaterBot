@@ -327,7 +327,7 @@ bot.on("message", async message => {
 			input.channel.send(eCreditEmb);
 		} else {
 			if (cmdFile) {
-				cmdFile.run(mu,input,pars,prefix,nasa);
+				cmdFile.run(bot,input,pars,prefix,nasa);
 				} else {
 				// AI(api.ai, Dialogflow v1) Intents
 				let aiRequest = ai.textRequest(msgc, {
@@ -346,6 +346,7 @@ bot.on("message", async message => {
 				});
 			}  		
 		}
+    }
 	
 	
 });

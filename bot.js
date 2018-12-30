@@ -3,6 +3,7 @@ const botconfig = require("./botconfig.json");
 const fs = require("fs");
 const bot = new Discord.Client();({disableEveryone: true});
 bot.commands = new Discord.Collection();
+let muai = process.env.waai
 
 fs.readdir("./commands/", (err, files) => {
 	
@@ -20,6 +21,10 @@ fs.readdir("./commands/", (err, files) => {
 		bot.commands.set(props.help.name, props);
 	});
 });
+
+	const apiai = require("apiai");
+	console.log("Dialog1 API: Ready(apiai)");
+	const ai = apiai(muai);
 
 console.log('봇 실행 완료');
 
@@ -250,7 +255,22 @@ bot.on("message", async message => {
 
       return message.channel.send("ㅇㅇㅈ!");
     }
-	
+   else	{
+	   let aiRequest = ai.textRequest(msgc, {
+					sessionId: input.author.id
+				});
+
+				aiRequest.end();
+
+				aiRequest.on("response", function(response) {
+					let aiResponseText = response.result.fulfillment.speech;
+					let aiResponseArr = aiResponseText.split(" ");
+					let aiEmb = new API.RichEmbed()
+					.setTitle(aiResponseText)
+					.setColor(input.member.displayHexColor)
+					input.channel.send(aiEmb);
+				});
+   }
 });
 					 
 bot.login(process.env.BOT_TOKEN);

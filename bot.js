@@ -4,7 +4,6 @@ const fs = require("fs");
 const bot = new Discord.Client();({disableEveryone: true});
 bot.commands = new Discord.Collection();
 let muai = process.env.waai
-let chat = "워터야"
 
 fs.readdir("./commands/", (err, files) => {
 	
@@ -256,9 +255,18 @@ bot.on("message", async message => {
 
       return message.channel.send("ㅇㅇㅈ!");
     }
-  
+	
+    let chat = "워터야"
+
     if (!input.content.startsWith(chat)) { return; }
 	
+	if (cooldown.has(input.author.id)) {
+			input.delete();
+			input.channel.send(`CoolDown (${cdseconds}sec.)\n잠시 명상의 시간을 (${cdseconds}초) 동안 가져보시길 바랍니다`).then((thismsg) => thismsg.delete(2000));
+			return;
+	}
+	cooldown.add(input.author.id);
+		
 	let msgAr = input.content.split(" ");
 	let msgc = input.content.slice(chat.length);
 	let i = msgAr[0];

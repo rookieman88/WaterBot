@@ -21,6 +21,7 @@
     "opusscript": "0.0.3",
     "request": "^2.88.0",
     "require": "^2.4.20",
+    "dialogflow": "^0.7.0",
     "simple-youtube-api": "^3.0.1",
     "ytdl-core": "^0.16.2",
     "nodemon": "1.18.8"

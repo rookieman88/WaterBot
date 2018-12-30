@@ -24,10 +24,10 @@ fs.readdir("./commands/", (err, files) => {
 console.log('봇 실행 완료');
 
 const activities_list = [
-    "워터야 도움 가즈아ㅏㅏ", 
-    "Made by Oasics",
+    "Made by Oasics", 
+    "2019년 5월 정식출시!",
     "꼬우면 Oasics #7777", 
-    "2019년 5월 정식출시"
+    "워터야 도움 가즈아ㅏㅏ"
     ];
 
 

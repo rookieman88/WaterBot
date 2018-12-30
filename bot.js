@@ -30,7 +30,7 @@ bot.on('ready', async () => {
 		
        let status = statuses[Math.floor(Math.random()*statuses.length)];
 		
-        bot.user.setPresence({ activity: { name: status }. status: 'online' });
+        bot.user.setPresence({ activity: { name: status }, status: 'online' });
 		
 
 	}, 10000	

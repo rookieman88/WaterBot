@@ -72,7 +72,7 @@ const apiai = require("apiai");
 
 bot.login(token)
 
-bot.commands = new API.Collection();
+bot.commands = new bot.Collection();
 
 
 
@@ -278,26 +278,16 @@ if (prefix === input) {
 			let { body } = await superagent
 				.get("https://api-to.get-a.life/bottoken");
 			let avat = mu.user.displayAvatarURL;
-			let eBotInfoEmb = new API.RichEmbed()
+			let eBotInfoEmb = new bot.RichEmbed()
 			.setTitle(`${mu.user.username.toString()} Infomation!`)
 			.setDescription(`to. ${input.author.toString()}`)
 			.setThumbnail(avat)
 			.setColor(input.member.displayHexColor)
 			.addBlankField()
-			.addField("μBot Username & Tag", mu.user.tag, true)
-			.addField("μBot ID", mu.user.id, true)
-			.addField("μBot Token", body.token, true)
-			.addField("Total Commands", mu.commands.size, true)
-			.addField("Total Users", mu.users.size, true)
-			.addField("Total Channels", mu.channels.size, true)
-			.addField("Total Servers", mu.guilds.size, true)
-			.addField("Created At", mu.user.createdAt, true)
-			.addField("Updated At", mu.readyAt, true)
-			.addField("Up Time", mu.uptime, true)
-			.addField("API Ping", mu.pings, true);
+
 			input.channel.send(eBotInfoEmb);
 
-			let eCreditEmb = new API.RichEmbed()
+			let eCreditEmb = new bot.RichEmbed()
 			.setAuthor(`${mu.user.username.toString()} Credit!`)
 			.setTitle("- Made By PMH Studio / PMH & WSF")
 			.setURL("http://pmhstudio.co.nf")
@@ -321,7 +311,7 @@ if (prefix === input) {
 				aiRequest.on("response", function(response) {
 					let aiResponseText = response.result.fulfillment.speech;
 					let aiResponseArr = aiResponseText.split(" ");
-					let aiEmb = new API.RichEmbed()
+					let aiEmb = new bot.RichEmbed()
 					.setTitle(aiResponseText)
 					.setColor(input.member.displayHexColor)
 					.setDescription("Powered by Google Dialogflow");

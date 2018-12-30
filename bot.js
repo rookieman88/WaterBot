@@ -261,7 +261,7 @@ bot.on("message", async message => {
 	
 	let msgAr = input.content.split(" ");
 	let msgc = input.content.slice(chat.length);
-	let i - msgAr[0];
+	let i = msgAr[0];
 	let pars = msgAr.slice(1);
 	let verify = i.slice(chat.length);
 	let cmdfile = bot.commands.get(verify);

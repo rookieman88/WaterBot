@@ -31,13 +31,11 @@ const activities_list = [
     ];
 
 
-bot.on("ready", function() {
+bot.on('ready', () => {
     setInterval(function() {
         var actID = Math.floor(Math.random() * Math.floor(activevar.length));
-        client.user.setActivity(activities);
+        bot.user.setActivity(activities_list[index]);;
     }, 10000)
-});
-	}, 10000)	
 });
 
 bot.on('guildMemberAdd', member => {

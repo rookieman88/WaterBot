@@ -21,26 +21,23 @@ let muai = process.env.waai
 
 
 // file reads-------------------------
-fs.readdir("./muc/", (err, files) => {
+fs.readdir("./commands/", (err, files) => {
 
-		// Command Files Exist Check
-		let jsfile = files.filter((f) => f.split(".").pop() === "js");
-		if (jsfile.length <= 0) {
-			console.log("Error(E404): Couldn't find commands.");
-			return;
-		}
+  if(err) console.log(err);
 
-		jsfile.forEach((f, i) => {
-			let props = require(`./muc/${f}`);
-			let filenames = f.split(".");
-			let filename = filenames[0];
-			mu.commands.set(filename, props);
-			mu.commands.set(props.help.name, props);
-			mu.commands.set(props.help.description, props);
-			console.log(`CommandLoad: Ready(${filename}, ${props.help.name}, ${props.help.description})`);
-		});
-	});
+  let jsfile = files.filter(f => f.split(".").pop() === "js")
+  if(jsfile.length <= 0){
+    console.log("Couldn't find commands.");
+    return;
+  }
 
+  jsfile.forEach((f, i) =>{
+    let props = require(`./commands/${f}`);
+    console.log(`${f} loaded!`);
+    bot.commands.set(props.help.name, props);
+  });
+
+});
 
 
 // tokens---------------------------
@@ -153,6 +150,13 @@ bot.on('guildMemberRemove', member => {
 //commands---------------------------------------------
 
 bot.on("message", async message => {
+	
+  let messageArray = message.content.split(" ");
+  let cmd = messageArray[0];
+  let args = messageArray.slice(1);
+
+  let commandfile = bot.commands.get(cmd.slice(prefix.length));
+  if(commandfile) commandfile.run(bot,message,args);	
 	
 	let msgAr = input.content.split(" ");
 	let msgc = input.content.slice(prefix.length);

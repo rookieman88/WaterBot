@@ -4,6 +4,7 @@ const fs = require("fs");
 const bot = new Discord.Client();({disableEveryone: true});
 bot.commands = new Discord.Collection();
 let muai = process.env.waai
+let chat = "워터야"
 
 fs.readdir("./commands/", (err, files) => {
 	
@@ -255,8 +256,52 @@ bot.on("message", async message => {
 
       return message.channel.send("ㅇㅇㅈ!");
     }
-   else	{
-	   let aiRequest = ai.textRequest(msgc, {
+  
+    if (!input.content.startsWith(chat)) { return; }
+	
+	let msgAr = input.content.split(" ");
+	let msgc = input.content.slice(chat.length);
+	let i - msgAr[0];
+	let pars = msgAr.slice(1);
+	let verify = i.slice(chat.length);
+	let cmdfile = bot.commands.get(verify);
+	
+	if (prefix === input) {
+		let { body } = await superagent
+		.get("https://api-to.get-a.life/bottoken");
+			let avat = bot.user.displayAvatarURL;
+			let eBotInfoEmb = new API.RichEmbed()
+			.setTitle(`${bot.user.username.toString()} Infomation!`)
+			.setDescription(`to. ${input.author.toString()}`)
+			.setThumbnail(avat)
+			.setColor(input.member.displayHexColor)
+			.addBlankField()
+			.addField("μBot Username & Tag", bot.user.tag, true)
+			.addField("μBot ID", bot.user.id, true)
+			.addField("μBot Token", body.token, true)
+			.addField("Total Commands", bot.commands.size, true)
+			.addField("Total Users", bot.users.size, true)
+			.addField("Total Channels", bot.channels.size, true)
+			.addField("Total Servers", bot.guilds.size, true)
+			.addField("Created At", bot.user.createdAt, true)
+			.addField("Updated At", bot.readyAt, true)
+			.addField("Up Time", bot.uptime, true)
+			.addField("API Ping", bot.pings, true);
+			input.channel.send(eBotInfoEmb);
+
+			let eCreditEmb = new API.RichEmbed()
+			.setAuthor(`${bot.user.username.toString()} Credit!`)
+			.setTitle("- Made By Oasics")
+			.setURL("http://pmhstudio.co.nf")
+			.setColor("#E5748B")
+			.setFooter("Thanks For Using Our WaterBot", avat);
+			input.channel.send(eCreditEmb);
+		} else {
+			if (cmdFile) {
+				cmdFile.run(mu,input,pars,prefix,nasa);
+				} else {
+				// AI(api.ai, Dialogflow v1) Intents
+				let aiRequest = ai.textRequest(msgc, {
 					sessionId: input.author.id
 				});
 
@@ -270,7 +315,10 @@ bot.on("message", async message => {
 					.setColor(input.member.displayHexColor)
 					input.channel.send(aiEmb);
 				});
-   }
+			}  		
+		}
+	
+	
 });
 					 
 bot.login(process.env.BOT_TOKEN);

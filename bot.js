@@ -181,8 +181,6 @@ if (!input.content.startsWith(prefix)) { return; } // Don't log Messages Without
 	if(message.author.bot) return;
 	
 	
-	let commandfile = bot.commands.get(cmd.slice(prefix.length));
-	if(commandfile) commandfile.run(bot,message,args);
 	
 	
 	var msg = message.content.toUpperCase();

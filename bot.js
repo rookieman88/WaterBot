@@ -33,7 +33,7 @@ bot.on('ready', async () => {
         bot.user.setPresence({ activity: { name: status }, status: 'online' });
 		
 
-	}, 10000	
+	}, 10000)	
 });
 
 bot.on('guildMemberAdd', member => {

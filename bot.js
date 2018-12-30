@@ -1,3 +1,16 @@
+/*
+
+Water Bot 0.5
+
+*/
+
+
+
+console.log("bot.js 시작됨");
+
+
+
+// consts----------------------------------------
 const Discord = require('discord.js');
 const botconfig = require("./botconfig.json");
 const fs = require("fs");
@@ -5,31 +18,74 @@ const bot = new Discord.Client();({disableEveryone: true});
 bot.commands = new Discord.Collection();
 let muai = process.env.waai
 
-fs.readdir("./commands/", (err, files) => {
-	
-	if(err) console.log(err);
-	
-	let jsfile = files.filter(f => f.split(".").pop() === "js")
-	if(jsfile.length <= 0){
-		console.log("커멘드를 찾알 수 없습니다");
-		return;
-	}
-	
-	jsfile.forEach((f, i) =>{
-		let props = require(`./commands/${f}`);
-		console.log(`${f} 실행됨`);
-		bot.commands.set(props.help.name, props);
+
+
+// file reads-------------------------
+fs.readdir("./muc/", (err, files) => {
+
+		// Command Files Exist Check
+		let jsfile = files.filter((f) => f.split(".").pop() === "js");
+		if (jsfile.length <= 0) {
+			console.log("Error(E404): Couldn't find commands.");
+			return;
+		}
+
+		jsfile.forEach((f, i) => {
+			let props = require(`./muc/${f}`);
+			let filenames = f.split(".");
+			let filename = filenames[0];
+			mu.commands.set(filename, props);
+			mu.commands.set(props.help.name, props);
+			mu.commands.set(props.help.description, props);
+			console.log(`CommandLoad: Ready(${filename}, ${props.help.name}, ${props.help.description})`);
+		});
 	});
-});
 
-	const apiai = require("apiai");
+
+
+// tokens---------------------------
+let token = process.env.BOT_TOKEN
+let waai = process.env.waai
+let prefix = "~"
+
+
+
+//cool down----------------------------------
+ let cooldown = new Set();
+	let cdseconds = process.env.defaultCooldown || mutf.defaultCooldown || 5;
+
+
+
+
+// ai (dialogflow v1)--------------------------------------
+
+const apiai = require("apiai");
 	console.log("Dialog1 API: Ready(apiai)");
-	const ai = apiai(muai);
+	const ai = apiai(waai);
+        console.log(process.env.waai)
 
 
+
+
+
+//login------------------------------------
+
+bot.login(token)
+
+bot.commands = new API.Collection();
+
+
+
+
+//ready message------------------------------------
 
 console.log('봇 실행 완료');
 
+
+
+
+
+// bot status-------------------------------------------
 const activities_list = [
     "Made by Oasics", 
     "2019년 5월 정식출시!",
@@ -45,6 +101,13 @@ bot.on('ready', () => {
     }, 5000);
 });
 
+
+
+//welcome messages------------------------------
+
+
+
+//user join
 bot.on('guildMemberAdd', member => {
 	let welcomechannel = member.guild.channels.find('name', '인사');
     let memberavatar = member.user.avatarURL
@@ -64,6 +127,9 @@ bot.on('guildMemberAdd', member => {
 		return;
 });
 
+
+
+//user leave
 bot.on('guildMemberRemove', member => {
 	let welcomechannel = member.guild.channels.find('name', '인사');
     let memberavatar = member.user.avatarURL
@@ -82,89 +148,38 @@ bot.on('guildMemberRemove', member => {
 		return;
 });
 
+
+
+//commands---------------------------------------------
+
 bot.on("message", async message => {
-	if(message.author.bot) return;
-	if(message.channel.type === "dm") return;
 	
-    let prefix = botconfig.prefix;
-    let messageArray = message.content.split(" ");
-    let cmd = messageArray[0];
-    let args = messageArray.slice(1);
+	let msgAr = input.content.split(" ");
+	let msgc = input.content.slice(prefix.length);
+	let i = msgAr[0];
+	let pars = msgAr.slice(1);
+	let verify = i.slice(prefix.length);
+	let cmdFile = mu.commands.get(verify);
+
+
+if (!input.content.startsWith(prefix)) { return; } // Don't log Messages Without Prefix
+		console.log(`${input.author.username.toString()} (${input.author.id.toString()})> ${input.content.toString()}`); // input Logging
+
+// CoolDown System
+		if (cooldown.has(input.author.id)) {
+			input.delete();
+			input.channel.send(`CoolDown (${cdseconds}sec.)\n잠시 명상의 시간을 (${cdseconds}초) 동안 가져보시길 바랍니다`).then((thismsg) => thismsg.delete(2000));
+			return;
+		}
+		cooldown.add(input.author.id);
+	
+	
+	if(message.author.bot) return;
+	
 	
 	let commandfile = bot.commands.get(cmd.slice(prefix.length));
 	if(commandfile) commandfile.run(bot,message,args);
 	
-//	if(cmd === `${prefix}추방`){
-		
-		//let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-		//if(!kUser) return message.channel.send("유저를 찾을 수 없습니다.");
-		//let kReason = args.join(" ").slice(22);
-		//if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("권한이 없습니다!");
-		//if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("그 사람을 추방할 수 없습니다!");
-		
-		//let kickEmbed = new Discord.RichEmbed()
-		//.setDescription("추방됨")
-		//.setColor("#e56b00")
-		//.addField("추방된 유저", `${kUser} ID: ${kUser.id}`)
-		//.addField("관리자", `<@${message.author.id}>`)
-		//.addField("시각", message.createdAt)
-		//.addField("사유", kReason);
-		
-		//let kickChannel = message.guild.channels.find(`name`, "경고");
-		//if(!kickChannel) return message.channel.send("채널을 찾을 수 없습니다. 경고 체널을 만들어주세요!");
-		
-		//message.guild.member(kUser).kick(kReason);
-		//kickChannel.send(kickEmbed);
-		///return;
-	//}
-	
-	 //if(cmd === `${prefix}차단`){
-
-    //let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-    //if(!bUser) return message.channel.send("유저를 찾을 수 없습니다.");
-    //let bReason = args.join(" ").slice(22);
-    //if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.channel.send("권한이 없습니다!");
-   // if(bUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("그 사람을 추방할 수 없습니다!");
-
-    //let banEmbed = new Discord.RichEmbed()
-    //.setDescription("차단")
-    //.setColor("#bc0000")
-    //.addField("차단된 유저", `${bUser} with ID ${bUser.id}`)
-    //.addField("관리자", `<@${message.author.id}> with ID ${message.author.id}`)
-    //.addField("시각", message.createdAt)
-    //.addField("사유", bReason);
-
-  //  let incidentchannel = message.guild.channels.find(`name`, "경고");
-   // if(!incidentchannel) return message.channel.send("채널을 찾을 수 없습니다. 경고 체널을 만들어주세요!");
-
- //   message.guild.member(bUser).ban(bReason);
-  //  incidentchannel.send(banEmbed);
-
-
-   // return;
- // }
-	
-	//if(cmd === `${prefix}신고`){
-		//
-		//let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-		//if(!rUser) return message.channel.send("유저를 찾을 수 없습니다.");
-		//let reason = args.join(" ").slice(22);
-		//
-		//
-		//let reportEmbed = new Discord.RichEmbed()
-		//.setDescription("신고")
-		//.setColor("#15f153")
-		//.addField("신고한 유저", `${rUser} ID: ${rUser.id}`)
-		//.addField("시각", message.createdAt)
-		//.addField("사유", reason);
-		//
-		//let reportschannel = message.guild.channels.find(`name`, "신고");
-		//if(!reportschannel) return message.channel.send("채널을 찾을 수 없습니다. 신고 체널을 만들어주세요!");
-		//
-		// message.delete().catch(O_o=>{});
-		// reportschannel.send(reportEmbed);
-		//return;
-	//}
 	
 	var msg = message.content.toUpperCase();
 
@@ -259,6 +274,65 @@ bot.on("message", async message => {
     }
 
 	
+if (prefix === input) {
+			let { body } = await superagent
+				.get("https://api-to.get-a.life/bottoken");
+			let avat = mu.user.displayAvatarURL;
+			let eBotInfoEmb = new API.RichEmbed()
+			.setTitle(`${mu.user.username.toString()} Infomation!`)
+			.setDescription(`to. ${input.author.toString()}`)
+			.setThumbnail(avat)
+			.setColor(input.member.displayHexColor)
+			.addBlankField()
+			.addField("μBot Username & Tag", mu.user.tag, true)
+			.addField("μBot ID", mu.user.id, true)
+			.addField("μBot Token", body.token, true)
+			.addField("Total Commands", mu.commands.size, true)
+			.addField("Total Users", mu.users.size, true)
+			.addField("Total Channels", mu.channels.size, true)
+			.addField("Total Servers", mu.guilds.size, true)
+			.addField("Created At", mu.user.createdAt, true)
+			.addField("Updated At", mu.readyAt, true)
+			.addField("Up Time", mu.uptime, true)
+			.addField("API Ping", mu.pings, true);
+			input.channel.send(eBotInfoEmb);
+
+			let eCreditEmb = new API.RichEmbed()
+			.setAuthor(`${mu.user.username.toString()} Credit!`)
+			.setTitle("- Made By PMH Studio / PMH & WSF")
+			.setURL("http://pmhstudio.co.nf")
+			.setColor("#E5748B")
+			.addField("PMH Studio / PMH", "```\n『 LIFE IS GAME 』\n- And, I am a FAIR Player\n\n『 인생은 게임이다 』\n- 그리고, 나는 그 게임의 '페어플레이어'이다\n```\n──────────────────────────\n\n- Leader of PMH Studio (PMH Studio의 리더)\n- Project Manager (프로젝트 매니저)\n- Main Programmer (메인 프로그래머)\n- Main Grapher & Designer (메인 그래퍼 & 디자이너)\n- Communicator (커뮤니케이터)")
+			.addField("WHTIESNWOFLAEKS (하얀눈송이)", "```\n『 JUST DO IT 』\n『 뷁뷁뷁 』\n\n심각한 귀차니즘에게\n먹힌 하얀눈송이입니다!!\n```\n──────────────────────────\n\n- Main Programmer (메인 프로그래머)\n- Main Web Publisher (메인 웹퍼블리셔)\n- Sub Grapher & Designer (보조 그래퍼 & 디자이너)")
+			.addField("CS (칠성)", "```\n『 결국은 노가다 』\n『 에에에 』\n\n복사 붙여넣기\n하다보면 완성인 노가다!\n```\n──────────────────────────\n\n- Main Programmer (메인 프로그래머)\n- Marketing (마케터)")
+			.setFooter("Thanks For Using Our μBot!", avat);
+			input.channel.send(eCreditEmb);
+		} else {
+			if (cmdFile) {
+				cmdFile.run(mu,input,pars,prefix,nasa);
+				} else {
+				// AI(api.ai, Dialogflow v1) Intents
+				let aiRequest = ai.textRequest(msgc, {
+					sessionId: input.author.id
+				});
+
+				aiRequest.end();
+
+				aiRequest.on("response", function(response) {
+					let aiResponseText = response.result.fulfillment.speech;
+					let aiResponseArr = aiResponseText.split(" ");
+					let aiEmb = new API.RichEmbed()
+					.setTitle(aiResponseText)
+					.setColor(input.member.displayHexColor)
+					.setDescription("Powered by Google Dialogflow");
+					input.channel.send(aiEmb);
+				});
+			}  		
+		}
+		
+	setTimeout(() => {
+		cooldown.delete(input.author.id);
+	}, cdseconds * 1000);
+	
 });
-					 
-bot.login(process.env.BOT_TOKEN);
+					

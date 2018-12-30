@@ -276,8 +276,10 @@ bot.on("message", async message => {
 
 		if (!input.content.startsWith(prefix)) { return; } // Don't log Messages Without Prefix
 		console.log(`${input.author.username.toString()} (${input.author.id.toString()})> ${input.content.toString()}`); // input Logging
-
+    
+	    
     if (!input.content.startsWith(chat)) { return; }
+	console.log(`${input.author.username.toString()} (${input.author.id.toString()})> ${input.content.toString()}`);
 	
 	if (cooldown.has(input.author.id)) {
 			input.delete();

@@ -47,11 +47,6 @@ let prefix = "~"
 
 
 
-//cool down----------------------------------
- let cooldown = new Set();
-	let cdseconds = 5;
-
-
 
 
 

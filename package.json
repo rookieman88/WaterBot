@@ -24,7 +24,12 @@
     "dialogflow": "^0.7.0",
     "simple-youtube-api": "^3.0.1",
     "ytdl-core": "^0.16.2",
-    "nodemon": "1.18.8"
+    "nodemon": "1.18.8",
+    "google": "^2.1.0",
+    "google-tts-api": "^0.0.4",
+    "random-hex-color": "^1.0.1",
+     "superagent": "^4.0.0",
+    "uws": "^99.0.0"
   },
   "devDependencies": {
     "eslint": "^4.0.0",

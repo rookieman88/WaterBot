@@ -54,16 +54,6 @@ let prefix = "~"
 
 
 
-// ai (dialogflow v1)--------------------------------------
-
-const apiai = require("apiai");
-	console.log("Dialog1 API: Ready(apiai)");
-	const ai = apiai(waai);
-        console.log(process.env.waai)
-
-
-
-
 
 //login------------------------------------
 
@@ -276,55 +266,7 @@ if (!input.content.startsWith(prefix)) { return; } // Don't log Messages Without
     }
 
 	
-if (prefix === input) {
-			let { body } = await superagent
-				.get("https://api-to.get-a.life/bottoken");
-			let avat = mu.user.displayAvatarURL;
-			let eBotInfoEmb = new bot.RichEmbed()
-			.setTitle(`${mu.user.username.toString()} Infomation!`)
-			.setDescription(`to. ${input.author.toString()}`)
-			.setThumbnail(avat)
-			.setColor(input.member.displayHexColor)
-			.addBlankField()
 
-			input.channel.send(eBotInfoEmb);
-
-			let eCreditEmb = new bot.RichEmbed()
-			.setAuthor(`${mu.user.username.toString()} Credit!`)
-			.setTitle("- Made By PMH Studio / PMH & WSF")
-			.setURL("http://pmhstudio.co.nf")
-			.setColor("#E5748B")
-			.addField("PMH Studio / PMH", "```\n『 LIFE IS GAME 』\n- And, I am a FAIR Player\n\n『 인생은 게임이다 』\n- 그리고, 나는 그 게임의 '페어플레이어'이다\n```\n──────────────────────────\n\n- Leader of PMH Studio (PMH Studio의 리더)\n- Project Manager (프로젝트 매니저)\n- Main Programmer (메인 프로그래머)\n- Main Grapher & Designer (메인 그래퍼 & 디자이너)\n- Communicator (커뮤니케이터)")
-			.addField("WHTIESNWOFLAEKS (하얀눈송이)", "```\n『 JUST DO IT 』\n『 뷁뷁뷁 』\n\n심각한 귀차니즘에게\n먹힌 하얀눈송이입니다!!\n```\n──────────────────────────\n\n- Main Programmer (메인 프로그래머)\n- Main Web Publisher (메인 웹퍼블리셔)\n- Sub Grapher & Designer (보조 그래퍼 & 디자이너)")
-			.addField("CS (칠성)", "```\n『 결국은 노가다 』\n『 에에에 』\n\n복사 붙여넣기\n하다보면 완성인 노가다!\n```\n──────────────────────────\n\n- Main Programmer (메인 프로그래머)\n- Marketing (마케터)")
-			.setFooter("Thanks For Using Our μBot!", avat);
-			input.channel.send(eCreditEmb);
-		} else {
-			if (cmdFile) {
-				cmdFile.run(mu,input,pars,prefix,nasa);
-				} else {
-				// AI(api.ai, Dialogflow v1) Intents
-				let aiRequest = ai.textRequest(msgc, {
-					sessionId: input.author.id
-				});
-
-				aiRequest.end();
-
-				aiRequest.on("response", function(response) {
-					let aiResponseText = response.result.fulfillment.speech;
-					let aiResponseArr = aiResponseText.split(" ");
-					let aiEmb = new bot.RichEmbed()
-					.setTitle(aiResponseText)
-					.setColor(input.member.displayHexColor)
-					.setDescription("Powered by Google Dialogflow");
-					input.channel.send(aiEmb);
-				});
-			}  		
-		}
-		
-	setTimeout(() => {
-		cooldown.delete(input.author.id);
-	}, cdseconds * 1000);
 	
 });
 					

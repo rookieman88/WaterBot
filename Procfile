@@ -1,2 +1,2 @@
-worker: nodemon bot.js
+worker: nodemon beta.js
 aibot: nodemon ai.js

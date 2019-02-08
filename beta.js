@@ -73,8 +73,8 @@ console.log('봇 실행 완료');
 const activities_list = [
     "Made by Oasics", 
     "2019년 5월 정식출시!",
-    "꼬우면 Oasics #7777", 
-    "워터야 도움 가즈아ㅏㅏ"
+    "꼬우면 NotOasics #5074", 
+    "~도움 입력 가즈아ㅏㅏ"
     ];
 
 
@@ -136,6 +136,9 @@ bot.on('guildMemberRemove', member => {
 
 //commands---------------------------------------------
 
+if (!input.content.startsWith(prefix)) { return; } // Don't log Messages Without Prefix
+		console.log(`${input.author.username.toString()} (${input.author.id.toString()})> ${input.content.toString()}`); // input Logging
+
 bot.on("message", async message => {
 	
   let messageArray = message.content.split(" ");
@@ -153,8 +156,6 @@ bot.on("message", async message => {
 	let cmdFile = mu.commands.get(verify);
 
 
-if (!input.content.startsWith(prefix)) { return; } // Don't log Messages Without Prefix
-		console.log(`${input.author.username.toString()} (${input.author.id.toString()})> ${input.content.toString()}`); // input Logging
 
 // CoolDown System
 		if (cooldown.has(input.author.id)) {

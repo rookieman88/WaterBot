@@ -136,11 +136,13 @@ bot.on('guildMemberRemove', member => {
 
 //commands---------------------------------------------
 
+
+bot.on("message", async message => {
+
+	
 if (!input.content.startsWith(prefix)) { return; } // Don't log Messages Without Prefix
 		console.log(`${input.author.username.toString()} (${input.author.id.toString()})> ${input.content.toString()}`); // input Logging
 
-bot.on("message", async message => {
-	
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0];
   let args = messageArray.slice(1);

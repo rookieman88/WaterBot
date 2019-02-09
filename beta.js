@@ -60,7 +60,7 @@ bot.login(token)
 
 const apiai = require("apiai");
 console.log("Dialog1 API: Ready(apiai)");
-const ai = apiai(watai);
+const ai = apiai(waai);
 
 
 

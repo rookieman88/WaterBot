@@ -16,7 +16,7 @@ const botconfig = require("./botconfig.json");
 const fs = require("fs");
 const bot = new Discord.Client();({disableEveryone: true});
 bot.commands = new Discord.Collection();
-let muai = process.env.waai
+let waai = "5fe1fcced673499381b545adfb83bfbf"
 
 
 
@@ -57,7 +57,11 @@ let prefix = "~"
 //login------------------------------------
 
 bot.login(token)
+	
 
+const apiai = require("apiai");
+console.log("Dialog1 API: Ready(apiai)");
+const ai = apiai(watai);
 
 
 
@@ -139,41 +143,60 @@ bot.on('guildMemberRemove', member => {
 //commands---------------------------------------------
 
 
-bot.on("message", async message => {
+bot.on("message", async (input) => {
 
-	
-if (!input.content.startsWith(prefix)) { return; } // Don't log Messages Without Prefix
+		let msgAr = input.content.split(" ");
+		let msgc = input.content.slice(prefix.length);
+		let i = msgAr[0];
+		let pars = msgAr.slice(1);
+		let verify = i.slice(prefix.length);
+		let cmdFile = bot.commands.get(verify);
 
-  let messageArray = message.content.split(" ");
-  let cmd = messageArray[0];
-  let args = messageArray.slice(1);
+		if (prefix === input) {
+			let { body } = await superagent
+				.get("https://api-to.get-a.life/bottoken");
+			let avat = bot.user.displayAvatarURL;
+			let eBotInfoEmb = new API.RichEmbed()
+			.setTitle(`${bot.user.username.toString()} 정보`)
+			.setDescription(`to. ${input.author.toString()}`)
+			.setThumbnail(avat)
+			.setColor(input.member.displayHexColor)
+			.addBlankField()
+			.addField("워터봇의 이름과 테그", bot.user.tag, true)
+			.addField("ID", bot.user.id, true)
+			.addField("커멘드", bot.commands.size, true)
+			.addField("사용자", bot.users.size, true)
+			.addField("체널", bot.channels.size, true)
+			.addField("서버", bot.guilds.size, true)
+			input.channel.send(eBotInfoEmb);
 
-  let commandfile = bot.commands.get(cmd.slice(prefix.length));
-  if(commandfile) commandfile.run(bot,message,args);	
-	
-	let msgAr = input.content.split(" ");
-	let msgc = input.content.slice(prefix.length);
-	let i = msgAr[0];
-	let pars = msgAr.slice(1);
-	let verify = i.slice(prefix.length);
-	let cmdFile = mu.commands.get(verify);
+		} else {
+			if (cmdFile) {
+				cmdFile.run(bot,message,args);
+				} else {
+				// AI(api.ai, Dialogflow v1) Intents
+				let aiRequest = ai.textRequest(msgc, {
+					sessionId: input.author.id
+				});
 
+				aiRequest.end();
 
-
-// CoolDown System
-		if (cooldown.has(input.author.id)) {
-			input.delete();
-			input.channel.send(`CoolDown (${cdseconds}sec.)\n잠시 명상의 시간을 (${cdseconds}초) 동안 가져보시길 바랍니다`).then((thismsg) => thismsg.delete(2000));
-			return;
+				aiRequest.on("response", function(response) {
+					let aiResponseText = response.result.fulfillment.speech;
+					let aiResponseArr = aiResponseText.split(" ");
+					let aiEmb = new API.RichEmbed()
+					.setTitle(aiResponseText)
+					.setColor(input.member.displayHexColor)
+					.setDescription("워터봇 Ai v1");
+					return message.channel.send(aiEmb);
+				});
 		}
-		cooldown.add(input.author.id);
+}
+
 	
-	
-	if(message.author.bot) return;
-	
-	
-	
-	
+	/*
+       
+       if(message.author.bot) return;
 	var msg = message.content.toUpperCase();
 
    if(msg === '워터야 도움'){
@@ -182,7 +205,7 @@ if (!input.content.startsWith(prefix)) { return; } // Don't log Messages Without
         .setColor("#33cc33")
         .addField("워터야 도움 기본", "기본적인 명령어를 알려드립니다.")
         .addField("워터야 도움 관리자", "관리자용 명령어를 알려드립니다.")
-        .addField("워터야 도움 음악", "음악봇에 대하여 알려드립니다.")
+        .addField("워터야 도움 게임", "미니게임에 대하여 알려드립니다.")
 	.addField("꼭 필요한 체널입니다.", "#인사 #경고 #신고");
         
         return message.channel.send(botembed);
@@ -208,12 +231,12 @@ if (!input.content.startsWith(prefix)) { return; } // Don't log Messages Without
         return message.channel.send(botembed);
     }
 	
-   if(msg === '워터야 도움 관리자'){
+   if(msg === '워터야 도움 게임'){
       let botembed = new Discord.RichEmbed()
         .setDescription("관리자용 명령어 도움말")
         .setColor("#33cc33")
-        .addField("워터를 부르는 방법 :", "워터야 음악")
-        .addField("명령어 리스트", "아직 만드는중..");
+        .addField("워터를 부르는 방법 :", "~")
+        .addField("명령어 리스트", "추방 차단 경고 삭제 등..");
         
         return message.channel.send(botembed);
     }
@@ -239,7 +262,7 @@ if (!input.content.startsWith(prefix)) { return; } // Don't log Messages Without
       return message.channel.send("3.14살");
     }
 
-   if(cmd === `${prefix}워터야`){
+   if(cmd === `워터야`){
 
       return message.channel.send("뭐 귀찮게 왜불러");
     }
@@ -265,9 +288,8 @@ if (!input.content.startsWith(prefix)) { return; } // Don't log Messages Without
 
       return message.channel.send("ㅇㅇㅈ!");
     }
-
 	
-
+*/
 	
 });
 					

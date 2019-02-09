@@ -46,7 +46,6 @@ fs.readdir("./commands/", (err, files) => {
 
 // tokens---------------------------
 let token = process.env.BOT_TOKEN
-let waai = process.env.waai
 let prefix = "~"
 
 

@@ -16,8 +16,8 @@ const botconfig = require("./botconfig.json");
 const fs = require("fs");
 const bot = new Discord.Client();({disableEveryone: true});
 bot.commands = new Discord.Collection();
-let waai = "5fe1fcced673499381b545adfb83bfbf"
-
+let waai = "5fe1fcced673499381b545adfb83bfbf";
+let prefix = "~";
 
 
 // file reads-------------------------
@@ -46,7 +46,7 @@ fs.readdir("./commands/", (err, files) => {
 
 // tokens---------------------------
 let token = process.env.BOT_TOKEN
-let prefix = "~"
+
 
 
 
@@ -151,6 +151,10 @@ bot.on("message", async (input) => {
 		let verify = i.slice(prefix.length);
 		let cmdFile = bot.commands.get(verify);
 
+	
+	if (!input.content.startsWith(prefix)) { return; } // Don't log Messages Without Prefix
+		console.log(`${input.author.username.toString()} (${input.author.id.toString()})> ${input.content.toString()}`); // input Logging
+	
 		if (prefix === input) {
 			let { body } = await superagent
 				.get("https://api-to.get-a.life/bottoken");

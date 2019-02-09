@@ -177,7 +177,8 @@ bot.on("message", async (input) => {
 					return message.channel.send(aiEmb);
 				});
 		}
-
+});
+	
 	
 	/*
        

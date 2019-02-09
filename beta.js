@@ -155,29 +155,12 @@ bot.on("message", async (input) => {
 	if (!input.content.startsWith(prefix)) { return; } // Don't log Messages Without Prefix
 		console.log(`${input.author.username.toString()} (${input.author.id.toString()})> ${input.content.toString()}`); // input Logging
 	
-		if (prefix === input) {
-			let { body } = await superagent
-				.get("https://api-to.get-a.life/bottoken");
-			let avat = bot.user.displayAvatarURL;
-			let eBotInfoEmb = new API.RichEmbed()
-			.setTitle(`${bot.user.username.toString()} 정보`)
-			.setDescription(`to. ${input.author.toString()}`)
-			.setThumbnail(avat)
-			.setColor(input.member.displayHexColor)
-			.addBlankField()
-			.addField("워터봇의 이름과 테그", bot.user.tag, true)
-			.addField("ID", bot.user.id, true)
-			.addField("커멘드", bot.commands.size, true)
-			.addField("사용자", bot.users.size, true)
-			.addField("체널", bot.channels.size, true)
-			.addField("서버", bot.guilds.size, true)
-			input.channel.send(eBotInfoEmb);
-
-		} else {
+		
 			if (cmdFile) {
 				cmdFile.run(bot,message,args);
-				} else {
-				// AI(api.ai, Dialogflow v1) Intents
+				} 
+	else 
+	{			// AI(api.ai, Dialogflow v1) Intents
 				let aiRequest = ai.textRequest(msgc, {
 					sessionId: input.author.id
 				});

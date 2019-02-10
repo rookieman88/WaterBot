@@ -16,8 +16,7 @@ const botconfig = require("./botconfig.json");
 const fs = require("fs");
 const bot = new Discord.Client();({disableEveryone: true});
 bot.commands = new Discord.Collection();
-let waai = "5fe1fcced673499381b545adfb83bfbf";
-let prefix = "~";
+let prefix = process.env.defaultPrefix
 
 
 // file reads-------------------------

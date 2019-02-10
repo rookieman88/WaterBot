@@ -16,7 +16,6 @@ const botconfig = require("./botconfig.json");
 const fs = require("fs");
 const bot = new Discord.Client();({disableEveryone: true});
 bot.commands = new Discord.Collection();
-let prefix = process.env.defaultPrefix
 const API = require("discord.js");
 
 
@@ -138,6 +137,7 @@ bot.on('guildMemberRemove', member => {
 
 bot.on("message", async (input) => {
 
+	        let prefix = botconfig.prefix;
 		let msgAr = input.content.split(" ");
 		let msgc = input.content.slice(prefix.length);
 		let i = msgAr[0];
@@ -149,8 +149,7 @@ bot.on("message", async (input) => {
 	if (!input.content.startsWith(prefix)) { return; } // Don't log Messages Without Prefix
 		console.log(`${input.author.username.toString()} (${input.author.id.toString()})> ${input.content.toString()}`); // input Logging
 	
-		
-			 let prefix = botconfig.prefix;
+	
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
     let args = messageArray.slice(1);

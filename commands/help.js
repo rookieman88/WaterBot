@@ -18,7 +18,7 @@ module.exports.run = async (bot, message, args) => {
         return message.channel.send(botembed);
 
 
-});
+}
 
 
 module.exports.help = {

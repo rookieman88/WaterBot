@@ -56,10 +56,6 @@ let token = process.env.BOT_TOKEN
 bot.login(token)
 	
 
-const apiai = require("apiai");
-console.log("Dialog1 API: Ready(apiai)");
-const ai = apiai(waai);
-
 
 
 

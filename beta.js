@@ -150,7 +150,7 @@ bot.on("message", async (input) => {
 		console.log(`${input.author.username.toString()} (${input.author.id.toString()})> ${input.content.toString()}`); // input Logging
 	
 	
-    let messageArray = message.content.split(" ");
+    let messageArray = input.content.split(" ");
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
 	

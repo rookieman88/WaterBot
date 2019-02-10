@@ -36,9 +36,7 @@ fs.readdir("./commands/", (err, files) => {
     let filenames = f.split(".");
     let filename = filenames[0];
     console.log(`${f} loaded!`);
-   	bot.commands.set(filename, props);
 	bot.commands.set(props.help.name, props);
-	bot.commands.set(props.help.description, props);
   });
 
 });
@@ -156,27 +154,14 @@ bot.on("message", async (input) => {
 		console.log(`${input.author.username.toString()} (${input.author.id.toString()})> ${input.content.toString()}`); // input Logging
 	
 		
-			if (cmdFile) {
-				cmdFile.run(bot,message,args);
-				} 
-	else 
-	{			// AI(api.ai, Dialogflow v1) Intents
-				let aiRequest = ai.textRequest(msgc, {
-					sessionId: input.author.id
-				});
-
-				aiRequest.end();
-
-				aiRequest.on("response", function(response) {
-					let aiResponseText = response.result.fulfillment.speech;
-					let aiResponseArr = aiResponseText.split(" ");
-					let aiEmb = new API.RichEmbed()
-					.setTitle(aiResponseText)
-					.setColor(input.member.displayHexColor)
-					.setDescription("워터봇 Ai v1");
-					return message.channel.send(aiEmb);
-				});
-		}
+			 let prefix = botconfig.prefix;
+    let messageArray = message.content.split(" ");
+    let cmd = messageArray[0];
+    let args = messageArray.slice(1);
+	
+	let commandfile = bot.commands.get(cmd.slice(prefix.length));
+	if(commandfile) commandfile.run(bot,message,args);
+		
 	
 	
 	/*

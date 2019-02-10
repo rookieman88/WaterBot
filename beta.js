@@ -17,6 +17,7 @@ const fs = require("fs");
 const bot = new Discord.Client();({disableEveryone: true});
 bot.commands = new Discord.Collection();
 let prefix = process.env.defaultPrefix
+const API = require("discord.js");
 
 
 // file reads-------------------------

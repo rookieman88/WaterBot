@@ -135,22 +135,22 @@ bot.on('guildMemberRemove', member => {
 //commands---------------------------------------------
 
 
-bot.on("message", async (input) => {
+bot.on("message", async message => {
 
 	        let prefix = botconfig.prefix;
-		let msgAr = input.content.split(" ");
-		let msgc = input.content.slice(prefix.length);
+		let msgAr = message.content.split(" ");
+		let msgc = message.content.slice(prefix.length);
 		let i = msgAr[0];
 		let pars = msgAr.slice(1);
 		let verify = i.slice(prefix.length);
 		let cmdFile = bot.commands.get(verify);
 
 	
-	if (!input.content.startsWith(prefix)) { return; } // Don't log Messages Without Prefix
-		console.log(`${input.author.username.toString()} (${input.author.id.toString()})> ${input.content.toString()}`); // input Logging
+	if (!message.content.startsWith(prefix)) { return; } // Don't log Messages Without Prefix
+		console.log(`${message.author.username.toString()} (${message.author.id.toString()})> ${message.content.toString()}`); // input Logging
 	
 	
-    let messageArray = input.content.split(" ");
+    let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
 	

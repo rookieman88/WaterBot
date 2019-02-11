@@ -35,10 +35,16 @@ module.exports.run = async (bot, message, args) =>{
         if (ai_choice == user_choice) {
           message.channel.send("무승부를 했다!");
         }
-        else if (ai_choice < user_choice || ai_choice == 0 && user_choice == 2) {
+        else if (ai_choice == 2 && user_choice == 0) {
+          message.channel.send(`<@${message.author.id}>가 이겼다!`);
+        }
+        else if (ai_choice == 0 && user_choice == 1) {
+          message.channel.send(`<@${message.author.id}>가 이겼다!`);
+        }
+        else if (ai_choice == 2 && user_choice == 1) {
           message.channel.send(`<@${message.author.id}>가 졌다!`);
         } else {
-          message.channel.send(`<@${message.author.id}>가 이겼다!`);
+          message.channel.send(`<@${message.author.id}>가 졌다!`);
         }
       }
 

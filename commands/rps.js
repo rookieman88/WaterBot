@@ -42,7 +42,7 @@ module.exports.run = async (bot, message, args) =>{
           message.channel.send(`<@${message.author.id}>가 이겼다!`);
         }
         else if (ai_choice == 2 && user_choice == 1) {
-          message.channel.send(`<@${message.author.id}>가 다!`);
+          message.channel.send(`<@${message.author.id}>가 이겼다!`);
         } else {
           message.channel.send(`<@${message.author.id}>가 졌다!`);
         }

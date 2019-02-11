@@ -22,7 +22,7 @@ module.exports.run = async (bot, message, args) =>{
           message.channel.send(`<@${message.author.id}>은(는) 보 :hand_splayed: 를 냈다!`); 
       } else {
           message.channel.send(`<@${message.author.id}>, 가위,바위,보 밖에 낼수 없다!`)
-      
+      }
       
       if (ai_choice == 0) {
           message.channel.send(`워터는 가위 :v: 를 냈다!`);

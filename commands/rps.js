@@ -49,7 +49,7 @@ module.exports.run = async (bot, message, args) =>{
       }
 
       if (!args[0]) {
-        message.reply("사용법 : ~가위바위보 (낼거)");
+        message.channel.send("사용법 : ~가위바위보 (낼거)");
       }
     }
 

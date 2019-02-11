@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args) =>{
   if (args[0]) {
         // get user choice && user choice
         let ai_choice = rand(0,2);
-        let user_choice = args[0] == "바위" ? 1 : args[0] == "보" ? 2 : 0;
+        let user_choice = args[0] == "바위" ? 1 : args[0] == "보" ? 2 : args[0] == "보" ? 0;
       
       
       if (user_choice == 0) {

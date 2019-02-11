@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args) =>{
   if (args[0]) {
         // get user choice && user choice
         let ai_choice = rand(0,2);
-        let user_choice = args[0] == "바위" ? 1 : args[0] == "보" ? 2 : args[0] == "가위" ? 0;
+        let user_choice = args[0] == "바위" ? 1 : args[0] == "보" ? 2 : args[0] == "가위" ? 0 : 3;
       
       
       if (user_choice == 0) {
@@ -17,9 +17,11 @@ module.exports.run = async (bot, message, args) =>{
       }
       else if (user_choice == 1) {
           message.channel.send(`<@${message.author.id}>은(는) :fist: 를 냈다!`);
-      } else {
+      } 
+      else if (user_choice == 2) {
           message.channel.send(`<@${message.author.id}>은(는) 보 :hand_splayed: 를 냈다!`); 
-      }
+      } else {
+          message.channel.send(`<@${message.author.id}>, 가위,바위,보 밖에 낼수 없다!`)
       
       
       if (ai_choice == 0) {

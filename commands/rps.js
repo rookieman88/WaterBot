@@ -10,16 +10,6 @@ module.exports.run = async (bot, message, args) =>{
         // get user choice && user choice
         let ai_choice = rand(0,2);
         let user_choice = args[0] == "바위" ? 1 : args[0] == "보" ? 2 : 0;
-
-      
-      if (ai_choice == 0) {
-          message.channel.send(`워터는 가위 :v: 를 냈다!`);
-      }
-      else if (ai_choice == 1) {
-          message.channel.send(`워터는 바위 :fist: 를 냈다!`);
-      } else {
-          message.channel.send(`워터는 보 :hand_splayed: 를 냈다!`); 
-      }
       
       
       if (user_choice == 0) {
@@ -31,14 +21,24 @@ module.exports.run = async (bot, message, args) =>{
           message.channel.send(`<@${message.author.id}>은(는) 보 :hand_splayed: 를 냈다!`); 
       }
       
+      
+      if (ai_choice == 0) {
+          message.channel.send(`워터는 가위 :v: 를 냈다!`);
+      }
+      else if (ai_choice == 1) {
+          message.channel.send(`워터는 바위 :fist: 를 냈다!`);
+      } else {
+          message.channel.send(`워터는 보 :hand_splayed: 를 냈다!`); 
+      }
+      
         // if their choices are same its a draw :D
         if (ai_choice == user_choice) {
-          message.reply("무승부를 했다!");
+          message.channel.send("무승부를 했다!");
         }
         else if (ai_choice < user_choice || ai_choice == 0 && user_choice == 2) {
-          message.reply(`<@${message.author.id}>가 졌다!`);
+          message.channel.send(`<@${message.author.id}>가 졌다!`);
         } else {
-          message.reply(`<@${message.author.id}>가 이겼다!`);
+          message.channel.send(`<@${message.author.id}>가 이겼다!`);
         }
       }
 

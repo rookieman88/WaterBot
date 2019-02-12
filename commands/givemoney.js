@@ -5,7 +5,7 @@ let coins = JSON.parse(fs.readFileSync("./saves/coins.json", "utf8"));
 module.exports.run = async (bot, message, args) => {
   
   
-let user = message.author.id
+let user = message.author
 
 if(!coins[user.id]) coins[user.id] = {
     coins: 0

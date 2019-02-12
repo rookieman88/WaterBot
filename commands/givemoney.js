@@ -16,7 +16,7 @@ if(!coins[user.id]) coins[user.id] = {
     if (err) console.log(err)
   });
   
-  message.channel.send(`<@${message.author.id}>용돈 1000원이 지급되었다!`);
+  message.reply("용돈 1000원이 지급되었다!");
   
 };
 

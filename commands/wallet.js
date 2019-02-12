@@ -6,8 +6,8 @@ let coins = JSON.parse(fs.readFileSync("./saves/coins.json", "utf8"));
 module.exports.run = async (bot, message, args) => {
 
 
-  let user = message.author.id
-  let usercoin = coins[user.id].warns;
+  let user = message.author
+  let usercoin = coins[user.id].coins;
   
   if(!coins[user.id]) coins[user.id] = {
     coins: 0

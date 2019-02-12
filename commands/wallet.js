@@ -7,13 +7,12 @@ module.exports.run = async (bot, message, args) => {
 
 
   let user = message.author
-  let usercoin = coins[user.id].coins;
   
   if(!coins[user.id]) coins[user.id] = {
     coins: 0
   };
   
-
+  let usercoin = coins[user.id].coins;
 
   message.reply(`<@${user.id}>님은 ${usercoin} 만큼의 돈을 가지고있다!`);
 

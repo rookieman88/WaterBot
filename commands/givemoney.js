@@ -10,7 +10,7 @@ let user = message.author
 if(!coins[user.id]) coins[user.id] = {
     coins: 100
   };
- coins[user.id].coins++100;
+ coins[user.id].coins++;
 
   
   message.reply("용돈 100원이 지급되었다!");

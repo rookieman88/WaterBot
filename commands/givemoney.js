@@ -30,8 +30,7 @@ fs.writeFile("./saves/coins.js", JSON.stringify(coins), (err) => {
     
  message.channel.send(msgembed)
     
-    
-}
+  
 
   
 };

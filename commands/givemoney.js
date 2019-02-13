@@ -19,7 +19,7 @@ let baseAmt = Math.floor(Math.random() * 100) + 1;
 if(coinAmt === baseAmt){
 	coins[message.author.id].coins + coinAmt
 };
-fs.writeFile("./saves/coins.js", JSON.stringify(coins), (err) => {
+fs.writeFile("./saves/coins.json", JSON.stringify(coins), (err) => {
 	if (err) console.log (err)
 });
     

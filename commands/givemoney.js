@@ -3,18 +3,12 @@ const fs = require("fs");
 let coins = JSON.parse(fs.readFileSync("./saves/coins.json", "utf8"));
 
 module.exports.run = async (bot, message, args) => {
-  
-  
-let user = message.author
 
-if(!coins[user.id]) coins[user.id] = {
+if(!coins[message.author.id]) coins[message.author.id] = {
     coins: 0
   };
- coins[user.id].coins + 1000;
+ coins[message.author.id].coins ++;
 
-  fs.writeFile("./saves/coins.json", JSON.stringify(coins), (err) => {
-    if (err) console.log(err)
-  });
   
   message.reply("용돈 1000원이 지급되었다!");
   

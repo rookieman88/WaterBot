@@ -5,12 +5,10 @@ let coins = JSON.parse(fs.readFileSync("./saves/coins.json", "utf8"));
 
 module.exports.run = async (bot, message, args) => {
 
-
-  let user = message.author
   
-  let usercoin = coins[user.id].coins;
+  let usercoin = coins[message.author.id].coins;
 
-  message.channel.send(`<@${user.id}>님은 ${usercoin} 만큼의 돈을 가지고있다!`);
+  message.channel.send(`<@${message.author.id}>님은 ${usercoin} 만큼의 돈을 가지고있다!`);
 
 }
 

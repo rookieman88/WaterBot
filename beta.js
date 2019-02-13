@@ -17,6 +17,7 @@ const fs = require("fs");
 const bot = new Discord.Client();({disableEveryone: true});
 bot.commands = new Discord.Collection();
 const API = require("discord.js");
+let coins = require("./saves/coins.json")
 
 
 // file reads-------------------------
@@ -132,7 +133,14 @@ bot.on('guildMemberRemove', member => {
 
 
 
+
+
+
+
 //commands---------------------------------------------
+
+
+
 
 
 bot.on("message", async message => {

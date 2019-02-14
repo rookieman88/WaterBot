@@ -11,7 +11,7 @@ module.exports.run = async (bot, message, args) => {
 let givecoin = 100;
 
 	Coin[message.author.id] = {
-          Coin: Coin[message.author.id].Coin + (coinAmtMent / 1)
+          Coin: Coin[message.author.id].Coin + (givecoin / 1)
       };
 	
 fs.writeFile("./saves/coins.json", JSON.stringify(coins), (err) => {

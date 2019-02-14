@@ -1,34 +1,30 @@
 const Discord = require("discord.js");
 const fs = require("fs");
-const ms = require("ms");
-let Coin = require("../saves/coins.json");
+let coins = require("../saves/coins.json");
 
 module.exports.run = async (bot, message, args) => {
-
-//coins
-
-
-let givecoin = 100;
-
-	Coin[message.author.id] = {
-          Coin: Coin[message.author.id].Coin + (givecoin / 1)
-      };
 	
-fs.writeFile("./saves/coins.json", JSON.stringify(coins), (err) => {
-	if (err) console.log (err)
-});
-    
+
+  let sCoins = coins[message.author.id].coins;
+  let yongdong = 100;
+	
+  coins[message.author.id] = {
+    coins: sCoins + parseInt(yongdong)
+  };
+
+
+  fs.writeFile("../saves/coins.json", JSON.stringify(coins), (err) => {
+    if(err) cosole.log(err)
+  });
+
  let msgembed = new Discord.RichEmbed()
  .setColor("#0000FF")
  .addField("용돈 100원이 지급되었습니다!", "잔액을 확인하려면 ~지갑 을 입력하세요!");
     
  message.channel.send(msgembed)
-    
-  
 
-  
-};
+}
 
 module.exports.help = {
-  name: "돈내놔"
+  name: "pay"
 }

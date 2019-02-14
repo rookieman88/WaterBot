@@ -1,14 +1,14 @@
 const Discord = require("discord.js");
 const fs = require("fs");
 const ms = require("ms");
-let Coins = require("../saves/coins.json");
+let Coin = require("../saves/coins.json");
 
 module.exports.run = async (bot, message, args) => {
 
 //coins
 
 
-let coinAmtMent = 100;
+let givecoin = 100;
 
 	Coin[message.author.id] = {
           Coin: Coin[message.author.id].Coin + (coinAmtMent / 1)

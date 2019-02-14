@@ -1,14 +1,13 @@
 const Discord = require("discord.js");
 const fs = require("fs");
-
+  const coins = require("../saves/coins.json");
 
 module.exports.run = async (bot, message, args) => {
 	
 
   let sCoins = coins[message.author.id].coins;
   let yongdong = 100;
-  let mcoins = require("../saves/coins.json");
-  let coins = mcoins.body;
+
 	
   coins[message.author.id] = {
     coins: sCoins + parseInt(yongdong)

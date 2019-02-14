@@ -24,7 +24,6 @@ fs.writeFile("./saves/coins.json", JSON.stringify(coins), (err) => {
 });
     
  let msgembed = new Discord.RichEmbed
- .setAuthor(message.author.username)
  .setColor("#0000FF")
  .addField("용돈 100원이 지급되었습니다!", "잔액을 확인하려면 ~지갑 을 입력하세요!");
     

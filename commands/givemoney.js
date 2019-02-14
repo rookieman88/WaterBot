@@ -1,24 +1,19 @@
 const Discord = require("discord.js");
 const fs = require("fs");
 const ms = require("ms");
-let coins = require("../saves/coins.json");
+let Coins = require("../saves/coins.json");
 
 module.exports.run = async (bot, message, args) => {
 
 //coins
 
-if(!coins[message.author.id]){
-	coins[message.author.id] = {
-		coins: 0
-	};
-}
 
-let coinAmt = Math.floor(Math.random() * 100) + 1;
-let baseAmt = Math.floor(Math.random() * 100) + 1;
+let coinAmtMent = 100;
 
-if(coinAmt === baseAmt){
-	coins[message.author.id].coins + coinAmt
-};
+	Coin[message.author.id] = {
+          Coin: Coin[message.author.id].Coin + (coinAmtMent / 1)
+      };
+	
 fs.writeFile("./saves/coins.json", JSON.stringify(coins), (err) => {
 	if (err) console.log (err)
 });

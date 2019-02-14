@@ -14,7 +14,7 @@ module.exports.run = async (bot, message, args) => {
   };
 
 
-  fs.writeFile("../saves/coins.json", JSON.stringify(coins), (err) => {
+  fs.writeFile("./saves/coins.json", JSON.stringify(coins), (err) => {
     if(err) cosole.log(err)
   });
 

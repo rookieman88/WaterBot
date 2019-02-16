@@ -22,6 +22,7 @@ module.exports.run = async (bot, message, args) => {
     if(err) cosole.log(err)
   });
 
+}
 
 module.exports.help = {
   name: "돈내놔"

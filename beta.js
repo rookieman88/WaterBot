@@ -172,14 +172,14 @@ bot.on("message", async message => {
        if(message.author.bot) return;
 	var msg = message.content.toUpperCase();
 	
-	if(msg === '~돈내놔'){
-       let botembed = new Discord.RichEmbed()
+
+     if (message.content === '~돈내놔') {
+           let botembed = new Discord.RichEmbed()
         .setColor("#33cc33")
-	.addField("용돈 100원이 지급되었습니다!", "잔액을 확인하려면 ~지갑 입력 ");
+	.addField("용돈 100원이 지급되었습니다!", "잔액을 확인하려면 ~지갑 입력 ㄱㄱ");
         
         return message.channel.send(botembed);
-    }
-	
+  }
 /*
    if(msg === '워터야 도움'){
        let botembed = new Discord.RichEmbed()

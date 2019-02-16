@@ -4,8 +4,6 @@ const fs = require("fs");
 
 module.exports.run = async (bot, message, args) => {
 
-
-	message.channel.send("용돈 100원이 지급되었습니다! 잔액을 확인하려면 ~지갑 을 입력하세요");
 	
   let YongDong = 100;
 

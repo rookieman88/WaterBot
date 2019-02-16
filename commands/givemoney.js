@@ -7,7 +7,8 @@ module.exports.run = async (bot, message, args) => {
 
   let YongDong = 100;
 
-
+  message.channel.send("용돈 100원이 지급되었습니다! 잔액을 확인하려면 ~지갑 을 입력하세요");
+	
 	if(!Coin[message.author.id]) Coin[message.author.id] = {
 	 Coin: 0
  };
@@ -21,13 +22,6 @@ module.exports.run = async (bot, message, args) => {
     if(err) cosole.log(err)
   });
 
- let msgembed = new Discord.RichEmbed()
- .setColor("#0000FF")
- .addField("용돈 100원이 지급되었습니다!", "잔액을 확인하려면 ~지갑 을 입력하세요!");
-
- message.channel.send(msgembed)
-
-}
 
 module.exports.help = {
   name: "돈내놔"

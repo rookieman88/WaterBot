@@ -15,7 +15,7 @@ module.exports.run = async (bot, message, args) =>{
 	 Coin: 0
  };
     
-    let Gcoin = 50
+    let YongDong = 50
     
   if (args[0]) {
         // get user choice && user choice

@@ -16,6 +16,7 @@ module.exports.run = async (bot, message, args) =>{
  };
     
     let YongDong = 50
+    let Winner;
     
   if (args[0]) {
         // get user choice && user choice
@@ -50,37 +51,37 @@ module.exports.run = async (bot, message, args) =>{
         }
         else if (ai_choice == 2 && user_choice == 0) {
           message.channel.send(`<@${message.author.id}>가 이겼다! +50 Coins`);
-            	Coin[message.author.id] = {
-			Coin: Coin[message.author.id].Coin + (YongDong)
-	};
-
+	 Winner = 1;
         }
         else if (ai_choice == 0 && user_choice == 1) {
           message.channel.send(`<@${message.author.id}>가 이겼다! +50 Coins`);
-            	Coin[message.author.id] = {
-			Coin: Coin[message.author.id].Coin + (YongDong)
-	};
-
+         Winner = 1;
         }
         else if (ai_choice == 1 && user_choice == 2) {
           message.channel.send(`<@${message.author.id}>가 이겼다! +50 Coins`);
-            	Coin[message.author.id] = {
-			Coin: Coin[message.author.id].Coin + (YongDong)
-	};
-
+         Winner = 1;
         } else {
           message.channel.send(`<@${message.author.id}>가 졌다!`);
         }
       }
-
-      if (!args[0]) {
-        message.channel.send("사용법 : ~가위바위보 (낼거)");
-      }
-	  fs.writeFile("./saves/coins.json", JSON.stringify(Coin), (err) => {
+	
+	
+	
+	if (Winner == 1) {
+			Coin[message.author.id] = {
+			Coin: Coin[message.author.id].Coin + (YongDong)
+	};
+			  fs.writeFile("./saves/coins.json", JSON.stringify(Coin), (err) => {
     if(err) cosole.log(err)
   });
 	
     }
+	}
+
+      if (!args[0]) {
+        message.channel.send("사용법 : ~가위바위보 (낼거)");
+      }
+
 
 
 

@@ -1,8 +1,11 @@
 const Discord = module.require("discord.js");
+const fs = require("fs");
+
 
 function rand(low, high) {
     return Math.random() * (high + 1 - low) + low | 0;
 }
+
 
 module.exports.run = async (bot, message, args) =>{
 

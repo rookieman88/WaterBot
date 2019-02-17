@@ -6,6 +6,14 @@ function rand(low, high) {
 
 module.exports.run = async (bot, message, args) =>{
 
+    let Coin = JSON.parse(fs.readFileSync("./saves/coins.json", "utf8"));
+    
+    	if(!Coin[message.author.id]) Coin[message.author.id] = {
+	 Coin: 0
+ };
+    
+    let Gcoin = 50
+    
   if (args[0]) {
         // get user choice && user choice
         let ai_choice = rand(0,2);
@@ -38,13 +46,25 @@ module.exports.run = async (bot, message, args) =>{
           message.channel.send("무승부를 했다!");
         }
         else if (ai_choice == 2 && user_choice == 0) {
-          message.channel.send(`<@${message.author.id}>가 이겼다!`);
+          message.channel.send(`<@${message.author.id}>가 이겼다! +50 Coins`);
+            	Coin[message.author.id] = {
+			Coin: Coin[message.author.id].Coin + (YongDong)
+	};
+
         }
         else if (ai_choice == 0 && user_choice == 1) {
-          message.channel.send(`<@${message.author.id}>가 이겼다!`);
+          message.channel.send(`<@${message.author.id}>가 이겼다! +50 Coins`);
+            	Coin[message.author.id] = {
+			Coin: Coin[message.author.id].Coin + (YongDong)
+	};
+
         }
         else if (ai_choice == 1 && user_choice == 2) {
-          message.channel.send(`<@${message.author.id}>가 이겼다!`);
+          message.channel.send(`<@${message.author.id}>가 이겼다! +50 Coins`);
+            	Coin[message.author.id] = {
+			Coin: Coin[message.author.id].Coin + (YongDong)
+	};
+
         } else {
           message.channel.send(`<@${message.author.id}>가 졌다!`);
         }
@@ -54,6 +74,10 @@ module.exports.run = async (bot, message, args) =>{
         message.channel.send("사용법 : ~가위바위보 (낼거)");
       }
     }
+  fs.writeFile("./saves/coins.json", JSON.stringify(Coin), (err) => {
+    if(err) cosole.log(err)
+  });
+
 
 module.exports.help = {
   name: "가위바위보"

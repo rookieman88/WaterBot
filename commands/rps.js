@@ -73,10 +73,12 @@ module.exports.run = async (bot, message, args) =>{
       if (!args[0]) {
         message.channel.send("사용법 : ~가위바위보 (낼거)");
       }
-    }
-  fs.writeFile("./saves/coins.json", JSON.stringify(Coin), (err) => {
+	  fs.writeFile("./saves/coins.json", JSON.stringify(Coin), (err) => {
     if(err) cosole.log(err)
   });
+	
+    }
+
 
 
 module.exports.help = {

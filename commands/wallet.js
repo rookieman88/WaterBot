@@ -1,15 +1,20 @@
 const Discord = require("discord.js");
 const fs = require("fs");
 const ms = require("ms");
-let Coin = JSON.parse(fs.readFileSync("./saves/coins.json", "utf8"));
 
 module.exports.run = async (bot, message, args) => {
 
-
-  let Ucoin = Coin[message.author.id].Coin;
-
+	superagent.get("https://api.jsonbin.io/b/5c62c948ad5128320af85de0/latest")
+	.then((res) => {
+		let WatCoin = res.body;
+    
+      let Ucoin = WatCoin[message.author.id].WatCoin;
+  
+    
   message.channel.send(`<@${message.author.id}>님은 ${Ucoin} 만큼의 돈을 가지고있다!`);
 
+    
+  });
 }
 
 module.exports.help = {

@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args) => {
       let Ucoin = WatCoin[message.author.id].WatCoin;
   
     
-  message.channel.send(`<@${message.author.id}>님은 ${Ucoin} 만큼의 돈을 가지고있다!`);
+  message.channel.send(`<@${message.author.id}>님은 ${WatCoin[input.author.id].WatCoin} 만큼의 돈을 가지고있다!`);
 
     
   });

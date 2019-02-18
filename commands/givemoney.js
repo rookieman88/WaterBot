@@ -22,6 +22,7 @@ module.exports.run = async (bot, message, args) => {
 
  superagent.put("https://api.jsonbin.io/b/5c62c948ad5128320af85de0").send(WatCoin).catch((err) => console.log(err));
 
+	});
 }
 
 module.exports.help = {

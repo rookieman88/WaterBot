@@ -7,9 +7,9 @@ module.exports.run = async (bot, message, args) => {
 
 	
 
-
+       let WatCoin:
 	superagent.get("https://api.jsonbin.io/b/5c62c948ad5128320af85de0/latest").then((res) => {
-		let WatCoin = res.body;
+		WatCoin = res.body;
                 let YongDong = 100;
 	
 	if(!WatCoin[message.author.id]) WatCoin[message.author.id] = {

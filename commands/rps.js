@@ -66,7 +66,7 @@ module.exports.run = async (bot, message, args) =>{
       }
 	
 	
-	
+	/*
 	if (Winner == 1) {
 			Coin[message.author.id] = {
 			Coin: Coin[message.author.id].Coin + (YongDong)
@@ -76,7 +76,7 @@ module.exports.run = async (bot, message, args) =>{
   });
 	
     }
-	
+	*/
 
       if (!args[0]) {
         message.channel.send("사용법 : ~가위바위보 (낼거)");

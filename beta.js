@@ -1,6 +1,6 @@
 /*
 
-Water Bot 0.5
+Water Bot 0.7
 
 */
 
@@ -72,7 +72,7 @@ console.log('봇 실행 완료');
 const activities_list = [
     "Made by Oasics", 
     "2019년 5월 정식출시!",
-    "꼬우면 NotOasics #5074", 
+    "꼬우면 oAsIcS#5074 로 DM ", 
     "~도움 입력 가즈아ㅏㅏ"
     ];
 

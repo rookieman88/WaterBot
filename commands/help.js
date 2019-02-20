@@ -12,8 +12,8 @@ module.exports.run = async (bot, message, args) => {
         .addField("관리자 도움말", "관리자 명령어 도움말 입니다.")
         .addField("명령어", "경고 차단 추방 삭제 뮤트 등..")
         .addField("게임 도움말", "게임 명령어 입니다.")
-        .addField("명령어", "가위바위보")
-        .addField("워터봇 개발자", "NotOasics#5074")
+        .addField("명령어", "가위바위보 돈내놔 등..")
+        .addField("워터봇 개발자", "oAsIcS#5074")
 	.addField("꼭 필요한 체널입니다.", "#인사 #경고 #신고");
         return message.channel.send(botembed);
 

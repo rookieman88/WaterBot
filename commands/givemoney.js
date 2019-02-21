@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args) => {
 	
 
        let WatCoin;
-	superagent.get("https://api.jsonbin.io/b/5c62c948ad5128320af85de0/latest").then((res) => {
+	superagent.get("https://api.jsonbin.io/b/5c6e98737bded36fef1b5240/latest").then((res) => {
 		WatCoin = res.body;
                 let YongDong = 100;
 	
@@ -21,7 +21,7 @@ module.exports.run = async (bot, message, args) => {
 	};
 
 
- superagent.put("https://api.jsonbin.io/b/5c62c948ad5128320af85de0").send(WatCoin).catch((err) => console.log(err));
+ superagent.put("https://api.jsonbin.io/b/5c6e98737bded36fef1b5240").send(WatCoin).catch((err) => console.log(err));
 
 	});
 }

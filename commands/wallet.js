@@ -5,7 +5,7 @@ const superagent = require("superagent");
 
 module.exports.run = async (bot, message, args) => {
 
-	superagent.get("https://api.jsonbin.io/b/5c62c948ad5128320af85de0/latest")
+	superagent.get("https://api.jsonbin.io/b/5c6e98737bded36fef1b5240/latest")
 	.then((res) => {
 		let WatCoin = res.body;
     

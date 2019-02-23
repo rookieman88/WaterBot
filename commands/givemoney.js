@@ -35,7 +35,7 @@ const cooldown = new Set();
  superagent.put("https://api.jsonbin.io/b/5c6e98737bded36fef1b5240").send(WatCoin).catch((err) => console.log(err));
 	 
 	        setTimeout(() => {
-          talkedRecently.delete(message.author.id);
+          cooldown.delete(message.author.id);
         }, 8.64e+7);
     }
 

@@ -46,7 +46,7 @@ module.exports.run = async (bot, message, args) => {
 
 
   WatCoin[message.author.id] = {
-    WatCoin + (yongdong)
+    WatCoin: WatCoin[message.author.id].WatCoin + (yongdong)
   };
 
 

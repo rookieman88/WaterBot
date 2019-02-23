@@ -1,10 +1,14 @@
 const Discord = require("discord.js");
 const fs = require("fs");
 const superagent = require("superagent");
-
+let cooldown = new Set();
+let cdseconds = 7200;
 
 module.exports.run = async (bot, message, args) => {
-
+ 
+	if(cooldown.has(message.author.id)){
+    return message.reply("쿨다운중입니다.. ~돈내놔를 마지막으로 입력한 시간부터 2시간 뒤에 다시 입력해 주세요")
+  }
 	
 
        let WatCoin;
@@ -24,6 +28,12 @@ module.exports.run = async (bot, message, args) => {
  superagent.put("https://api.jsonbin.io/b/5c6e98737bded36fef1b5240").send(WatCoin).catch((err) => console.log(err));
 
 	});
+	
+	  setTimeout(() => {
+    cooldown.delete(message.author.id)
+  }, cdseconds * 1000)
+
+
 }
 
 module.exports.help = {

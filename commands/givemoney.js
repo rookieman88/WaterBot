@@ -14,7 +14,7 @@ const cooldown = new Set();
     } else {
 
         cooldown.add(message.author.id);
-    }
+    };
 	
 
        let WatCoin;
@@ -37,7 +37,7 @@ const cooldown = new Set();
 	        setTimeout(() => {
           cooldown.delete(message.author.id);
         }, 8.64e+7);
-    }
+    };
 
 
 

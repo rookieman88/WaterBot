@@ -37,7 +37,6 @@ const cooldown = new Set();
 	        setTimeout(() => {
           cooldown.delete(message.author.id);
         }, 8.64e+7);
-    };
 
 
 

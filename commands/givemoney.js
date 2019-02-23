@@ -55,14 +55,12 @@ exports.run = (bot, message, args) => {
 
         superagent.put("https://api.jsonbin.io/b/5c7136c3adda296e595a9726").send(ccd).catch((err) => console.log(err));
 	}, cdseconds * 1000);
-	
-	};
 		
-	});
-	// Before cooldown
+	
 	} else {
     message.channel.send(`내일 다시 ㄱㄱ`)
 	};
+	}):
 }
 
 module.exports.help = {

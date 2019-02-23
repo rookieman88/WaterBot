@@ -7,8 +7,11 @@ exports.run = (bot, message, args) => {
 	       let ccd;
 	superagent.get("https://api.jsonbin.io/b/5c7136c3adda296e595a9726/latest").then((res) => {
 		ccd = res.body;
-		let ccdu  = message.author.id.ccd
-	
+	      let ccdu = ccd[message.author.id].ccd;
+		
+if(!ccd[message.author.id]) ccd[message.author.id] = {
+	 ccd: 0
+ };
 	if (ccdu = 0) {
 	
         let cooldown = new Set();
@@ -37,10 +40,7 @@ exports.run = (bot, message, args) => {
 		let CommandCooldown = new Set()
 	
 		let  nono = 1
-	
-	if(!ccd[message.author.id]) ccd[message.author.id] = {
-	 ccd: 0
- };
+
 
 
 	ccd[message.author.id] = {

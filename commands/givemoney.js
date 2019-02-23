@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 
 exports.run = (bot, message, args) => {
-	if (bot.channelperms.botCommandsAllowed.indexOf(message.channel.id) == -1) return;
+	
 	bot.addToDatabase(message.author.id);
 	
 	let userData = bot.storage[message.author.id];	// user's data			

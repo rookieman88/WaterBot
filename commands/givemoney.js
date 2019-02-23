@@ -7,8 +7,9 @@ exports.run = (bot, message, args) => {
 	       let ccd;
 	superagent.get("https://api.jsonbin.io/b/5c7136c3adda296e595a9726/latest").then((res) => {
 		ccd = res.body;
+		let ccdu  = message.author.id.ccd
 	
-	if (ccd = 0) {	// checks if cooldown is over.
+	if (ccdu = 0) {
 	
         let cooldown = new Set();
 	let cdseconds = 86400;

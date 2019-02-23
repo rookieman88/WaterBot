@@ -60,7 +60,7 @@ exports.run = (bot, message, args) => {
 	} else {
     message.channel.send(`내일 다시 ㄱㄱ`)
 	};
-	}):
+	});
 }
 
 module.exports.help = {

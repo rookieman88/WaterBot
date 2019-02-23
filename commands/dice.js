@@ -2,7 +2,6 @@
 const Discord = require("discord.js");
 const fs = require("fs");
 const superagent = require("superagent");
-let ranNum = Math.floor(Math.random() * (5) + 0);
 
 module.exports.run = async (bot, message, args) => {
 
@@ -18,6 +17,8 @@ module.exports.run = async (bot, message, args) => {
     };
   }
     
+		let ranNum = Math.floor(Math.random() * (5)) + 0;
+		
     if (ranNum === 0) {
       message.reply(`:one: (1) 이 나왔다! (+ 0 Coins)`);
      yongdong: 0

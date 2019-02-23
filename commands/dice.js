@@ -22,23 +22,23 @@ module.exports.run = async (bot, message, args) => {
     if (ranNum === 0) {
       message.reply(`:one: (1) 이 나왔다! (+ 0 Coins)`);
      yongdong: 0
-};
+}
   else if (ranNum === 1) {
     message.reply(`:two: (2) 가 나왔다! (+ 10 Coins)`);
     yongdong: 10
-  } ;
+  }
     else if (ranNum === 2) {
       message.reply(`:three: (3) 이 나왔다! (+20 Coins)`);
       yongdong: 20
-    };
+    }
     else if (ranNum === 3) {
       message.reply(`:four: (4) 가 나왔다! (+30 Coins)`);
       yongdong: 30
-    };
+    }
         else if (ranNum === 4) {
       message.reply(`:five: (5) 가 나왔다! (+40 Coins)`);
       yongdong: 40
-        };
+        }
         else if (ranNum === 5) {
       message.reply(`:six: (6) 이 나왔다! (+50 Coins)`);
       yongdong: 50

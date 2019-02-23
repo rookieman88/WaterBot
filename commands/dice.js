@@ -38,7 +38,7 @@ module.exports.run = async (bot, message, args) => {
       message.reply(`:five: (5) 가 나왔다! (+40 Coins)`);
       yongdong: 40
         }
-        else if (ranNum === 5 {
+        else if (ranNum === 5) {
       message.reply(`:six: (6) 이 나왔다! (+50 Coins)`);
       yongdong: 50
   }

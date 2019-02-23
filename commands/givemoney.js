@@ -14,7 +14,7 @@ const cooldown = new Set();
     } else {
 
         cooldown.add(message.author.id);
-
+    }
 	
 
        let WatCoin;

@@ -25,7 +25,8 @@ module.exports.run = async (bot, message, args) => {
     뒤네요.. -10 Coins`);
       WatCoin[message.author.id] = {
           WatCoin: WatCoin[message.author.id].WatCoin - (coinAmtMent / 1)
-      };
+      }
+  };
   superagent.put("https://api.jsonbin.io/b/5c6e98737bded36fef1b5240").send(WatCoin).catch((err) => console.log(err));
 
 });

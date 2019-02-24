@@ -14,7 +14,7 @@ let um = args.join(" ").slice(22);
     return message.reply("돈이 없는데?")
   }
   let sCoins = WatCoin[message.author.id].WatCoin;
-  if(sCoin < args[0]) return message.reply("그만큼 돈은 있음?");
+  if(sCoins < args[0]) return message.reply("그만큼 돈은 있음?");
   
   let yongdong;
     

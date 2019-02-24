@@ -28,17 +28,20 @@ if (ranNum === 0) {
 yongdong = (um * 2)
   }
 		
+		let win;
+		let mal;
+		
     if (ranNum === 0) {
-      let mal = (`3분의 1의 확률로 4배로 돌려받습니다! ㅊㅊ`);
-      let win = 1
+      mal = (`3분의 1의 확률로 4배로 돌려받습니다! ㅊㅊ`);
+      win = 1
 }
   else if (ranNum === 1) {
     let mal = (`도박 실패... `);
-    let win = 2
+    win = 2
   }
     else if (ranNum === 2) {
-     let mal = (`3분의 1의 확률로 2배로 돌려받습니다! ㅊㅊ`);
-     let win = 3
+    mal = (`3분의 1의 확률로 2배로 돌려받습니다! ㅊㅊ`);
+     win = 3
     }
 
 
@@ -46,15 +49,29 @@ if (win === 1) {
   WatCoin[message.author.id] = {
     WatCoin: WatCoin[message.author.id].WatCoin + (yongdong / 1)
   };
+  let dobakembed = new Discord.RichEmbed()
+  .setTitle(mal)
+  .addField("얻어간 돈 +", yongdong)
+  message.channel.send(dobakembed);
   } else if (win === 2) {
     WatCoin[message.author.id] = {
     WatCoin: WatCoin[message.author.id].WatCoin - (yongdong / 1)
   };
+   let dobakembed = new Discord.RichEmbed()
+  .setTitle(mal)
+  .addField("얻어간 돈 -", yongdong)
+  message.channel.send(dobakembed);
   } else if (win === 3) {
   WatCoin[message.author.id] = {
     WatCoin: WatCoin[message.author.id].WatCoin + (yongdong / 1)
   };
+  let dobakembed = new Discord.RichEmbed()
+  .setTitle(mal)
+  .addField("얻어간 돈 +", yongdong)
+  message.channel.send(dobakembed);
   };
+		
+
 
 
 

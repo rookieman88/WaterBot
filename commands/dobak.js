@@ -36,7 +36,7 @@ yongdong = (args[0] * 2)
       win = 1
 }
   else if (ranNum === 1) {
-    let mal = (`도박 실패... `);
+    mal = (`도박 실패... `);
     win = 2
   }
     else if (ranNum === 2) {

@@ -21,11 +21,11 @@ let um = args.join(" ").slice(22);
 		let ranNum = Math.floor(Math.random() * (2)) + 0;
 	
 if (ranNum === 0) {
-  yongdong = (um * 4)
+  yongdong = (args[0] * 4)
   } else if (ranNum === 1) {
- yongdong = (um / 1)
+ yongdong = (args[0] / 1)
   } else if (ranNum === 2) {
-yongdong = (um * 2)
+yongdong = (args[0] * 2)
   }
 		
 		let win;
@@ -52,6 +52,7 @@ if (win === 1) {
   let dobakembed = new Discord.RichEmbed()
   .setTitle(mal)
   .addField("얻어간 돈 +", yongdong)
+  .setColor("#00FF97")
   message.channel.send(dobakembed);
   } else if (win === 2) {
     WatCoin[message.author.id] = {
@@ -59,6 +60,7 @@ if (win === 1) {
   };
    let dobakembed = new Discord.RichEmbed()
   .setTitle(mal)
+   .setColor("#00FF97")
   .addField("얻어간 돈 -", yongdong)
   message.channel.send(dobakembed);
   } else if (win === 3) {
@@ -67,6 +69,7 @@ if (win === 1) {
   };
   let dobakembed = new Discord.RichEmbed()
   .setTitle(mal)
+  .setColor("#00FF97")
   .addField("얻어간 돈 +", yongdong)
   message.channel.send(dobakembed);
   };

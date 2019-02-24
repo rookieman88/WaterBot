@@ -21,18 +21,18 @@ let um = args.join(" ").slice(22);
 		let ranNum = Math.floor(Math.random() * (2)) + 0;
 	
 if (ranNum === 0) {
-  yongdong = (args[0] * 4)
+  yongdong = (args[0] * 2)
   } else if (ranNum === 1) {
  yongdong = (args[0] / 1)
   } else if (ranNum === 2) {
-yongdong = (args[0] * 2)
+yongdong = (args[0] * 4)
   }
 		
 		let win;
 		let mal;
 		
     if (ranNum === 0) {
-      mal = (`3분의 1의 확률로 4배로 돌려받습니다! ㅊㅊ`);
+      mal = (`3분의 1의 확률로 2배로 돌려받습니다! ㅊㅊ`);
       win = 1
 }
   else if (ranNum === 1) {
@@ -40,7 +40,7 @@ yongdong = (args[0] * 2)
     win = 2
   }
     else if (ranNum === 2) {
-    mal = (`3분의 1의 확률로 2배로 돌려받습니다! ㅊㅊ`);
+    mal = (`3분의 1의 확률로 4배로 돌려받습니다! ㅊㅊ`);
      win = 3
     }
 

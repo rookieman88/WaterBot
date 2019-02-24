@@ -1,5 +1,6 @@
 const Discord = module.require("discord.js");
 const fs = require("fs");
+const superagent = require("superagent");
 
 
 function rand(low, high) {
@@ -7,7 +8,7 @@ function rand(low, high) {
 }
 
 
-module.exports.run = async (bot, message, args) =>{
+module.exports.run = async (bot, message, args) => {
 
 	superagent.get("https://api.jsonbin.io/b/5c6e98737bded36fef1b5240/latest").then((res) => {
 		let WatCoin = res.body;
@@ -64,6 +65,7 @@ module.exports.run = async (bot, message, args) =>{
         } else {
           message.channel.send(`<@${message.author.id}>가 졌다!`);
         }
+	  
       }
 	
 	
@@ -71,11 +73,11 @@ module.exports.run = async (bot, message, args) =>{
 	if (Winner == 1) {
 			WatCoin[message.author.id] = {
 			WatCoin: WatCoin[message.author.id].WatCoin + (YongDong)
-	};
+	}
+		
   superagent.put("https://api.jsonbin.io/b/5c6e98737bded36fef1b5240").send(WatCoin).catch((err) => console.log(err));
 
-  });
-	
+	});
 	
 
       if (!args[0]) {

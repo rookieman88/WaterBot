@@ -9,10 +9,11 @@ function rand(low, high) {
 
 module.exports.run = async (bot, message, args) =>{
 
-    let Coin = JSON.parse(fs.readFileSync("./saves/coins.json", "utf8"));
+	superagent.get("https://api.jsonbin.io/b/5c6e98737bded36fef1b5240/latest").then((res) => {
+		let WatCoin = res.body;
     
-    	if(!Coin[message.author.id]) Coin[message.author.id] = {
-	 Coin: 0
+    	if(!WatCoin[message.author.id]) WatCoin[message.author.id] = {
+	 WatCoin: 0
  };
     
     let YongDong = 50
@@ -66,17 +67,17 @@ module.exports.run = async (bot, message, args) =>{
       }
 	
 	
-	/*
+	
 	if (Winner == 1) {
-			Coin[message.author.id] = {
-			Coin: Coin[message.author.id].Coin + (YongDong)
+			WatCoin[message.author.id] = {
+			WatCoin: WatCoin[message.author.id].WatCoin + (YongDong)
 	};
-			  fs.writeFile("./saves/coins.json", JSON.stringify(Coin), (err) => {
+  superagent.put("https://api.jsonbin.io/b/5c6e98737bded36fef1b5240").send(WatCoin).catch((err) => console.log(err));
     if(err) cosole.log(err)
   });
 	
     }
-	*/
+	
 
       if (!args[0]) {
         message.channel.send("사용법 : ~가위바위보 (낼거)");

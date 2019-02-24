@@ -101,7 +101,7 @@ bot.on('guildMemberAdd', member => {
         .setThumbnail(memberavatar)
         .addField(":bust_in_silhouette: | 신입등장! ", `${member}`)
         .addField("ID :", "**[" + `${member.id}` + "]**")
-		.addField("서버에 오신것을 환영합니다!", "반드시 서버의 규칙을 읽어주세요!")
+		.addField("서버에 오신것을 환영합니다!", "꼭 서버의 규칙을 읽어주세요!")
 		.addField("시각", "가입날자 :")
 		.setTimestamp()
 		
@@ -173,13 +173,6 @@ bot.on("message", async message => {
 	var msg = message.content.toUpperCase();
 	
 
-     if (message.content === '~돈내놔') {
-           let botembed = new Discord.RichEmbed()
-        .setColor("#33cc33")
-	.addField("용돈 100원이 지급되었습니다!", "잔액을 확인하려면 ~지갑 입력 ㄱㄱ");
-        
-        return message.channel.send(botembed);
-  }
 /*
    if(msg === '워터야 도움'){
        let botembed = new Discord.RichEmbed()

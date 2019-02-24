@@ -73,10 +73,9 @@ module.exports.run = async (bot, message, args) =>{
 			WatCoin: WatCoin[message.author.id].WatCoin + (YongDong)
 	};
   superagent.put("https://api.jsonbin.io/b/5c6e98737bded36fef1b5240").send(WatCoin).catch((err) => console.log(err));
-    if(err) cosole.log(err)
+
   });
 	
-    }
 	
 
       if (!args[0]) {

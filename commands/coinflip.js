@@ -18,7 +18,7 @@ module.exports.run = async (bot, message, args) => {
     message.channel.send(`동전을 던집니다! 결과는?
     앞이네요! +30 Coins`);
       WatCoin[message.author.id] = {
-          WatCoin: WatCoin[input.author.id].WatCoin + (coinAmtMent / 1)
+          WatCoin: WatCoin[message.author.id].WatCoin + (coinAmtMent / 1)
       }
   } else if (coinAmt === 1) {
           message.channel.send(`동전을 던집니다! 결과는?

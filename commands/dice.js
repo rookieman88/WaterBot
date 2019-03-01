@@ -28,7 +28,7 @@ if (ranNum === 0) {
       coinAmtMent = 30;
   } else if (ranNum === 4) {
       coinAmtMent = 40;
-  } else if (ranNum === 5) {
+  } else {
       coinAmtMent = 50;
   }
 		

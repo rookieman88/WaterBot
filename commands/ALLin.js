@@ -38,23 +38,23 @@ module.exports.run = async (bot, message, args) => {
     mal = (`결과는..? 
 4배로 돌려받습니다! ㅊㅊ`);
      win = 3
-    }
+    };
 
 
 if (win === 1) {
   WatCoin[message.author.id] = {
     WatCoin: WatCoin[message.author.id].WatCoin + (sCoins * 2)
-  };
+  }
   message.channel.send(mal);
   } else if (win === 2) {
     WatCoin[message.author.id] = {
     WatCoin: WatCoin[message.author.id].WatCoin - (sCoins - sCoins)
-  };
+  }
   message.channel.send(mal);
   } else if (win === 3) {
   WatCoin[message.author.id] = {
     WatCoin: WatCoin[message.author.id].WatCoin + (sCoins * 4)
-  };
+  }
   message.channel.send(mal);
   };
 		
@@ -64,6 +64,7 @@ if (win === 1) {
 
  superagent.put("https://api.jsonbin.io/b/5c6e98737bded36fef1b5240").send(WatCoin).catch((err) => console.log(err));
 });
+}
 
 
 module.exports.help = {

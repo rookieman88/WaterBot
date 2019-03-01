@@ -67,7 +67,6 @@ if(sCoins < 5000) return message.reply("5000원 이상의 돈을 가진 자 만 
       superagent.put("https://api.jsonbin.io/b/5c6e98737bded36fef1b5240").send(WatCoin).catch((err) => console.log(err));
         let dobakEmb = new discord.RichEmbed()
         .setTitle("슬롯머신!")
-        .setAuthor(message.author.username)
         .setColor("#FF0000")
         .setDescription(`${Slot1} ${Slot2} ${Slot3}`)
         .setFooter(SlotResult);

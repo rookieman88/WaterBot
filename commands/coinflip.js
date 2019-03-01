@@ -22,13 +22,13 @@ module.exports.run = async (bot, message, args) => {
 
   if (coinAmt === 0) {
     message.channel.send(`동전을 던집니다! 결과는?
-    앞이네요! +30 Coins`);
+    앞이네요! +500 Coins`);
       WatCoin[message.author.id] = {
           WatCoin: WatCoin[message.author.id].WatCoin + (coinAmtMent / 1)
       }
   } else if (coinAmt === 1) {
           message.channel.send(`동전을 던집니다! 결과는?
-    뒤네요.. -10 Coins`);
+    뒤네요.. -100 Coins`);
       WatCoin[message.author.id] = {
           WatCoin: WatCoin[message.author.id].WatCoin - (coinAmtMent / 1)
       }
@@ -43,5 +43,5 @@ module.exports.run = async (bot, message, args) => {
 }
 
 module.exports.help = {
-  name: "동전던지기",
+  name: "동전",
 }

@@ -43,17 +43,17 @@ module.exports.run = async (bot, message, args) => {
 
 if (win === 1) {
   WatCoin[message.author.id] = {
-    WatCoin: WatCoin[message.author.id].WatCoin + (sCoins * 2)
+    WatCoin: WatCoin[message.author.id].WatCoin + (sCoins / 1)
   }
   message.channel.send(mal);
   } else if (win === 2) {
     WatCoin[message.author.id] = {
-    WatCoin: WatCoin[message.author.id].WatCoin - (sCoins - sCoins)
+    WatCoin: WatCoin[message.author.id].WatCoin - (sCoins / 1)
   }
   message.channel.send(mal);
   } else if (win === 3) {
   WatCoin[message.author.id] = {
-    WatCoin: WatCoin[message.author.id].WatCoin + (sCoins * 4)
+    WatCoin: WatCoin[message.author.id].WatCoin + (sCoins * 3)
   }
   message.channel.send(mal);
   };

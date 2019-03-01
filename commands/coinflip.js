@@ -9,9 +9,9 @@ module.exports.run = async (bot, message, args) => {
   let coinAmtMent; 
   
   if (coinAmt === 0) {
-      coinAmtMent = 30;
+      coinAmtMent = 500;
   } else if (coinAmt === 1) {
-      coinAmtMent = 10;
+      coinAmtMent = 100;
   };
 		
    if(!WatCoin[message.author.id]){

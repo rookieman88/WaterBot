@@ -47,7 +47,7 @@ if (ranNum === 0) {
         else if (ranNum === 4) {
       message.reply(`:five: (5) 가 나왔다! (+40 Coins)`);
         }
-        else if (ranNum === 5) {
+        else {
       message.reply(`:six: (6) 이 나왔다! (+50 Coins)`);
   };
 

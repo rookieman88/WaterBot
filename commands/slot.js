@@ -5,11 +5,10 @@ module.exports.run = async (bot, message, args) => {
   let WatCoin;
 	superagent.get("https://api.jsonbin.io/b/5c6e98737bded36fef1b5240/latest").then((res) => {
 		WatCoin = res.body;
-    if (!WatCoin[message.author.id]) {
-      WatCoin[message.author.id] = {
-        WatCoin: 0
-      };
-    }
+		
+		let sCoins = WatCoin[message.author.id].WatCoin;
+
+if(sCoins < 5000) return message.reply("5000원 이상의 돈을 가진 자 만 플레이할 수 있다!");
 
       let Slot1; // 첫번째 슬롯 값의 대한 메세지 스트링
       let Slot2; // 두번째 슬롯 값의 대한 메세지 스트링

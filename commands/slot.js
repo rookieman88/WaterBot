@@ -14,16 +14,15 @@ module.exports.run = async (bot, message, args) => {
       let Slot1; // 첫번째 슬롯 값의 대한 메세지 스트링
       let Slot2; // 두번째 슬롯 값의 대한 메세지 스트링
       let Slot3; // 세번째 슬롯 값의 대한 메세지 스트링
-      let SlotMax = 4; // 생성될 슬롯 값의 최대값
-      let Ran1 = Math.floor(Math.random() * (SlotMax)) + 0; // 첫번째 슬롯 값 추출
-      let Ran2 = Math.floor(Math.random() * (SlotMax)) + 0; // 두번째 슬롯 값 추출
-      let Ran3 = Math.floor(Math.random() * (SlotMax)) + 0; // 세번째 슬롯 값 추출
+      let Ran1 = Math.floor(Math.random() * (3)) + 0; // 첫번째 슬롯 값 추출
+      let Ran2 = Math.floor(Math.random() * (3)) + 0; // 두번째 슬롯 값 추출
+      let Ran3 = Math.floor(Math.random() * (3)) + 0; // 세번째 슬롯 값 추출
      
     if (Ran1 = 1) {
           Slot1 = ":one:";
       } else if (Ran1 = 2) {
           Slot1 = ":two:";
-      } else if (Ran1 <= 3) {
+      } else if (Ran1 = 3) {
           Slot1 = ":three:";
       }
   
@@ -35,11 +34,11 @@ module.exports.run = async (bot, message, args) => {
           Slot2 = ":three:";
       }
       
-      if (Ran3 <= 20) {
+      if (Ran3 = 1) {
           Slot3 = ":one:";
-      } else if (Ran3 <= 30) {
+      } else if (Ran3 = 2) {
           Slot3 = ":two:";
-      } else if (Ran3 <= 40) {
+      } else if (Ran3 = 3) {
           Slot3 = ":three:";
       }
 		

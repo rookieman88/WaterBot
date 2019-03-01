@@ -18,28 +18,28 @@ module.exports.run = async (bot, message, args) => {
       let Ran2 = Math.floor(Math.random() * (3)) + 0; // 두번째 슬롯 값 추출
       let Ran3 = Math.floor(Math.random() * (3)) + 0; // 세번째 슬롯 값 추출
      
-    if (Ran1 = 1) {
-          Slot1 = ":one:";
-      } else if (Ran1 = 2) {
-          Slot1 = ":two:";
-      } else if (Ran1 = 3) {
-          Slot1 = ":three:";
+    if (Ran1 === 1) {
+          Slot1 = ":one:"
+      } else if (Ran1 === 2) {
+          Slot1 = ":two:"
+      } else {
+          Slot1 = ":three:"
       }
   
-      if (Ran2 = 1) {
-          Slot2 = ":one:";
-      } else if (Ran2 = 2) {
-          Slot2 = ":two:";
-      } else if (Ran2 = 3) {
-          Slot2 = ":three:";
+      if (Ran2 === 1) {
+          Slot2 = ":one:"
+      } else if (Ran2 === 2) {
+          Slot2 = ":two:"
+      } else {
+          Slot2 = ":three:"
       }
       
-      if (Ran3 = 1) {
-          Slot3 = ":one:";
-      } else if (Ran3 = 2) {
-          Slot3 = ":two:";
-      } else if (Ran3 = 3) {
-          Slot3 = ":three:";
+      if (Ran3 === 1) {
+          Slot3 = ":one:"
+      } else if (Ran3 === 2) {
+          Slot3 = ":two:"
+      } else {
+          Slot3 = ":three:"
       }
 		
        if (Slot1 == Slot2 && Slot2 == Slot3) {

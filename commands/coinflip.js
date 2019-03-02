@@ -7,7 +7,10 @@ module.exports.run = async (bot, message, args) => {
 
   let coinAmt = Math.floor(Math.random() * (2)) + 0;
   let coinAmtMent; 
-  
+		let sCoins = WatCoin[message.author.id].WatCoin;
+
+if(sCoins < 100) return message.reply("100원 이상의 돈을 가진 자 만 플레이할 수 있다!");
+		
   if (coinAmt === 0) {
       coinAmtMent = 500;
   } else if (coinAmt === 1) {

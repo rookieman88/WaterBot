@@ -33,14 +33,12 @@ let nhelp = new Discord.RichEmbed()
 		return message.channel.send(nhelp);
 	} else if (helpmenu === 2) {
 		return message.channel.send(ghelp);
-	} else if (helpmenu === 3) {
+	} else if (helpmenu === 0) {
 		return message.channel.send(gmhelp);
-	} else {
-		return message.channel.send(botembed);
-	}
+	} else { return message.channel.send(botembed); };
 	
 	 if (!args[0]) {
-        message.channel.send(botembed);
+        return message.channel.send(botembed);
       }
 
 

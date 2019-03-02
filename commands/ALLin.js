@@ -18,6 +18,10 @@ module.exports.run = async (bot, message, args) => {
 		if(sCoins === 0) {
 			return message.reply("돈이 없는데 어딜 도박을");
 		};
+				
+
+if(sCoins < 1000) return message.reply("1000원 이상의 돈을 가진 자 만 플레이할 수 있다!");
+		
   let yongdong;
     
 		let ranNum = Math.floor(Math.random() * (2)) + 0;

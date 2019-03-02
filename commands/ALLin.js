@@ -12,33 +12,33 @@ module.exports.run = async (bot, message, args) => {
     if(!WatCoin[message.author.id]){
     return message.reply("돈이 없는데?")
   }
+	
   let sCoins = WatCoin[message.author.id].WatCoin;
 
+		if(sCoins === 0) {
+			return message.reply("돈이 없는데 어딜 도박을");
   
   let yongdong;
     
-		let ranNum = Math.floor(Math.random() * (3)) + 0;
+		let ranNum = Math.floor(Math.random() * (2)) + 0;
 
 		
 		let win;
 		let mal;
 		
     if (ranNum === 0) {
-      mal = (`결과는..?
+      mal = (`2분의 1 확률로 2배로 받거나 돈을 모두 잃습니다!
+결과는..?
 2배로 돌려받습니다! ㅊㅊ`);
       win = 1
 }
   else if (ranNum === 1) {
-    mal = (`결과는..?
+    mal = (`2분의 1 확률로 2배로 받거나 돈을 모두 잃습니다!
+결과는..?
 실패하셨습니다...
 모든 돈 하늘로 승천!`);
     win = 2
   }
-    else if (ranNum === 2) {
-    mal = (`결과는..? 
-4배로 돌려받습니다! ㅊㅊ`);
-     win = 3
-    };
 
 
 if (win === 1) {
@@ -49,11 +49,6 @@ if (win === 1) {
   } else if (win === 2) {
     WatCoin[message.author.id] = {
     WatCoin: WatCoin[message.author.id].WatCoin - (sCoins / 1)
-  }
-  message.channel.send(mal);
-  } else if (win === 3) {
-  WatCoin[message.author.id] = {
-    WatCoin: WatCoin[message.author.id].WatCoin + (sCoins * 3)
   }
   message.channel.send(mal);
   };

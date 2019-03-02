@@ -20,7 +20,7 @@ module.exports.run = async (bot, message, args) => {
 
             }
         }
-        GoogleEmb.setColor(randomHexColor())
+        GoogleEmb.setColor("#007CFF")
         .setURL(`https://google.com/search?q=${encodeURI(say)}`);
         message.channel.send(GoogleEmb);
     });

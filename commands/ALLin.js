@@ -11,13 +11,13 @@ module.exports.run = async (bot, message, args) => {
 
     if(!WatCoin[message.author.id]){
     return message.reply("돈이 없는데?")
-  }
+  };
 	
   let sCoins = WatCoin[message.author.id].WatCoin;
 
 		if(sCoins === 0) {
 			return message.reply("돈이 없는데 어딜 도박을");
-  
+		};
   let yongdong;
     
 		let ranNum = Math.floor(Math.random() * (2)) + 0;
@@ -38,7 +38,8 @@ module.exports.run = async (bot, message, args) => {
 실패하셨습니다...
 모든 돈 하늘로 승천!`);
     win = 2
-  }
+  };
+		
 
 
 if (win === 1) {

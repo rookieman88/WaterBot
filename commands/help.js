@@ -3,13 +3,13 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
 	
-let helpmenu = args[0] == "기본" ? 1 : args[0] == "게임" ? 2 : args[0] == "관리" ? 0 : 3;
+let helpmenu = args[0] == "기본" ? 1 : args[0] == "게임" ? 2 : args[0] == "관리" ? 0 : args[0] == "음악" ? 3 : 4;
 
  let botembed = new Discord.RichEmbed()
         .setTitle("도움말")
         .setColor("#33cc33")
         .addField("워터를 부르는 방법", "~")
-        .addField("도움말들", "기본 / 관리 / 게임 / 음악 [개발중]")
+        .addField("도움말들", "기본 / 관리 / 게임 / 음악 [베타]")
         .addField("워터봇 개발자", "oAsIcS#5074")
 	.addField("꼭 필요한 체널입니다.", "#인사 #경고 #신고");
 let nhelp = new Discord.RichEmbed()
@@ -28,6 +28,10 @@ let nhelp = new Discord.RichEmbed()
        .setColor("#33cc33")
        .addField("명렁어들", "주사위 동전 올인 기부 가위바위보 슬롯머신 등");
 	
+	let musichelp = new Discord.RichEmbed()
+	.setTitle("음악 도움말")
+	.setColor("#33cc33")
+	.addField("명령어들", "플레이 스킵 들어와 나가 등");
 	
 	if (helpmenu === 1) {
 		return message.channel.send(nhelp);
@@ -35,6 +39,8 @@ let nhelp = new Discord.RichEmbed()
 		return message.channel.send(ghelp);
 	} else if (helpmenu === 0) {
 		return message.channel.send(gmhelp);
+	} else if (helpmenu === 3) {
+		return message.channel.send(musichelp);
 	} else { return message.channel.send(botembed); };
 	
 	 if (!args[0]) {

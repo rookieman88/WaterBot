@@ -1,6 +1,6 @@
 const discord = require("discord.js");
 
-module.exports.run = async (bot, input, args) => {
+module.exports.run = async (bot, message, args) => {
 
 	message.channel.send(` [${Math.round(bot.ping)}ms] `);
   

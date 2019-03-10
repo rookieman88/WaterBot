@@ -139,11 +139,11 @@ bot.on('guildMemberRemove', member => {
 //----------------------------------------------------------stock
 
 let onemoney = jusic[1].jusic
-let twomoney = jusic[1].jusic
-let thrmoney = jusic[1].jusic
-let fourmoney = jusic[1].jusic
-let fivmoney = jusic[1].jusic
-let sixmoney = jusic[1].jusic
+let twomoney = jusic[2].jusic
+let thrmoney = jusic[3].jusic
+let fourmoney = jusic[4].jusic
+let fivmoney = jusic[5].jusic
+let sixmoney = jusic[6].jusic
 
 bot.on('ready', () => {
 	

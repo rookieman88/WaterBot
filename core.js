@@ -1,6 +1,6 @@
 /*
 
-Water Bot 0.7
+Water Bot 0.9
 
 */
 
@@ -18,6 +18,8 @@ const bot = new Discord.Client();({disableEveryone: true});
 bot.commands = new Discord.Collection();
 const API = require("discord.js");
 let coins = require("./saves/coins.json")
+const superagent = require("superagent");
+let jusic = require("./saves/jusic.json");
 
 
 // file reads-------------------------
@@ -86,6 +88,8 @@ bot.on('ready', () => {
 
 
 
+
+
 //welcome messages------------------------------
 
 
@@ -132,8 +136,54 @@ bot.on('guildMemberRemove', member => {
 });
 
 
+//----------------------------------------------------------stock
+
+let onemoney = jusic[1].jusic
+let twomoney = jusic[1].jusic
+let thrmoney = jusic[1].jusic
+let fourmoney = jusic[1].jusic
+let fivmoney = jusic[1].jusic
+let sixmoney = jusic[1].jusic
+
+bot.on('ready', () => {
+	
+
+		
+		
+	
+     setInterval(() => {
+	     
+let onestock = Math.floor(Math.random() * (999)) + 0;
+let twostock = Math.floor(Math.random() * (999)) + 0;
+let threestock = Math.floor(Math.random() * (999)) + 0;
+let fourstock = Math.floor(Math.random() * (999)) + 0;
+let fivestock = Math.floor(Math.random() * (999)) + 0;
+let sixstock = Math.floor(Math.random() * (999)) + 0;
+	     
+let onestockeq = Math.floor(Math.random() * (2)) + 0;
+let twostockeq = Math.floor(Math.random() * (2)) + 0;
+let threestockeq = Math.floor(Math.random() * (2)) + 0;
+let fourstockeq = Math.floor(Math.random() * (2)) + 0;
+let fivestockeq = Math.floor(Math.random() * (2)) + 0;
+let sixstockeq = Math.floor(Math.random() * (2)) + 0;
 
 
+ if (onestockeq === 0) {
+	 jusic: onemoney - parseInt(onestock)
+ };
+	 
+	 
+	     
+	     
+	     
+	     
+	     
+	     
+	     
+	     
+	     
+    }, 60000);
+});
 
 
 

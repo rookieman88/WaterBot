@@ -5,7 +5,6 @@ let warns = JSON.parse(fs.readFileSync("./saves/warns.json", "utf8"));
 
 module.exports.run = async (bot, message, args) => {
 
-  //!warn @daeshan <reason>
   if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("권한이 없습니다!");
   let wUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0])
   if(!wUser) return message.reply("사용법 : ~경고 @사람이름 사유");
@@ -24,7 +23,7 @@ module.exports.run = async (bot, message, args) => {
   });
 
   let warnEmbed = new Discord.RichEmbed()
-  .setAuthor(wUser.username)
+  .setAuthor(wUser.id)
   .setDescription("님이 경고되었습니다")
   .addField("관리자", `<@${message.author.id}>`)
   .setColor("#fc6400")

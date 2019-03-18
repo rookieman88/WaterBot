@@ -11,6 +11,7 @@ module.exports.run = async (bot, message, args) => {
   if(!wUser) return message.reply("사용법 : ~경고 @사람이름 사유");
   if(wUser.hasPermission("MANAGE_MESSAGES")) return message.reply("그 유저를 경고할 수 없습니다!");
   let reason = args.join(" ").slice(22);
+	let warnuser = message.guild.members.get(args[0])
 
   if(!warns[wUser.id]) warns[wUser.id] = {
     warns: 0
@@ -23,8 +24,8 @@ module.exports.run = async (bot, message, args) => {
   });
 
   let warnEmbed = new Discord.RichEmbed()
-  .setTitle(`${`wUser.username`} 님이 경고되었습니다`)
-  .setDescription("경고")
+  .setTitle(warnuser.username)
+  .setDescription("님이 경고되었습니다")
   .addField("관리자", `<@${message.author.id}>`)
   .setColor("#fc6400")
   .addField("유저", `<@${wUser.id}>`)
@@ -41,7 +42,7 @@ module.exports.run = async (bot, message, args) => {
 	  let wEmbed = new Discord.RichEmbed()
 		.setDescription("추방")
 		.setColor("#DF0101")
-		.addField("추방된 유저 ID", `${wUser.id}`)
+		.addField("추방된 유저 ", `${wUser.id}`)
 		.addField("시각", message.createdAt)
 		.addField("사유", "경고 4회");
 		

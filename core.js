@@ -72,7 +72,10 @@ console.log('봇 실행 완료');
 
 // bot status (error) -------------------------------------------
 
-
+	bot.on("ready", async () => {
+		
+		bot.user.setActivity(`워터야 도움 입력 ㄱㄱ`, {type: "PLAYING"});
+	});
 
 
 

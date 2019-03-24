@@ -70,21 +70,9 @@ console.log('봇 실행 완료');
 
 
 
-// bot status-------------------------------------------
-const activities_list = [
-    "Made by Oasics", 
-    "2019년 5월 정식출시!",
-    "꼬우면 oAsIcS#5074 로 DM ", 
-    "~도움 입력 가즈아ㅏㅏ"
-    ];
+// bot status (error) -------------------------------------------
 
 
-bot.on('ready', () => {
-     setInterval(() => {
-        const index = Math.floor(Math.random() * (activities_list.length - 1) + 1);
-        bot.user.setActivity(activities_list[index]);
-    }, 5000);
-});
 
 
 

@@ -74,7 +74,7 @@ console.log('봇 실행 완료');
 
 	bot.on("ready", async () => {
 		
-		bot.user.setActivity(`워터야 도움 입력 ㄱㄱ`, {type: "PLAYING"});
+		bot.user.setActivity(`~도움 입력 ㄱㄱ`, {type: "PLAYING"});
 	});
 
 

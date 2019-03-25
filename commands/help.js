@@ -26,7 +26,7 @@ let nhelp = new Discord.RichEmbed()
 	let ghelp = new Discord.RichEmbed()
        .setTitle("게임 도움말")
        .setColor("#33cc33")
-       .addField("이 기능은 망했습니다", "더 좋은 버전이 나올때까지 ");
+       .addField("이 기능은 망했습니다", "더 좋은 버전이 나올때까지 기다리세요");
 	
 	let musichelp = new Discord.RichEmbed()
 	.setTitle("음악 도움말")

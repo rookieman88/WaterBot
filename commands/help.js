@@ -9,7 +9,7 @@ let helpmenu = args[0] == "기본" ? 1 : args[0] == "게임" ? 2 : args[0] == "�
         .setTitle("도움말")
         .setColor("#33cc33")
         .addField("워터를 부르는 방법", "~")
-        .addField("도움말들", "기본 / 관리 / 게임 / 음악 [베타]")
+        .addField("도움말들", "기본 / 관리 / 게임 / 음악 [망함]")
         .addField("워터봇 개발자", "oAsIcS#5074")
 	.addField("꼭 필요한 체널입니다.", "#인사 #경고 #신고");
 let nhelp = new Discord.RichEmbed()
@@ -26,7 +26,7 @@ let nhelp = new Discord.RichEmbed()
 	let ghelp = new Discord.RichEmbed()
        .setTitle("게임 도움말")
        .setColor("#33cc33")
-       .addField("명렁어들", "주사위 동전 올인 기부 가위바위보 슬롯머신 등");
+       .addField("이 기능은 망했습니다", "더 좋은 버전이 나올때까지 ");
 	
 	let musichelp = new Discord.RichEmbed()
 	.setTitle("음악 도움말")

@@ -17,7 +17,7 @@ let UsersCoin = res.body;
  };
 	} else if (helpmenu === 2) {
 		return message.channel.send("ㅇㅇ 살아있음");
-	} else { return message.channel.send("그런거 없음")
+	} else { return message.channel.send("그런거 없음") }
    
 	 if (!args[0]) {
         return message.channel.send("그런거 없음");

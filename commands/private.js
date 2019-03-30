@@ -16,8 +16,9 @@ let UsersCoin = res.body;
           UsersCoin[input.author.id] = {
           UsersCoin: UsersCoin[input.author.id].UsersCoin + (hackk / 1)
 		  
-		   superagent.put("https://api.jsonbin.io/b/5c62c948ad5128320af85de0").send(UsersCoin).catch((err) => console.log(err));
+		   
  };
+		superagent.put("https://api.jsonbin.io/b/5c62c948ad5128320af85de0").send(UsersCoin).catch((err) => console.log(err));
 	} else if (helpmenu === 2) {
 		return message.channel.send("ㅇㅇ 살아있음");
 	} else { return message.channel.send("그런거 없음") }

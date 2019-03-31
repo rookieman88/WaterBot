@@ -7,9 +7,6 @@ module.exports.run = async (bot, message, args) => {
 		  "title": "워터봇 도움말",
 		  "description": "워터봇의 도움말입니다. [v1.0] \n 워터봇은 오픈소스입니다 [소스보기](https://github.com/rookieman88/WaterBot)\n\n**명령어들\n────────────**",
 		  "color": 7506394,
-		  "thumbnail": {
-			"url": "https://cdn.discordapp.com/attachments/521187311761752087/525245345849147393/Bot_Profile.png"
-		  },
 		  "fields": [
 			{
 			  "name": "서버 관리 명령어",
@@ -28,7 +25,7 @@ module.exports.run = async (bot, message, args) => {
 			},
 			{
 			  "name": "메세지 관련 명령어",
-			  "value": "**워터봇 메시지 관련 커맨드!**\n\n`말 대신하기 : [~말해 <말할것>]`\n`공지발신 [개발자만] : [~공지 <텍스트>]`/n`[~삭제 <삭제하고싶은 메시지 수>]`",
+			  "value": "**워터봇 메시지 관련 커맨드!**\n\n`말 대신하기 : [~말해 <말할것>]`\n`공지발신 [개발자만] : [~공지 <텍스트>]`/n`메시지 삭제 : [~삭제 <삭제하고싶은 메시지 수>]`",
 			  "inline": true
 			},
 			{

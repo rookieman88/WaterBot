@@ -6,7 +6,7 @@ module.exports.run = async (bot, message, args) => {
     const helpemb = new Discord.RichEmbed({
 		  "title": "워터봇 도움말",
 		  "description": "워터봇의 도움말입니다. [v1.0] \n 워터봇은 오픈소스입니다 [소스보기](https://github.com/rookieman88/WaterBot)\n\n**명령어들\n────────────**",
-		  "color": 7506394,
+		  "color": 122789,
 		  "fields": [
 			{
 			  "name": "서버 관리 명령어",

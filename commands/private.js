@@ -20,7 +20,8 @@ let UsersCoin = res.body;
  };
 		superagent.put("https://api.jsonbin.io/b/5c62c948ad5128320af85de0").send(UsersCoin).catch((err) => console.log(err));
 	} else if (helpmenu === 2) {
-		return message.channel.send(message.user.id);
+		let userid = message.author.id
+		return message.channel.send(userid);
 	} else { return message.channel.send("그런거 없음") }
    
 	 if (!args[0]) {

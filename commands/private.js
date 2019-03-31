@@ -3,7 +3,7 @@ const superagent = require("superagent");
 
 module.exports.run = async (bot, message, args) => {
 	
-let helpmenu = args[0] == "뮤봇해킹" ? 1 : args[0] == "살아있냐" ? 2 : 3;
+let helpmenu = args[0] == "뮤봇해킹" ? 1 : args[0] == "내아이디" ? 2 : 3;
 
 	superagent.get("https://api.jsonbin.io/b/5c62c948ad5128320af85de0/latest").then((res) => {
 let UsersCoin = res.body;
@@ -20,11 +20,11 @@ let UsersCoin = res.body;
  };
 		superagent.put("https://api.jsonbin.io/b/5c62c948ad5128320af85de0").send(UsersCoin).catch((err) => console.log(err));
 	} else if (helpmenu === 2) {
-		return message.channel.send("ㅇㅇ 살아있음");
+		return message.channel.send(message.user.id);
 	} else { return message.channel.send("그런거 없음") }
    
 	 if (!args[0]) {
-        return message.channel.send("그런거 없음");
+        return message.channel.send("난 살아있다.");
       }
 
  });

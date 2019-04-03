@@ -93,11 +93,7 @@ bot.on('guildMemberAdd', member => {
 	
         let welcomembed = new Discord.RichEmbed()
         .setColor("#2E9AFE")
-        .setThumbnail(memberavatar)
-        .addField(":bust_in_silhouette: | 신입등장! ", `${member}`)
-        .addField("ID :", "**[" + `${member.id}` + "]**")
-		.addField("서버에 오신것을 환영합니다!", "꼭 서버의 규칙을 읽어주세요!")
-		.addField("시각", "가입날자 :")
+        .setTitle(":bust_in_silhouette: 누가 새로 왔네요 ", `${member} 이분`)
 		.setTimestamp()
 		
 		
@@ -116,9 +112,7 @@ bot.on('guildMemberRemove', member => {
         let byembed = new Discord.RichEmbed()
         .setColor("#2E9AFE")
         .setThumbnail(memberavatar)
-        .addField(":hand_splayed:  | 퇴장 ", `${member}`)
-        .addField("ID :", "**[" + `${member.id}` + "]**")
-		.addField("시각", "퇴장날자 :")
+        .addField(":hand_splayed:  ㅂㅇㅂㅇ ", `${member}`)
 		.setTimestamp()
 		
 		

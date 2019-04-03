@@ -93,7 +93,7 @@ bot.on('guildMemberAdd', member => {
 	
         let welcomembed = new Discord.RichEmbed()
         .setColor("#2E9AFE")
-        .setTitle(":bust_in_silhouette: 누가 새로 왔네요 ", `${member} 이분`)
+        .addField(":bust_in_silhouette: 누가 새로 왔네요 ", `${member} 이분`)
 		.setTimestamp()
 		
 		

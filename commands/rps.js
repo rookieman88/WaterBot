@@ -11,18 +11,18 @@ function rand(low, high) {
 module.exports.run = async (bot, message, args) => {
 
 
-     let filter = (reaction, user) => (reaction.emoji.name === ':v:' || reaction.emoji.name === ':fist:' || reaction.emoji.name === ':hand_splayed:') && user.id === message.author.id
+     let filter = (reaction, user) => (reaction.emoji.name === '\:v:' || reaction.emoji.name === '\:fist:' || reaction.emoji.name === '\:hand_splayed:') && user.id === message.author.id
     
 
         let ai_choice = rand(0,2);
 	let computer_choice;
 	        if (ai_choice == 0) {
-          computer_choice = ':v:'
+          computer_choice = '\:v:'
       }
       else if (ai_choice == 1) {
-          computer_choice = 'fist'
+          computer_choice = '\:fist:'
       } else {
-         computer_choice = ':hand_splayed:'
+         computer_choice = '\:hand_splayed:'
       }
 	  
 	  
@@ -30,9 +30,9 @@ module.exports.run = async (bot, message, args) => {
       .setColor(0x0000ff)
       .addField("가위바위보", '안내면 진다.. 가위 바위... [제한시간 **30초**]')
     message.channel.send(rpsembed).then((th) => {
-      th.react(':hand_splayed:')
-      th.react(':v:')
-      th.react(':fist:')
+      th.react('\:hand_splayed:')
+      th.react('\:v:')
+      th.react('\:fist:')
       th.awaitReactions(filter, {
         time: 30000,
         max: 1
@@ -43,9 +43,9 @@ module.exports.run = async (bot, message, args) => {
             .addField("왜 안내냐?", "쫄았네")
           th.edit(timeoutembed)
         } else {
-          let paper = ':hand_splayed:'
-	  let rock = ':fist:'
-	  let sissor =  ':v:'
+          let paper = '\:hand_splayed:'
+	  let rock = '\:fist:'
+	  let sissor =  '\:v:'
 	  
 	  let mal;
 		let bumal;

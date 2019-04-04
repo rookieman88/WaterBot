@@ -84,7 +84,8 @@ let rpsyayembed = new discord.RichEmbed()
 
 
             th.edit(rpsyayembed)
-}
+	}
+      }
       
       
 	  /*

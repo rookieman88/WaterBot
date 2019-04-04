@@ -78,6 +78,7 @@ module.exports.run = async (bot, message, args) => {
         } else {
 		mal = "졌다.."
 		bumal = "이런.."
+	}
 
 let rpsembed = new discord.RichEmbed()
             .setColor(0x808080)

@@ -11,7 +11,7 @@ function rand(low, high) {
 module.exports.run = async (bot, message, args) => {
 
 
-    
+     let filter = (reaction, user) => (reaction.emoji.name === ':v:' || reaction.emoji.name === ':fist:' || reaction.emoji.name === ':hand_splayed:') && user.id === message.author.id
     
 
         let ai_choice = rand(0,2);

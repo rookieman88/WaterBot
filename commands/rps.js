@@ -11,18 +11,18 @@ function rand(low, high) {
 module.exports.run = async (bot, message, args) => {
 
 
-     let filter = (reaction, user) => (reaction.emoji.name === '✌️' || reaction.emoji.name === '✊' || reaction.emoji.name === '🖐️') && user.id === message.author.id
+     let filter = (reaction, user) => (reaction.emoji.name === '✌' || reaction.emoji.name === '✊' || reaction.emoji.name === '✋') && user.id === message.author.id
     
 
         let ai_choice = rand(0,2);
 	let computer_choice;
 	        if (ai_choice == 0) {
-          computer_choice = '✌️'
+          computer_choice = '✌'
       }
       else if (ai_choice == 1) {
           computer_choice = '✊'
       } else {
-         computer_choice = '🖐️'
+         computer_choice = '✋'
       }
 	  
 	  
@@ -30,8 +30,8 @@ module.exports.run = async (bot, message, args) => {
       .setColor(0x0000ff)
       .addField("가위바위보", '안내면 진다.. 가위 바위... [제한시간 **30초**]')
     message.channel.send(rpsembed).then((th) => {
-      th.react('🖐️')
-      th.react('✌️')
+      th.react('✋')
+      th.react('✌')
       th.react('✊')
       th.awaitReactions(filter, {
         time: 30000,
@@ -43,9 +43,9 @@ module.exports.run = async (bot, message, args) => {
             .addField("왜 안내냐?", "쫄았네")
           th.edit(timeoutembed)
         } else {
-          let paper = '🖐️'
+          let paper = '✋'
 	  let rock = '✊'
-	  let sissor =  '✌️'
+	  let sissor =  '✌'
 	  
 	  let mal;
 		let bumal;

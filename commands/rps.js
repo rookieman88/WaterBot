@@ -1,4 +1,4 @@
-const Discord = module.require("discord.js");
+const discord = module.require("discord.js");
 const fs = require("fs");
 const superagent = require("superagent");
 

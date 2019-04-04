@@ -38,10 +38,9 @@ module.exports.run = async (bot, message, args) => {
         max: 1
       }).then((collected) => {
         if (!collected) {
-          let timeoutembed = new discord.RichEmbed()
-            .setColor(0x808080)
-            .addField("왜 안내냐?", "쫄았네")
-          th.edit(timeoutembed)
+          let rpsembed = new discord.RichEmbed()
+            .addField("왜 안내냐?", "쫄았네");
+          th.edit(rpsembed);
         } else {
           let paper = '✋'
 	  let rock = '✊'
@@ -78,12 +77,12 @@ module.exports.run = async (bot, message, args) => {
 		bumal = "졌다.."
         }
 
-let rpsyayembed = new discord.RichEmbed()
+let rpsembed = new discord.RichEmbed()
             .setColor(0x808080)
             .addField(mal, bumal)
 
 
-            th.edit(rpsyayembed)
+            th.edit(rpsembed)
 	}
 });
 

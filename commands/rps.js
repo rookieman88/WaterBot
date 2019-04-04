@@ -75,7 +75,9 @@ module.exports.run = async (bot, message, args) => {
         else if (collected == 2 && computer_choice == 1) {
 		mal = "워터 [ :hand_splayed: ] VS <@${message.author.id}> [ :fist: ]"
 		bumal = "졌다.."
-        }
+        } else {
+		mal = "졌다.."
+		bumal = "이런.."
 
 let rpsembed = new discord.RichEmbed()
             .setColor(0x808080)

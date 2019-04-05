@@ -29,7 +29,8 @@ module.exports.run = async (bot, message, args) => {
 
  let giveembed = new Discord.RichEmbed()
  .setColor("#6699ff")
- .setAuthor(`${message.author.username}이(가) <${pUser.id}> 에게 기부했습니다`)
+ .setAuthor(`${message.author.username}이(가) 기부했습니다`)
+ .addField(`기부받은 사람`, `<@${pUser.id}>`)
  .addField(`기부한 돈`, `${args[1]}`)
  
 		

@@ -42,9 +42,9 @@ module.exports.run = async (bot, message, args) => {
             .addField("왜 안내냐?", "쫄았네");
           th.edit(rpsembed);
         } else {
-          let paper = '✋'
-	  let rock = '✊'
-	  let sissor =  '✌'
+          let paper = '✋' //2
+	  let rock = '✊' //1
+	  let sissor =  '✌' //0
 	  
 	  let mal;
 		let bumal;
@@ -53,26 +53,26 @@ module.exports.run = async (bot, message, args) => {
           mal = "무승부를 했다!"
 			  bumal = "이런.."
         }
-        else if (collected == 2 && computer_choice == 0) {
+        else if (collected == paper && computer_choice == sissor) {
 		mal = "워터 [ :hand_splayed: ] VS <@${message.author.id}> [ :v: ]"
 		bumal = "<@${message.author.id}> 승!"
         }
-        else if (collected == 0 && computer_choice == 1) {
+        else if (collected == sissor && computer_choice == rock) {
 		mal = "워터 [ :v: ] VS <@${message.author.id}> [ :fist: ]"
 		bumal = "<@${message.author.id}> 승!"
         }
-        else if (collected == 1 && computer_choice == 2) {
+        else if (collected == rock && computer_choice == paper) {
 		mal = "워터 [ :fist: ] VS <@${message.author.id}> [ :hand_splayed: ]"
 		bumal = "<@${message.author.id}> 승!"
-        }     else if (collected == 0 && computer_choice == 2) {
+        }     else if (collected == sissor && computer_choice == paper) {
 		mal = "워터 [ :v: ] VS <@${message.author.id}> [ :hand_splayed: ]"
 		bumal = "졌다.."
         }
-        else if (collected == 1 && computer_choice == 0) {
+        else if (collected == rock && computer_choice == sissor) {
 		mal = "워터 [ :fist: ] VS <@${message.author.id}> [ :v: ]"
 		bumal = "졌다.."
         }
-        else if (collected == 2 && computer_choice == 1) {
+        else if (collected == paper && computer_choice == rock) {
 		mal = "워터 [ :hand_splayed: ] VS <@${message.author.id}> [ :fist: ]"
 		bumal = "졌다.."
         } else {

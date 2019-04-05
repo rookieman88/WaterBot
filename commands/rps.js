@@ -49,35 +49,35 @@ module.exports.run = async (bot, message, args) => {
 	  let mal;
 		let bumal;
 	  
-	          if (collected == computer_choice) {
+	          if (collected.array()[0].emoji.name == computer_choice) {
           mal = "무승부를 했다!"
 			  bumal = "이런.."
         }
-        else if (collected == paper && computer_choice == sissor) {
+        else if (collected.array()[0].emoji.name == paper && computer_choice == sissor) {
 		mal = "워터 [ :hand_splayed: ] VS <@${message.author.id}> [ :v: ]"
 		bumal = "<@${message.author.id}> 승!"
         }
-        else if (collected == sissor && computer_choice == rock) {
+        else if (collected.array()[0].emoji.name == sissor && computer_choice == rock) {
 		mal = "워터 [ :v: ] VS <@${message.author.id}> [ :fist: ]"
 		bumal = "<@${message.author.id}> 승!"
         }
-        else if (collected == rock && computer_choice == paper) {
+        else if (collected.array()[0].emoji.name == rock && computer_choice == paper) {
 		mal = "워터 [ :fist: ] VS <@${message.author.id}> [ :hand_splayed: ]"
 		bumal = "<@${message.author.id}> 승!"
-        }     else if (collected == sissor && computer_choice == paper) {
+        }     else if (collected.array()[0].emoji.name == sissor && computer_choice == paper) {
 		mal = "워터 [ :v: ] VS <@${message.author.id}> [ :hand_splayed: ]"
 		bumal = "졌다.."
         }
-        else if (collected == rock && computer_choice == sissor) {
+        else if (collected.array()[0].emoji.name == rock && computer_choice == sissor) {
 		mal = "워터 [ :fist: ] VS <@${message.author.id}> [ :v: ]"
 		bumal = "졌다.."
         }
-        else if (collected == paper && computer_choice == rock) {
+        else if (collected.array()[0].emoji.name == paper && computer_choice == rock) {
 		mal = "워터 [ :hand_splayed: ] VS <@${message.author.id}> [ :fist: ]"
 		bumal = "졌다.."
         } else {
-		mal = "졌다.."
-		bumal = "이런.."
+		mal = "이것은 전설의 오류!"
+		bumal = "님이 진거임 ㅅㄱ"
 	}
 
 let rpsembed = new discord.RichEmbed()

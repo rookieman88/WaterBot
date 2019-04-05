@@ -81,7 +81,7 @@ module.exports.run = async (bot, message, args) => {
 	}
 
 let rpsembed = new discord.RichEmbed()
-            .setColor(0x808080)
+            .setColor(0x0000ff)
             .addField(mal, bumal)
 
 

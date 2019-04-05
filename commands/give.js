@@ -9,14 +9,16 @@ module.exports.run = async (bot, message, args) => {
 		WatCoin = res.body;
 
   if(!WatCoin[message.author.id]){
-    return message.reply("님도 돈이 없는데?")
+        WatCoin[message.author.id] = {
+      WatCoin: 30
+    };
   }
 
   let pUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
 
   if(!WatCoin[pUser.id]){
     WatCoin[pUser.id] = {
-      WatCoin: 0
+      WatCoin: 30
     };
   }
 
@@ -27,8 +29,7 @@ module.exports.run = async (bot, message, args) => {
 
  let giveembed = new Discord.RichEmbed()
  .setColor("#6699ff")
- .setTitle("기부")
- .setAuthor(`${message.author.username}이(가) [ <@!${pUser.id}> ] 에게 기부했습니다`)
+ .setAuthor(`${message.author.username}이(가) <${pUser.id}> 에게 기부했습니다`)
  .addField(`기부한 돈`, `${args[1]}`)
  
 		

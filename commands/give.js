@@ -25,7 +25,15 @@ module.exports.run = async (bot, message, args) => {
 
   if(sCoins < args[1]) return message.reply("그만큼 돈은 있음?");
 
-    message.channel.send(` ${pUser}한테 ${args[1]} 만큼 기부한거 맞죠? 환불 안됨 `);
+ let giveembed = new Discord.RichEmbed()
+ .setColor("#6699ff")
+ .setTitle("기부")
+ .setAuthor(`${message.author.username}이 ${pUser}에게 기부했습니다`)
+ .addField(`기부한 돈`, `${args[1]}`)
+ 
+		
+		
+    message.channel.send(giveembed);
 
   WatCoin[message.author.id] = {
     WatCoin: sCoins - parseInt(args[1])

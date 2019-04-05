@@ -54,27 +54,27 @@ module.exports.run = async (bot, message, args) => {
 			  bumal = "이런.."
         }
         else if (collected.array()[0].emoji.name == paper && computer_choice == sissor) {
-		mal = "워터 [ :hand_splayed: ] VS <@${message.author.id}> [ :v: ]"
-		bumal = "<@${message.author.id}> 승!"
+		mal = "${message.author.id} [ :hand_splayed: ] VS 워터 [ :v: ]"
+		bumal = "졌다.."
         }
         else if (collected.array()[0].emoji.name == sissor && computer_choice == rock) {
-		mal = "워터 [ :v: ] VS <@${message.author.id}> [ :fist: ]"
-		bumal = "<@${message.author.id}> 승!"
+		mal = "${message.author.id} [ :v: ] VS 워터 [ :fist: ]"
+		bumal = "졌다.."
         }
         else if (collected.array()[0].emoji.name == rock && computer_choice == paper) {
-		mal = "워터 [ :fist: ] VS <@${message.author.id}> [ :hand_splayed: ]"
-		bumal = "<@${message.author.id}> 승!"
-        }     else if (collected.array()[0].emoji.name == sissor && computer_choice == paper) {
-		mal = "워터 [ :v: ] VS <@${message.author.id}> [ :hand_splayed: ]"
+		mal = "${message.author.id} [ :fist: ] VS 워터 [ :hand_splayed: ]"
 		bumal = "졌다.."
+        }     else if (collected.array()[0].emoji.name == sissor && computer_choice == paper) {
+		mal = "${message.author.id} [ :v: ] VS 워터 [ :hand_splayed: ]"
+		bumal = `${message.author.id} 승!`
         }
         else if (collected.array()[0].emoji.name == rock && computer_choice == sissor) {
-		mal = "워터 [ :fist: ] VS <@${message.author.id}> [ :v: ]"
-		bumal = "졌다.."
+		mal = "${message.author.id} [ :fist: ] VS 워터 [ :v: ]"
+		bumal = `${message.author.id} 승!`
         }
         else if (collected.array()[0].emoji.name == paper && computer_choice == rock) {
-		mal = "워터 [ :hand_splayed: ] VS <@${message.author.id}> [ :fist: ]"
-		bumal = "졌다.."
+		mal = "${message.author.id} [ :hand_splayed: ] VS 워터 [ :fist: ]"
+		bumal = `${message.author.id} 승!`
         } else {
 		mal = "이것은 전설의 오류!"
 		bumal = "님이 진거임 ㅅㄱ"

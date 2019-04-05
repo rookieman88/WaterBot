@@ -10,9 +10,12 @@ module.exports.run = async (bot, message, args) => {
 		let WatCoin = res.body;
     
 		
-		  if(!WatCoin[message.author.id]){
-message.channel.send(`돈이 없다!`);
-  }
+
+  if(!WatCoin[message.author.id]){
+        WatCoin[message.author.id] = {
+      WatCoin: 30
+    };
+}
       let Ucoin = WatCoin[message.author.id].WatCoin;
   
     

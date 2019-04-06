@@ -25,7 +25,7 @@ warns = res.body;
 
 
   let warnEmbed = new Discord.RichEmbed()
-  .setTitle(`<${wUser}>`)
+  .setTitle(`${wUser}`)
   .setDescription("님이 경고되었습니다")
   .addField("관리자", `<@${message.author.id}>`)
   .setColor("#fc6400")
@@ -42,13 +42,14 @@ warns = res.body;
 		
 		
 	
- message.channel.send(```
+ message.channel.send(` "```
                       
 		      ${wUser} 가 경고되었습니다.
 		      사유는 [ ${reason} ] 입니다.
 		      경고를 받은 횟수는 ${wCoins} 입니다.
 		      
-```)
+```"
+		      `)
 
   if(warns[wUser.id].warns == 4){
 	  

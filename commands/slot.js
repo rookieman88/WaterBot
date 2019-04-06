@@ -31,59 +31,59 @@ if(Moning < 1000) return message.reply(" `1000윈` 이상의 돈을 걸어야 �
 
       // 첫번째 슬롯 값의 대한 메세지 스트링
       if (Ran1 <= 20) {
-          Slot1 = ":zero:";
+          Slot1 = ":star:";
       } else if (Ran1 <= 40) {
-          Slot1 = ":one:";
+          Slot1 = ":heart:";
       } else if (Ran1 <= 50) {
-          Slot1 = ":two:";
+          Slot1 = ":money_mouth:";
       } else if (Ran1 <= 70) {
-          Slot1 = ":three:";
+          Slot1 = ":four_leaf_clover:";
       } else if (Ran1 <= 80) {
-          Slot1 = ":four:";
+          Slot1 = ":gem:";
       } else if (Ran1 <= 95) {
-          Slot1 = ":five:";
+          Slot1 = ":potato:";
       } else if (Ran1 <= 99) {
-          Slot1 = ":six:";
+          Slot1 = ":cherres:";
       } else if (Ran1 == 100) {
-          Slot1 = ":seven:";
+          Slot1 = ":rosette:";
       }
 
       // 두번째 슬롯 값의 대한 메세지 스트링
       if (Ran2 <= 10) {
-          Slot2 = ":zero:";
+          Slot2 = ":star:";
       } else if (Ran2 <= 20) {
-          Slot2 = ":one:";
+          Slot2 = ":heart:";
       } else if (Ran2 <= 40) {
-          Slot2 = ":two:";
+          Slot2 = ":money_mouth:";
       } else if (Ran2 <= 45) {
-          Slot2 = ":three:";
+          Slot2 = ":four_leaf_clover:";
       } else if (Ran2 <= 60) {
-          Slot2 = ":four:";
+          Slot2 = ":gem:";
       } else if (Ran2 <= 75) {
-          Slot2 = ":five:";
+          Slot2 = ":potato:";
       } else if (Ran2 <= 85) {
-          Slot2 = ":six:";
+          Slot2 = ":cherres:";
       } else if (Ran2 <= 100) {
-          Slot2 = ":seven:";
+          Slot2 = ":rosette:";
       }
 
       // 세번째 슬롯 값의 대한 메세지 스트링
       if (Ran3 <= 10) {
-          Slot3 = ":zero:";
+          Slot3 = ":star:";
       } else if (Ran3 <= 20) {
-          Slot3 = ":one:";
+          Slot3 = ":heart:";
       } else if (Ran3 <= 30) {
-          Slot3 = ":two:";
+          Slot3 = ":money_mouth:";
       } else if (Ran3 <= 40) {
-          Slot3 = ":three:";
+          Slot3 = ":four_leaf_clover:";
       } else if (Ran3 <= 50) {
-          Slot3 = ":four:";
+          Slot3 = ":gem:";
       } else if (Ran3 <= 60) {
-          Slot3 = ":five:";
+          Slot3 = ":potato:";
       } else if (Ran3 <= 70) {
-          Slot3 = ":six:";
+          Slot3 = ":cherres:";
       } else if (Ran3 <= 100) {
-          Slot3 = ":seven:";
+          Slot3 = ":rosette:";
       }
 
 
@@ -146,15 +146,15 @@ let Yeang;
 
 
       // 아래 if문들은 위에서 부터 계산이 중요한 순서대로 정렬되야 정상적으로 뮤트코인이 지급됩니다
-      if (Slot1 == Slot2 && Slot2 == Slot3 && Slot1 == ":seven:") {
-          SlotResult = "끼이야야야야아악!! 777!!! 잭팟이다!!!!!! [+13777 코인]";
+      if (Slot1 == Slot2 && Slot2 == Slot3 && Slot1 == ":gem:") {
+          SlotResult = "끼이야야야야아악!! 잭팟이다!!!!!! [+13777 코인]";
           let Leang = 13777 - Moning
           Yeang = `보상  [ 13777원 ] - 게임비 [ ${Moning}원 ] 손익 : [ ${Leang}원 ]`
           WatCoin[message.author.id] = {
               WatCoin: WatCoin[message.author.id].WatCoin + 13777
           };
-      } else if (Slot1 == Slot2 && Slot2 == Slot3 && Slot1 == ":zero:") {
-          SlotResult = "엌ㅋ 000 실화얔ㅋ [+0 코인, ㅅㄱ]";
+      } else if (Slot1 == Slot2 && Slot2 == Slot3 && Slot1 == ":four_leaf_clover:") {
+          SlotResult = "네잎클로버닷!! [+9444 코인]";
           let Leang = 0 - Moning
           Yeang = `보상  [ 0원 ] - 게임비 [ ${Moning}원 ] 손익 : [ ${Leang}원 ]`
       } else if (Slot1 == Slot2 && Slot2 == Slot3) {

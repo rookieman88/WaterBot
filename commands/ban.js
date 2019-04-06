@@ -18,7 +18,7 @@ module.exports.run = async (bot, message, args) => {
     let incidentchannel = message.guild.channels.find(`name`, "경고");
 	 message.channel.send(`
                       
-${bUser} 가 경고되었습니다.
+${bUser} 가 차단되었습니다.
 사유는 [ ${bReason} ] 입니다.
 		      
 		      `)

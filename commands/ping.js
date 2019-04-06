@@ -2,7 +2,7 @@ const discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
 
-	message.channel.send(` [${Math.round(bot.ping)}ms] `);
+	message.channel.send(`퐁! [ ${Math.round(bot.ping)}ms ] `);
   
 };
 

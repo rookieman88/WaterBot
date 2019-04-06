@@ -23,9 +23,8 @@ let kUser = message.guild.member(message.mentions.users.first() || message.guild
 		kickChannel.send(kickEmbed);
 	
 	 message.channel.send(`
-                      
-		      ${kUser} 가 추방되었습니다.
-		      사유는 [ ${kReason} ] 입니다.
+ ${kUser} 가 추방되었습니다.
+사유는 [ ${kReason} ] 입니다.
 		      
 		      `)
 	

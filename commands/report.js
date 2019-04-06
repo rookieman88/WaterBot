@@ -10,14 +10,19 @@ const Discord = require("discord.js");
 		let reportEmbed = new Discord.RichEmbed()
 		.setDescription("신고")
 		.setColor("#15f153")
-		.addField("신고한 유저", `${rUser} ID: ${rUser.id}`)
+		.addField("신고받은 유저", `${rUser}`)
 		.addField("시각", message.createdAt)
 		.addField("사유", reason);
 		
 		let reportschannel = message.guild.channels.find(`name`, "신고");
+	          message.channel.send(`
+                      
+${rUser} 를 신고했습니다.
+사유는 [ ${reason} ] 입니다.
+		      
+		      `)
 		if(!reportschannel) return message.channel.send("채널을 찾을 수 없습니다. 신고 체널을 만들어주세요!");
 		
-		 message.delete().catch(O_o=>{});
 		 reportschannel.send(reportEmbed);
 		return;
 	}

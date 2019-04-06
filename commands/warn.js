@@ -1,9 +1,13 @@
 const Discord = require("discord.js");
 const fs = require("fs");
 const ms = require("ms");
-let warns = JSON.parse(fs.readFileSync("./saves/warns.json", "utf8"));
+const superagent = require("superagent");
 
 module.exports.run = async (bot, message, args) => {
+	
+	       let warns;
+	superagent.get("https://api.jsonbin.io/b/5ca858e10f4c9334823b9515/latest").then((res) => {
+warns = res.body;
 
   if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("권한이 없습니다!");
   let wUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0])
@@ -18,12 +22,11 @@ module.exports.run = async (bot, message, args) => {
 
   warns[wUser.id].warns++;
 
-  fs.writeFile("./saves/warns.json", JSON.stringify(warns), (err) => {
-    if (err) console.log(err)
-  });
+ superagent.put("https://api.jsonbin.io/b/5ca858e10f4c9334823b9515").send(warns).catch((err) => console.log(err));
+});
 
   let warnEmbed = new Discord.RichEmbed()
-  .setTitle(`<@${wUser.id}>`)
+  .setTitle(`<${wUser}>`)
   .setDescription("님이 경고되었습니다")
   .addField("관리자", `<@${message.author.id}>`)
   .setColor("#fc6400")

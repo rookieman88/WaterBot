@@ -193,6 +193,7 @@ let Yeang;
         .setAuthor("슬롯머신:")
         .setColor("##FF0000")
         .addField(`▶ ${Slot1} ${Slot2} ${Slot3} `, SlotResult)
+        .setFooter(Yeang)
 
 	th.edit(rpsembed)
 

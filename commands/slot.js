@@ -135,8 +135,8 @@ if(sCoins < 5000) return message.reply(" `5000원` 이상의 돈을 지니신 �
 let Yeang;
  const Moning = args.join(" ");
 
- WatCoin[input.author.id] = {
-     WatCoin: WatCoin[input.author.id].WatCoin - Moning
+ WatCoin[message.author.id] = {
+     WatCoin: WatCoin[message.author.id].WatCoin - Moning
  };
 
 
@@ -146,8 +146,8 @@ let Yeang;
           SlotResult = "끼이야야야야아악!! 777!!! 잭팟이다!!!!!! [+13777 코인]";
           let Leang = 13777 - Moning
           Yeang = `보상  [ 13777원 ] - 게임비 [ ${Moning}원 ] 손익 : [ ${Leang}원 ]`
-          WatCoin[input.author.id] = {
-              WatCoin: WatCoin[input.author.id].WatCoin + 13777
+          WatCoin[message.author.id] = {
+              WatCoin: WatCoin[message.author.id].WatCoin + 13777
           };
       } else if (Slot1 == Slot2 && Slot2 == Slot3 && Slot1 == ":zero:") {
           SlotResult = "엌ㅋ 000 실화얔ㅋ [+0 코인, ㅅㄱ]";
@@ -157,29 +157,29 @@ let Yeang;
           SlotResult = "3슬롯을 맞추는데 성공했다! [+8192 코인]";
           let Leang = 8192 - Moning
           Yeang = `보상  [ 8192원 ] - 게임비 [ ${Moning}원 ] 손익 : [ ${Leang}원 ]`
-          WatCoin[input.author.id] = {
-              WatCoin: WatCoin[input.author.id].WatCoin + 8192
+          WatCoin[message.author.id] = {
+              WatCoin: WatCoin[message.author.id].WatCoin + 8192
           };
       } else if (Slot1 == Slot2 || Slot2 == Slot3) {
           SlotResult = "2슬롯을 연속으로 맞추는데 성공했다! [+2048 코인]";
           let Leang = 2048 - Moning
           Yeang = `보상  [ 2048원 ] - 게임비 [ ${Moning}원 ] 손익 : [ ${Leang}원 ]`
-          WatCoin[input.author.id] = {
-              WatCoin: WatCoin[input.author.id].WatCoin + 2048
+          WatCoin[message.author.id] = {
+              WatCoin: WatCoin[message.author.id].WatCoin + 2048
           };
       } else if (Slot1 == Slot3) {
           SlotResult = "연속으론 아니지만 2슬롯을 맞추는데 성공했다! [+1024 코인]";
           let Leang = 1024 - Moning
           Yeang = `보상  [ 1024원 ] - 게임비 [ ${Moning}원 ] 손익 : [ ${Leang}원 ]`
-          WatCoin[input.author.id] = {
-              WatCoin: WatCoin[input.author.id].WatCoin + 1024
+          WatCoin[message.author.id] = {
+              WatCoin: WatCoin[message.author.id].WatCoin + 1024
           };
       } else {
               SlotResult = "운이 없네... [-2000 코인]";
               let Leang = 0 - Moning
               Yeang = `보상  [ 0원 ] - 게임비 [ ${Moning}원 ] 손익 : [ ${Leang}원 ]`
-              WatCoin[input.author.id] = {
-                  WatCoin: WatCoin[input.author.id].WatCoin - 2000
+              WatCoin[message.author.id] = {
+                  WatCoin: WatCoin[message.author.id].WatCoin - 2000
 
           }
       }

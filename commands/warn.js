@@ -43,9 +43,9 @@ warns = res.body;
 	
  message.channel.send(`
                       
-		      ${wUser} 가 경고되었습니다.
-		      사유는 [ ${reason} ] 입니다.
-		      경고를 받은 횟수는 ${wCoins} 입니다.
+${wUser} 가 경고되었습니다.
+사유는 [ ${reason} ] 입니다.
+경고를 받은 횟수는 ${wCoins} 입니다.
 		      
 		      `)
 

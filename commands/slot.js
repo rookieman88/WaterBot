@@ -80,6 +80,75 @@ if(sCoins < 5000) return message.reply(" `5000원` 이상의 돈을 지니신 �
       } else if (Ran3 <= 100) {
           Slot3 = ":seven:";
       }
+       let filter = (reaction, user) => (reaction.emoji.name === '1⃣'' || reaction.emoji.name === '2⃣' || reaction.emoji.name === '3⃣'') && user.id === message.author.id
+      
+      	      let rpsembed = new discord.RichEmbed()
+      .setColor(0x0000ff)
+      .addField("가위바위보", '안내면 진다.. 가위 바위... [제한시간 **30초**]')
+    message.channel.send(rpsembed).then((th) => {
+      th.react('1⃣''
+      th.react('2⃣''
+      th.react('3⃣''
+      th.awaitReactions(filter, {
+        time: 30000,
+        max: 3
+      }).then((collected) => {
+        if (!collected) {
+          let rpsembed = new discord.RichEmbed()
+            .addField("왜 안내냐?", "쫄았네");
+          th.edit(rpsembed);
+        } else {
+          let paper = '1⃣' //2
+	  let rock = '2⃣'' //1
+	  let sissor =  '3⃣'' //0
+	  let realone = :question:
+	  let realtwo = :question:
+	  let realthree = :question:
+	  
+	  let mal;
+		let bumal;
+	  
+	          if (collected.array()[0].emoji.name == paper) {
+		  
+		  
+        }
+        else if (collected.array()[0].emoji.name == rock) {
+	
+	
+        }
+        else if (collected.array()[0].emoji.name == sissor) {
+		
+		
+        }
+        else if (collected.array()[0].emoji.name == rock && computer_choice == paper) {
+		
+		
+        }     else if (collected.array()[0].emoji.name == sissor && computer_choice == paper) {
+		
+		
+        }
+        else if (collected.array()[0].emoji.name == rock && computer_choice == sissor) {
+		
+		
+        }
+        else if (collected.array()[0].emoji.name == paper && computer_choice == rock) {
+		
+		
+        } else {
+		
+		
+	}
+
+let rpsembed = new discord.RichEmbed()
+            .setColor(0x0000ff)
+            .addField(mal, bumal)
+
+
+            th.edit(rpsembed)
+	}
+});
+
+
       
       // 아래 if문들은 위에서 부터 계산이 중요한 순서대로 정렬되야 정상적으로 뮤트코인이 지급됩니다
       if (Slot1 == Slot2 && Slot2 == Slot3 && Slot1 == ":seven:") {
@@ -124,13 +193,15 @@ if(sCoins < 5000) return message.reply(" `5000원` 이상의 돈을 지니신 �
       
       superagent.put("https://api.jsonbin.io/b/5c62c948ad5128320af85de0").send(UsersCoin).catch((err) => console.log(err));
         let dobakEmb = new API.RichEmbed()
-        .setTitle("도박결과:")
-        .setAuthor(input.author.username)
+        .setTitle("▶ :one: :two: :three:")
+        .setAuthor("슬롯머신:")
         .setColor("##FF0000")
         .addField(`▶ :one: :two: :three:`, )
         .setFooter(SlotResult);
-        input.channel.send(dobakEmb);
+        th.edit(dobakEmb);
         
+	
+	});
 });
 
 */

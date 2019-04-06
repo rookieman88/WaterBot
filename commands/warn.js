@@ -22,8 +22,7 @@ warns = res.body;
 
   warns[wUser.id].warns++;
 
- superagent.put("https://api.jsonbin.io/b/5ca858e10f4c9334823b9515").send(warns).catch((err) => console.log(err));
-});
+
 
   let warnEmbed = new Discord.RichEmbed()
   .setTitle(`<${wUser}>`)
@@ -40,14 +39,16 @@ warns = res.body;
   warnchannel.send(warnEmbed);
 	
 	let wCoins = warns[wUser.id].warns;
+		
+		
 	
- message.channel.send(`
+ message.channel.send(```
                       
 		      ${wUser} 가 경고되었습니다.
 		      사유는 [ ${reason} ] 입니다.
-		      경고를 받은 횟수는 ${wCoins} 입니다
+		      경고를 받은 횟수는 ${wCoins} 입니다.
 		      
-`)
+```)
 
   if(warns[wUser.id].warns == 4){
 	  
@@ -67,6 +68,10 @@ warns = res.body;
 		 return;
 
 }
+		
+		 superagent.put("https://api.jsonbin.io/b/5ca858e10f4c9334823b9515").send(warns).catch((err) => console.log(err));
+});
+	
 };
 
 module.exports.help = {

@@ -11,9 +11,8 @@ let kUser = message.guild.member(message.mentions.users.first() || message.guild
 		let kickEmbed = new Discord.RichEmbed()
 		.setTitle(" 추방 ")
 		.setColor("#e56b00")
-		.addField("추방된 유저", `${kUser} ID: ${kUser.id}`)
+		.addField("추방된 유저", `${kUser}`)
 		.addField("관리자", `<@${message.author.id}>`)
-		.addField("시각", message.createdAt)
 		.addField("사유", kReason);
 		
 		let kickChannel = message.guild.channels.find(`name`, "경고");

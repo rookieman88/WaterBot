@@ -4,7 +4,7 @@ const discord = require("discord.js");
 const superagent = require("superagent");
 const delay = ms => new Promise(res => setTimeout(res, ms));
 
-module.exports.run = async (bot, input, args) => {
+module.exports.run = async (bot, message, args) => {
 
 
 

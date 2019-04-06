@@ -25,8 +25,7 @@ warns = res.body;
 
 
   let warnEmbed = new Discord.RichEmbed()
-  .setTitle(`${wUser}`)
-  .setDescription("님이 경고되었습니다")
+  .setTitle(` 경고 `)
   .addField("관리자", `<@${message.author.id}>`)
   .setColor("#fc6400")
   .addField("유저", `<@${wUser.id}>`)

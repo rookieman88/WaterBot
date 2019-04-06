@@ -9,7 +9,7 @@ let kUser = message.guild.member(message.mentions.users.first() || message.guild
 		if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("그 사람을 추방할 수 없습니다!");
 		
 		let kickEmbed = new Discord.RichEmbed()
-		.setDescription("추방됨")
+		.setTitle(" 추방 ")
 		.setColor("#e56b00")
 		.addField("추방된 유저", `${kUser} ID: ${kUser.id}`)
 		.addField("관리자", `<@${message.author.id}>`)
@@ -21,6 +21,14 @@ let kUser = message.guild.member(message.mentions.users.first() || message.guild
 		
 		message.guild.member(kUser).kick(kReason);
 		kickChannel.send(kickEmbed);
+	
+	 message.channel.send(`
+                      
+		      ${kUser} 가 경고되었습니다.
+		      사유는 [ ${kReason} ] 입니다.
+		      
+		      `)
+	
 		return;
    }
 	

@@ -30,6 +30,8 @@ module.exports.run = async (bot, message, args) => {
 	 .setColor(0x0000ff)
 	.setAuthor(message.author.username)
 	.addField(mal, bumal)
+	
+	message.channel.send(malembed)
 		
 }
 

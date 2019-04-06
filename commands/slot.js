@@ -13,8 +13,12 @@ module.exports.run = async (bot, message, args) => {
 		WatCoin = res.body;
 
 		let sCoins = WatCoin[message.author.id].WatCoin;
+		
+		
+		 const Moning = args.join(" ");
 
-if(sCoins < 5000) return message.reply(" `5000원` 이상의 돈을 지니신 분만 플레이할수 있습니다.");
+if(sCoins < 5000) return message.reply(" `5000원` 이상의 돈을 지니신 분만 플레이할 수 있습니다. ");
+if(Moning < 1000) return message.reply(" `1000윈` 이상의 돈을 걸어야 플레이 할 수 있습니다. ");
 
       let Slot1; // 첫번째 슬롯 값의 대한 메세지 스트링
       let Slot2; // 두번째 슬롯 값의 대한 메세지 스트링
@@ -133,7 +137,7 @@ if(sCoins < 5000) return message.reply(" `5000원` 이상의 돈을 지니신 �
    setTimeout(function() {
 
 let Yeang;
- const Moning = args.join(" ");
+
 
  WatCoin[message.author.id] = {
      WatCoin: WatCoin[message.author.id].WatCoin - Moning

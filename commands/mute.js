@@ -13,7 +13,7 @@ module.exports.run = async (bot, message, args) => {
   let muterole = message.guild.roles.find(`name`, "Muted");
 
   await(tomute.addRole(muterole.id));
-  message.reply(`<@${tomute.id}> 가 뮤트되었습니다.)}`);
+  message.reply(`<@${tomute.id}> 가 뮤트되었습니다.`);
 
   
   let muteEmbed = new Discord.RichEmbed()

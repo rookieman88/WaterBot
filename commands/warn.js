@@ -23,7 +23,7 @@ module.exports.run = async (bot, message, args) => {
   });
 
   let warnEmbed = new Discord.RichEmbed()
-  .setAuthor(`<@${wUser.id}>`)
+  .setTitle(`<@${wUser.id}>`)
   .setDescription("님이 경고되었습니다")
   .addField("관리자", `<@${message.author.id}>`)
   .setColor("#fc6400")
@@ -35,6 +35,16 @@ module.exports.run = async (bot, message, args) => {
   if(!warnchannel) return message.reply("체널을 찾을 수 없습니다. 경고 체널을 만들어주세요!");
 
   warnchannel.send(warnEmbed);
+	
+	let wCoins = warns[wUser.id].warns;
+	
+ message.channel.send(`
+                      ```
+		      ${wUser} 가 경고되었습니다.
+		      사유는 ${reason} 입니다.
+		      경고를 받은 횟수는 ${wCoins} 입니다
+		      ```
+`)
 
   if(warns[wUser.id].warns == 4){
 	  

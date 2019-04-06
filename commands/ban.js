@@ -9,14 +9,19 @@ module.exports.run = async (bot, message, args) => {
     if(bUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("그 사람을 추방할 수 없습니다!");
 
     let banEmbed = new Discord.RichEmbed()
-    .setDescription("차단")
+    .setTitle("차단")
     .setColor("#bc0000")
-    .addField("차단된 유저", `${bUser} with ID ${bUser.id}`)
-    .addField("관리자", `<@${message.author.id}> with ID ${message.author.id}`)
-    .addField("시각", message.createdAt)
+    .addField("차단된 유저", `${bUser}`)
+    .addField("관리자", `<@${message.author.id}>`)
     .addField("사유", bReason);
 
     let incidentchannel = message.guild.channels.find(`name`, "경고");
+	 message.channel.send(`
+                      
+${bUser} 가 경고되었습니다.
+사유는 [ ${bReason} ] 입니다.
+		      
+		      `)
     if(!incidentchannel) return message.channel.send("채널을 찾을 수 없습니다. 경고 체널을 만들어주세요!");
 
     message.guild.member(bUser).ban(bReason);

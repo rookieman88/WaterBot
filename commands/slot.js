@@ -90,7 +90,8 @@ if(sCoins < 5000) return message.reply(" `5000원` 이상의 돈을 지니신 �
         .addField(`▶ :question: :question: :question: `, `???`)
     message.channel.send(rpsembed).then((th) => {
 
-      await delay(3000);
+      setTimeout(function() {
+
 
 
          let rpsembed = new discord.RichEmbed()
@@ -101,8 +102,9 @@ if(sCoins < 5000) return message.reply(" `5000원` 이상의 돈을 지니신 �
 
 	th.edit(rpsembed)
 
-	      await delay(3000);
+}, 3000);
 
+      setTimeout(function() {
 
          let rpsembed = new discord.RichEmbed()
         .setTitle("▶ :one: :two: :three:")
@@ -112,8 +114,10 @@ if(sCoins < 5000) return message.reply(" `5000원` 이상의 돈을 지니신 �
 
 	th.edit(rpsembed)
 
-      await delay(3000);
+}, 3000);
 
+
+     setTimeout(function() {
 
          let rpsembed = new discord.RichEmbed()
         .setTitle("▶ :one: :two: :three:")
@@ -123,8 +127,10 @@ if(sCoins < 5000) return message.reply(" `5000원` 이상의 돈을 지니신 �
 
 	th.edit(rpsembed)
 
+}, 3000);
 
 
+   setTimeout(function() {
 
 let Yeang;
  const Moning = args.join(" ");
@@ -189,6 +195,8 @@ let Yeang;
         .addField(`▶ ${Slot1} ${Slot2} ${Slot3} `, SlotResult)
 
 	th.edit(rpsembed)
+
+}, 3000);
 
 
 });

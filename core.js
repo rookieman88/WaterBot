@@ -110,7 +110,6 @@ bot.on('guildMemberRemove', member => {
 	
         let byembed = new Discord.RichEmbed()
         .setColor("#2E9AFE")
-        .setThumbnail(memberavatar)
         .addField(":hand_splayed:  ㅂㅇㅂㅇ ", `${member}`)
 		.setTimestamp()
 		

@@ -106,7 +106,6 @@ bot.on('guildMemberAdd', member => {
 //user leave
 bot.on('guildMemberRemove', member => {
 	let welcomechannel = member.guild.channels.find('name', '인사');
-    let memberavatar = member.user.avatarURL
     if (!welcomechannel) return;
 	
         let byembed = new Discord.RichEmbed()

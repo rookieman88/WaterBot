@@ -180,7 +180,7 @@ let Yeang;
           };
       } else {
               SlotResult = "운이 없네... [-2000 코인]";
-              let Leang = -3000
+              let Leang = -2000 - Moning
               Yeang = `보상  [ 0원 ] - 게임비 [ ${Moning}원 ] 손익 : [ ${Leang}원 ]`
               WatCoin[message.author.id] = {
                   WatCoin: WatCoin[message.author.id].WatCoin - 2000

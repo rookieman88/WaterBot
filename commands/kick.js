@@ -24,7 +24,7 @@ let kUser = message.guild.member(message.mentions.users.first() || message.guild
 	
 	 message.channel.send(`
                       
-		      ${kUser} 가 경고되었습니다.
+		      ${kUser} 가 추방되었습니다.
 		      사유는 [ ${kReason} ] 입니다.
 		      
 		      `)

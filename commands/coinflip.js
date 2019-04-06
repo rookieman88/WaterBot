@@ -5,22 +5,29 @@ module.exports.run = async (bot, message, args) => {
 
 
   let coinAmt = Math.floor(Math.random() * (3)) + 0;
-  let coinAmtMent; 
+  let mal;
+let bumal;
 
 
 
 
+	
+	
   if (coinAmt === 0) {
-    message.channel.send(`동전을 던집니다! 결과는?
-    앞이네요!`);
+    mal = `동전을 던집니다! 결과는?`
+    bumal = `앞이네요!`
       
   } else if (coinAmt === 1) {
-          message.channel.send(`동전을 던집니다! 결과는?
-    뒤네요..`);
+          mal = `동전을 던집니다! 결과는?`
+    bumal = `뒤네요..`
   } else if  (coinAmt === 2) {
-	  message.channel.send(`동전을 던집니다! 결과는?
- 섯다!`);
+	  mal`동전을 던집니다! 결과는?`
+ bumal = `섯다!`
   };
+	
+	let malembed = new discord.RichEmbed()
+	.setAuthor(message.author.username)
+	.addField(mal, bumal)
 		
 }
 

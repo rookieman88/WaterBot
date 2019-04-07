@@ -119,54 +119,7 @@ bot.on('guildMemberRemove', member => {
 });
 
 
-//----------------------------------------------------------stock
-
-let onemoney = jusic[1].jusic
-let twomoney = jusic[2].jusic
-let thrmoney = jusic[3].jusic
-let fourmoney = jusic[4].jusic
-let fivmoney = jusic[5].jusic
-let sixmoney = jusic[6].jusic
-
-bot.on('ready', () => {
-	
-
-		
-		
-	
-     setInterval(() => {
-	     
-let onestock = Math.floor(Math.random() * (999)) + 0;
-let twostock = Math.floor(Math.random() * (999)) + 0;
-let threestock = Math.floor(Math.random() * (999)) + 0;
-let fourstock = Math.floor(Math.random() * (999)) + 0;
-let fivestock = Math.floor(Math.random() * (999)) + 0;
-let sixstock = Math.floor(Math.random() * (999)) + 0;
-	     
-let onestockeq = Math.floor(Math.random() * (2)) + 0;
-let twostockeq = Math.floor(Math.random() * (2)) + 0;
-let threestockeq = Math.floor(Math.random() * (2)) + 0;
-let fourstockeq = Math.floor(Math.random() * (2)) + 0;
-let fivestockeq = Math.floor(Math.random() * (2)) + 0;
-let sixstockeq = Math.floor(Math.random() * (2)) + 0;
-
-
- if (onestockeq === 0) {
-	 jusic: onemoney - parseInt(onestock)
- };
-	 
-	 
-	     
-	     
-	     
-	     
-	     
-	     
-	     
-	     
-	     
-    }, 60000);
-});
+//----------------------------------------------------------stock (beta)
 
 
 
@@ -176,7 +129,6 @@ let sixstockeq = Math.floor(Math.random() * (2)) + 0;
 
 
 bot.afk = new Map();
-
 bot.on("message", async message => {
 
 	        let prefix = botconfig.prefix;
@@ -189,12 +141,10 @@ bot.on("message", async message => {
 	
     let mentioned = bot.afk.get(message.mentions.users.first().id);
     if (mentioned) { message.channel.send(`**${mentioned.usertag}** 는 현재 잠수상태입니다. [ 사유: ${mentioned.reason} ]`);
-  }
-  let afkend = new Discord.RichEmbed()
-.addField(` ${message.author} 님의 잠수상태가 끝났습니다!`, `사유: ${mentioned.reason}`)
+  
 
   let afkcheck = bot.afk.get(message.author.id);
-  if (afkcheck) return [bot.afk.delete(message.author.id), message.channel.send(afkend)];
+  if (afkcheck) return [bot.afk.delete(message.author.id), message.channel.send(`${message.author}님의 잠수상태가 끝났습니다.`)];
 	
 	if (!message.content.startsWith(prefix)) { return; } // Don't log Messages Without Prefix
 		console.log(`${message.author.username.toString()} (${message.author.id.toString()})> ${message.content.toString()}`); // input Logging
@@ -210,9 +160,6 @@ bot.on("message", async message => {
 	
 	
 	
-       
-       if(message.author.bot) return;
-	var msg = message.content.toUpperCase();
 	
 
 /*

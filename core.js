@@ -131,9 +131,9 @@ bot.on('guildMemberRemove', member => {
 bot.afk = new Map();
 bot.on("message", async message => {
 	
-		let AfkUser = message.guild.member(message.mentions.users.first());
+
 	
-	    let mentioned = bot.afk.get(AfkUser.id);
+    let mentioned = bot.afk.get(message.mentions.users.first().id);
     if (mentioned) { message.channel.send(`**${mentioned.usertag}** 는 현재 잠수상태입니다. [ 사유: ${mentioned.reason} ]`) };
   
 

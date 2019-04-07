@@ -133,12 +133,23 @@ bot.on("message", async message => {
 	
 
 	
-    let mentioned = bot.afk.get(message.mentions.users.first().id);
-    if (mentioned) { message.channel.send(`**${mentioned.usertag}** 는 현재 잠수상태입니다. [ 사유: ${mentioned.reason} ]`) };
-  
+  if (message.content.includes(message.mentions.users.first())) {
+    bot.afk.forEach(key => {
+      if (key.id == message.mentions.users.first().id) {
+        message.guild.fetchMember(key.id).then(member => {
+          let user_tag = member.user.tag;
+          return message.channel.send(`**${user_tag}** 는 현재 잠수상태입니다. 사유: ${key.reason}`);
+        });
+      }
+    });
+  }
 
-  let afkcheck = bot.afk.get(message.author.id);
-  if (afkcheck) return [bot.afk.delete(message.author.id), message.channel.send(`${message.author}님의 잠수상태가 끝났습니다.`)];
+  bot.afk.forEach(key => {
+    if (message.author.id == key.id) {
+      bot.afk.delete(message.author.id);
+      return message.reply(`${message.author}님의 잠수상태가 끝났습니다.`);
+    }
+});
 	
 
 	        let prefix = botconfig.prefix;

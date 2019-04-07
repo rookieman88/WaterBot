@@ -15,17 +15,19 @@ const Discord = require("discord.js");
 		.addField("사유", reason);
 		
 		let reportschannel = message.guild.channels.find(`name`, "신고");
-	          message.channel.send(`
+	          
+	 
+		if(!reportschannel) return message.channel.send("채널을 찾을 수 없습니다. 신고 체널을 만들어주세요!");
+		
+		 reportschannel.send(reportEmbed);
+	 	          message.channel.send(`
                       
 ${rUser} 를 신고했습니다.
 사유는 [ ${reason} ] 입니다.
 		      
-		      `)
-		if(!reportschannel) return message.channel.send("채널을 찾을 수 없습니다. 신고 체널을 만들어주세요!");
+);
 		
-		 reportschannel.send(reportEmbed);
-		return;
-	}
+	};
 	
 module.exports.help = {
 	name: "신고",

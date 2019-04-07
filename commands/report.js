@@ -8,7 +8,7 @@ const Discord = require("discord.js");
 		
 		
 		let reportEmbed = new Discord.RichEmbed()
-		.set("신고")
+		.setTitle("신고")
 		.setColor("#15f153")
 		.addField("신고받은 유저", `${rUser}`)
 		.addField("시각", message.createdAt)

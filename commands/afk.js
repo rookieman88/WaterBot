@@ -1,6 +1,6 @@
 module.exports.run = async (bot, message, args) => {
 
-    let reason = args.join(' ')
+    let reason = args.join(' ') ? args.join(' ') : '아직 잠수중입니다.';
     let afklist = bot.afk.get(message.author.id);
 
     if (!afklist) {

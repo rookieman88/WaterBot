@@ -140,7 +140,7 @@ bot.on("message", async message => {
 		let cmdFile = bot.commands.get(verify);
 	
     let mentioned = bot.afk.get(message.mentions.users.first().id);
-    if (mentioned) { message.channel.send(`**${mentioned.usertag}** 는 현재 잠수상태입니다. [ 사유: ${mentioned.reason} ]`);
+    if (mentioned) { message.channel.send(`**${mentioned.usertag}** 는 현재 잠수상태입니다. [ 사유: ${mentioned.reason} ]`) };
   
 
   let afkcheck = bot.afk.get(message.author.id);

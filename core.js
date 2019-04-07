@@ -130,6 +130,16 @@ bot.on('guildMemberRemove', member => {
 
 bot.afk = new Map();
 bot.on("message", async message => {
+	
+		let AfkUser = message.guild.member(message.mentions.users.first());
+	
+	    let mentioned = bot.afk.get(AfkUser.id);
+    if (mentioned) { message.channel.send(`**${mentioned.usertag}** 는 현재 잠수상태입니다. [ 사유: ${mentioned.reason} ]`) };
+  
+
+  let afkcheck = bot.afk.get(message.author.id);
+  if (afkcheck) return [bot.afk.delete(message.author.id), message.channel.send(`${message.author}님의 잠수상태가 끝났습니다.`)];
+	
 
 	        let prefix = botconfig.prefix;
 		let msgAr = message.content.split(" ");
@@ -138,14 +148,9 @@ bot.on("message", async message => {
 		let pars = msgAr.slice(1);
 		let verify = i.slice(prefix.length);
 		let cmdFile = bot.commands.get(verify);
-	let AfkUser = message.guild.member(message.mentions.users.first());
-	
-    let mentioned = bot.afk.get(AfkUser.id);
-    if (mentioned) { message.channel.send(`**${mentioned.usertag}** 는 현재 잠수상태입니다. [ 사유: ${mentioned.reason} ]`) };
-  
 
-  let afkcheck = bot.afk.get(message.author.id);
-  if (afkcheck) return [bot.afk.delete(message.author.id), message.channel.send(`${message.author}님의 잠수상태가 끝났습니다.`)];
+	
+
 	
 	if (!message.content.startsWith(prefix)) { return; } // Don't log Messages Without Prefix
 		console.log(`${message.author.username.toString()} (${message.author.id.toString()})> ${message.content.toString()}`); // input Logging

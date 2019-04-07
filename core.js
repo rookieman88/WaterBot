@@ -138,8 +138,9 @@ bot.on("message", async message => {
 		let pars = msgAr.slice(1);
 		let verify = i.slice(prefix.length);
 		let cmdFile = bot.commands.get(verify);
+	let AfkUser = message.guild.member(message.mentions.users.first());
 	
-    let mentioned = bot.afk.get(message.mentions.users.first().id);
+    let mentioned = bot.afk.get(AfkUser.id);
     if (mentioned) { message.channel.send(`**${mentioned.usertag}** 는 현재 잠수상태입니다. [ 사유: ${mentioned.reason} ]`) };
   
 

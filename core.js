@@ -175,7 +175,7 @@ let sixstockeq = Math.floor(Math.random() * (2)) + 0;
 
 
 
-
+bot.afk = new Map();
 bot.on("message", async message => {
 
 	        let prefix = botconfig.prefix;
@@ -185,7 +185,15 @@ bot.on("message", async message => {
 		let pars = msgAr.slice(1);
 		let verify = i.slice(prefix.length);
 		let cmdFile = bot.commands.get(verify);
+	
+    let mentioned = bot.afk.get(message.mentions.users.first().id);
+    if (mentioned) message.channel.send(`**${mentioned.usertag}** 는 현재 잠수상태입니다. [ 사유: ${mentioned.reason} ]`);
+  }
+  let afkend = new Discord.RichEmbed()
+.addField(` ${message.author} 님의 잠수상태가 끝났습니다!`, `사유: ${mentioned.reason}`)
 
+  let afkcheck = bot.afk.get(message.author.id);
+  if (afkcheck) return [bot.afk.delete(message.author.id), message.channel.send(afkend)];
 	
 	if (!message.content.startsWith(prefix)) { return; } // Don't log Messages Without Prefix
 		console.log(`${message.author.username.toString()} (${message.author.id.toString()})> ${message.content.toString()}`); // input Logging

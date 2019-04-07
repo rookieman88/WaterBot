@@ -176,6 +176,7 @@ let sixstockeq = Math.floor(Math.random() * (2)) + 0;
 
 
 bot.afk = new Map();
+
 bot.on("message", async message => {
 
 	        let prefix = botconfig.prefix;
@@ -187,7 +188,7 @@ bot.on("message", async message => {
 		let cmdFile = bot.commands.get(verify);
 	
     let mentioned = bot.afk.get(message.mentions.users.first().id);
-    if (mentioned) message.channel.send(`**${mentioned.usertag}** 는 현재 잠수상태입니다. [ 사유: ${mentioned.reason} ]`);
+    if (mentioned) { message.channel.send(`**${mentioned.usertag}** 는 현재 잠수상태입니다. [ 사유: ${mentioned.reason} ]`);
   }
   let afkend = new Discord.RichEmbed()
 .addField(` ${message.author} 님의 잠수상태가 끝났습니다!`, `사유: ${mentioned.reason}`)

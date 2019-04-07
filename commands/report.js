@@ -28,5 +28,5 @@ ${rUser} 를 신고했습니다.
 	}
 	
 module.exports.help = {
-	name: "신고"
+	name: "신고",
 }

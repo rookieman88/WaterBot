@@ -147,7 +147,7 @@ bot.on("message", async message => {
   bot.afk.forEach(key => {
     if (message.author.id == key.id) {
       bot.afk.delete(message.author.id);
-      return message.channel.send(`${message.author.}님의 잠수상태가 끝났습니다.`);
+      return message.channel.send(`${message.author.username}님의 잠수상태가 끝났습니다.`);
     }
 });
 	

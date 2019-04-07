@@ -11,7 +11,7 @@ module.exports.run = async (bot, message, args) => {
 
         bot.afk.set(message.author.id, construct);
         message.channel.send(`
-${message.author} 님의 잠수상태가 시작되었습니다
+${message.author.username} 님의 잠수상태가 시작되었습니다
 사유: ${reason}`);
     }
 

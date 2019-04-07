@@ -24,7 +24,8 @@ const Discord = require("discord.js");
                       
 ${rUser} 를 신고했습니다.
 사유는 [ ${reason} ] 입니다.
-		      
+
+`
 );
 		
 	};

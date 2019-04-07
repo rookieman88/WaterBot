@@ -43,7 +43,7 @@ if(Moning < 1000) return message.reply(" `1000윈` 이상의 돈을 걸어야 �
       } else if (Ran1 <= 95) {
           Slot1 = ":potato:";
       } else if (Ran1 <= 99) {
-          Slot1 = ":cherres:";
+          Slot1 = ":cherries:";
       } else if (Ran1 == 100) {
           Slot1 = ":rosette:";
       }
@@ -62,7 +62,7 @@ if(Moning < 1000) return message.reply(" `1000윈` 이상의 돈을 걸어야 �
       } else if (Ran2 <= 75) {
           Slot2 = ":potato:";
       } else if (Ran2 <= 85) {
-          Slot2 = ":cherres:";
+          Slot2 = ":cherries:";
       } else if (Ran2 <= 100) {
           Slot2 = ":rosette:";
       }
@@ -81,7 +81,7 @@ if(Moning < 1000) return message.reply(" `1000윈` 이상의 돈을 걸어야 �
       } else if (Ran3 <= 60) {
           Slot3 = ":potato:";
       } else if (Ran3 <= 70) {
-          Slot3 = ":cherres:";
+          Slot3 = ":cherries:";
       } else if (Ran3 <= 100) {
           Slot3 = ":rosette:";
       }

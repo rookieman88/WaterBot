@@ -11,7 +11,9 @@ const bot = new Discord.Client();
  let owner = bot.users.get("417571990820618250")
  
  
- let 
+ let embed = new Discord.RichEmbed()
+ .setTitle(`문의옴`)
+ .addField(`${message.author.id}`, `${reason}`)
  
 owner.send(embed)
 

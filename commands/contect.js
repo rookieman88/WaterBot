@@ -10,11 +10,13 @@ const bot = new Discord.Client();
 		
  let owner = bot.users.get("417571990820618250")
  
- let txt = new Discord.RichEmbed()
- .setAuthor(`문의가 왔다! ${message.author}`)
- .addField("문의 내용", reason)
+owner.send({embed: {
+  color: 3447003,
+  author: "문의가 왔다!",
+  title: `${message.author}`,
+  description: `${reason}`
+}});
  
- owner.send(txt)
 	 	          message.channel.send(`
                       
 문의가 완료되었습니다

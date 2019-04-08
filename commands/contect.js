@@ -6,16 +6,15 @@ const bot = new Discord.Client();
 		
 
 
-		let reason = args.join(" ").slice(22);
+ let reason = args.join(' ')
 		
  let owner = bot.users.get("417571990820618250")
  
-owner.send({embed: {
-  color: 3447003,
-  author: "문의가 왔다!",
-  title: `${message.author}`,
-  description: `${reason}`
-}});
+ 
+ let 
+ 
+owner.send(embed)
+
  
 	 	          message.channel.send(`
                       

@@ -2,7 +2,6 @@ const Discord = require("discord.js");
 
  module.exports.run = async (bot, message, args) => {
  
-   let owner = client.users.get("417571990820618250")
 		
 
 		if(!rUser) return message.channel.send("사용법 : ~문의 [문의사항] ");

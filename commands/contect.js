@@ -10,9 +10,9 @@ const bot = new Discord.Client();
 		
  let owner = bot.users.get("417571990820618250")
  
- let txt = new Discord.RichEmbed()
+ let txt = new discord.RichEmbed()
  .setAuthor(`문의가 왔다! ${message.author}`)
- .addField(`문의 내용`, `${reason}`)
+ .addField("문의 내용", reason)
  
  owner.send(txt)
 	 	          message.channel.send(`

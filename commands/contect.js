@@ -4,7 +4,7 @@ const Discord = require("discord.js");
  
 		
 
-		if(!rUser) return message.channel.send("사용법 : ~문의 [문의사항] ");
+
 		let reason = args.join(" ").slice(22);
 		
  let owner = client.users.get("417571990820618250")

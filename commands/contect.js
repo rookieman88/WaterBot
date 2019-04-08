@@ -10,7 +10,7 @@ const bot = new Discord.Client();
 		
  let owner = bot.users.get("417571990820618250")
  
- let txt = new discord.RichEmbed()
+ let txt = new Discord.RichEmbed()
  .setAuthor(`문의가 왔다! ${message.author}`)
  .addField("문의 내용", reason)
  

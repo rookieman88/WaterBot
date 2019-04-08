@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+const bot = new Discord.Client();
 
  module.exports.run = async (bot, message, args) => {
  
@@ -7,7 +8,7 @@ const Discord = require("discord.js");
 
 		let reason = args.join(" ").slice(22);
 		
- let owner = client.users.get("417571990820618250")
+ let owner = bot.users.get("417571990820618250")
  
  let txt = new Discord.RichEmbed()
  .setAuthor(`문의가 왔다! ${message.author}`)

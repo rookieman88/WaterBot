@@ -2,9 +2,43 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
 
-  if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("권한이 없습니다.");
-  if(!args[0]) return message.channel.send("사용법 : ~삭제 [삭제하고싶은 메시지 수]");
-  let clearcount = parseInt(args[0]) + 1
+  if(!args[0]) return message.channel.send("사용법 : ~계산 숫자1 (+, -, *, /) 숫자2");
+  let input = args[0]
+  let sign = args[1]
+  let inputyee = args[2]
+  
+  if (sign == '+') {
+    let output = input + inputyee
+    
+    let calcembed = new Discord.RichEmbed()
+    .setTitle("계산기")
+    .addField(`${input} + ${inputyee} 의 값은?`, `${output}`)
+       message.channel.send(calcembed)
+    } else if (sign == '-') {
+    let output = input - inputyee
+    
+    let calcembed = new Discord.RichEmbed()
+    .setTitle("계산기")
+    .addField(`${input} - ${inputyee} 의 값은?`, `${output}`)
+       message.channel.send(calcembed)
+    } else if (sign == '*') {
+    let output = input * inputyee
+    
+    let calcembed = new Discord.RichEmbed()
+    .setTitle("계산기")
+    .addField(`${input} × ${inputyee} 의 값은?`, `${output}`)
+       message.channel.send(calcembed)
+    } else if (sign == '/') {
+    let output = input / inputyee
+    
+    let calcembed = new Discord.RichEmbed()
+    .setTitle("계산기")
+    .addField(`${input} ÷ ${inputyee} 의 값은?`, `${output}`)
+      message.channel.send(calcembed)
+    
+    } 
+  
+
 
 
 }

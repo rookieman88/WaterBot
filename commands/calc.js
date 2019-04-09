@@ -3,13 +3,12 @@ const Discord = require("discord.js");
 module.exports.run = async (bot, message, args) => {
 
   if(!args[0]) return message.channel.send("사용법 : ~계산 숫자1 (+, -, *, /) 숫자2");
-  let input = args[0]
+  var input = args[0]
   let sign = args[1]
-  let inputyee = args[2]
+  var inputyee = args[2]
   
   if (sign == '+') {
-    let output;
-   output = input + inputyee
+    var output = input + inputyee
     
     let calcembed = new Discord.RichEmbed()
     .setTitle("계산기")

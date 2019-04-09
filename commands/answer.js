@@ -28,6 +28,7 @@ owner.send(embed)
 답변 내용은 [ ${reason} ] 입니다.
 `
 );
+ }
 		
 	};
 	

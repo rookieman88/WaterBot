@@ -19,7 +19,7 @@ const bot = new Discord.Client();
  let embed = new Discord.RichEmbed()
  .addField(`답변옴`, `${reason}`)
  
-owner.send(embed)
+User.send(embed)
 
  
 	 	          message.channel.send(`

@@ -9,11 +9,12 @@ const bot = new Discord.Client();
 
 		
  let owner = "417571990820618250"
+ 
 
  
  if (message.author.id === owner) {
- 
-  let User = bot.users.get(args[0])
+ let human = args[0]
+  let User = bot.users.get(`${human}`)
    let reason = args[1]
  
  let embed = new Discord.RichEmbed()

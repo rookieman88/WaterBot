@@ -36,8 +36,8 @@ module.exports.run = async (bot, message, args) => {
     .addField(`${input} ÷ ${inputyee} 의 값은?`, `${output}`)
       message.channel.send(calcembed)
     
-    } else if (sign == '루트') {
-      let reallyfu = parseInt(input)
+    } else if (input == '루트') {
+      let reallyfu = parseInt(sign)
     let output = Math.sqrt(reallyfu);
     
     let calcembed = new Discord.RichEmbed()

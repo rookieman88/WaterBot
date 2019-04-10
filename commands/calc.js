@@ -52,7 +52,7 @@ module.exports.run = async (bot, message, args) => {
     
     let calcembed = new Discord.RichEmbed()
     .setTitle("계산기")
-    .addField(`{sign}의 ${inputyee} 제곱 값은?`, `${output}`)
+    .addField(`${sign}의 ${inputyee} 제곱 값은?`, `${output}`)
        message.channel.send(calcembed)
       
     }

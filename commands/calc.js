@@ -44,6 +44,8 @@ module.exports.run = async (bot, message, args) => {
     .setTitle("계산기")
     .addField(`루트 ${input} 의 값은?`, `${output}`)
        message.channel.send(calcembed)
+      
+    }
   
 
 

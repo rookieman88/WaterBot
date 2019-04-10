@@ -45,6 +45,15 @@ module.exports.run = async (bot, message, args) => {
     .addField(`√${sign} 의 값은?`, `${output}`)
        message.channel.send(calcembed)
       
+    } else if (input == '제곱') {
+      let reallyfu = parseInt(sign)
+    let output = Math.pow(reallyfu);
+    
+    let calcembed = new Discord.RichEmbed()
+    .setTitle("계산기")
+    .addField(`√${sign} 의 값은?`, `${output}`)
+       message.channel.send(calcembed)
+      
     }
   
 

@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args) => {
   var inputyee = args[2]
   
   if (sign == '+') {
-    var output = input + inputyee
+    var output = parseInt(input) + parseInt(inputyee)
     
     let calcembed = new Discord.RichEmbed()
     .setTitle("계산기")

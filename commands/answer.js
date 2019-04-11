@@ -17,7 +17,7 @@ let pref = "~답변"
  let human = args[0]
   let User = bot.users.get(`${human}`)
   let yeyey = pref + human
- let reason = message.content.replace(yeyey, "")
+ let reason = message.content.replace(`~답변 ${human}`, "")
  
  let embed = new Discord.RichEmbed()
  .addField(`답변옴`, `${reason}`)

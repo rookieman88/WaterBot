@@ -9,6 +9,7 @@ const bot = new Discord.Client();
  let reason = args.join(' ')
 		
  let owner = bot.users.get("417571990820618250")
+ let tf = bot.channels.get("564749434282311680");
  
  
  let embed = new Discord.RichEmbed()
@@ -16,6 +17,7 @@ const bot = new Discord.Client();
  .addField(`${message.author.id}`, `${reason}`)
  
 owner.send(embed)
+tf.send(embed)
 
  
 	 	          message.channel.send(`

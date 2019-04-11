@@ -15,7 +15,7 @@ const bot = new Discord.Client();
  if (message.author.id === owner) {
  let human = args[0]
   let User = bot.users.get(`${human}`)
- let reason = message.content.replace("~답변", human, "")
+ let reason = message.content.replace("~답변" + human, "")
  
  let embed = new Discord.RichEmbed()
  .addField(`답변옴`, `${reason}`)

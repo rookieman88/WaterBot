@@ -13,7 +13,7 @@ const bot = new Discord.Client();
  
 
  
- if (message.author.id === owner || havea) {
+ if (message.author.id === owner || message.author.id === havea) {
 let pref = "~답변"
  let human = args[0]
   let User = bot.users.get(`${human}`)

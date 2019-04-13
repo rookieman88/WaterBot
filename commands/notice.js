@@ -6,29 +6,21 @@ const client = new Discord.Client();
  let reason = message.content.replace(`~공지`, "")
 
  if (message.author.id === "417571990820618250") {
-let toSay = `${reason}`
-this.client.guilds.map((guild) => {
-  let found = 0
-  toSay = `${reason}`
-  let setting = guild.settings.get('공지')
-  if (setting === 'off') return
-  guild.channels.map((c) => {
-    if (found === 0) {
-      if (c.type === 'text') {
-        if (c.permissionsFor(this.client.user).has('VIEW_CHANNEL') === true) {
-          if (c.permissionsFor(this.client.user).has('SEND_MESSAGES') === true) {
-            c.send(toSay)
-            found = 1
-          }
-        }
-      }
-    }
-  })
-})
+bot.guilds.forEach((guild) => { //for each guild the bot is in
+         let defaultChannel = "";
+         guild.channels.forEach((channel) => {
+               if(channel.type == "text" && defaultChannel == "") {
+               if(channel.permissionsFor(guild.me).has("SEND_MESSAGES")) {
+                   defaultChannel = channel;
+               }
+               }
+         })
+	
+	defaultChannel.send(`${reason}`)
 
 message.channel(`
   공지 발신 성공!
-  내용 : "${toSay}"
+  내용 : "${reason}"
   `)
 } else {return message.channel.send("권한이 없습니다") }
     

@@ -12,7 +12,7 @@ const client = new Discord.Client();
         let found = 0
         guild.channels.map((c) => {
           if (found === 0) {
-            if (c.type === "공지") {
+            if (c.type === "text") {
               if (c.permissionsFor(this.client.user).has("VIEW_CHANNEL") === true) {
                 if (c.permissionsFor(this.client.user).has("SEND_MESSAGES") === true) {
                   c.send(toSay);

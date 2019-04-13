@@ -7,6 +7,8 @@ module.exports.run = async (bot, message, args) => {
   
   if (message.author.id === "417571990820618250") {
     
+  let act = args[0]
+    
   let human;
   
   if (args[0] == "플레이") {
@@ -17,7 +19,7 @@ module.exports.run = async (bot, message, args) => {
     human = 1
   }
   
-     let reason = message.content.replace(`~봇게임 ${human}`, "")
+     let reason = message.content.replace(`~봇게임 ${act} `, "")
 
    
   if (human === 1) {

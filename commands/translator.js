@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const translator = require("google-translate-api");
+const translate = require("google-translate-api");
 
 module.exports.run = async (bot, message, args) => {
 
@@ -14,7 +14,7 @@ let output;
   
   if (input == '영어') {
    
-   translator(`${fo}`, {to: 'en'}).then(res => {
+   translate(fo, {to: 'en'}).then(res => {
     output = (res.text);
     
     let calcembed = new Discord.RichEmbed()
@@ -26,7 +26,7 @@ let output;
 });
        
     } else if (input == '한국어') {
-   translator(`${fo}`, {to: 'ko'}).then(res => {
+   translate(fo, {to: 'ko'}).then(res => {
     output = (res.text);
     
     let calcembed = new Discord.RichEmbed()

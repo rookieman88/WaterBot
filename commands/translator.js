@@ -24,7 +24,7 @@ let output;
    });
        
     } else if (input == '한국어') {
-   translator(`${fo}`, {to: 'kr'}).then(res => {
+   translator(`${fo}`, {to: 'ko'}).then(res => {
     output = (res.text);
     
     let calcembed = new Discord.RichEmbed()

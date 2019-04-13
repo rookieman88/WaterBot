@@ -3,6 +3,10 @@ const client = new Discord.Client
 
 module.exports.run = async (bot, message, args) => {
 
+  
+  
+  if (message.author.id === "417571990820618250") {
+    
   let human;
   
   if (args[0] == "플레이") {
@@ -18,13 +22,18 @@ module.exports.run = async (bot, message, args) => {
    
   if (human === 1) {
   
-  client.user.setActivity(`${reason}`, {type: "PLAYING"});
+ bot.user.setActivity(`${reason}`, {type: "PLAYING"});
   
   } else if (human === 2) {
     
-  client.user.setActivity(`${reason}`, {type: "WATCHING"});
+  bot.user.setActivity(`${reason}`, {type: "WATCHING"});
     
     }
+    
+  } else {
+    message.channel.send("권한이 없습니다!")
+    
+  }
                                         
   
 

@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args) => {
   var inputyee = args[2]
   
   
-let fo = message.content.replace(`~번역`, "")
+let fo = message.content.replace(`~번역 ${input}`, "")
 let output;
   
   

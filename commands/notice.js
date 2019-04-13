@@ -25,30 +25,7 @@ this.client.guilds.map((guild) => {
     }
   })
 })
-message.reply(`Execution completed. Shouted "${toSay}"`)
-} else if (message.author.id === '251383432331001856') {
-let toSay = `${args.msg}
-~Chrono, SmoreSoftware Founder & Retired Developer`
-this.client.guilds.map((guild) => {
-  let found = 0
-  toSay = `${args.msg}
-~Chrono, SmoreSoftware Founder & Retired Developer
-Want to turn these announcements off? Do \`${guild.commandPrefix}settings add announcements off\` to opt out.`
-  let setting = guild.settings.get('announcements')
-  if (setting === 'off') return
-  guild.channels.map((c) => {
-    if (found === 0) {
-      if (c.type === 'text') {
-        if (c.permissionsFor(this.client.user).has('VIEW_CHANNEL') === true) {
-          if (c.permissionsFor(this.client.user).has('SEND_MESSAGES') === true) {
-            c.send(toSay)
-            found = 1
-          }
-        }
-      }
-    }
-  })
-})
+
 message.channel(`
   공지 발신 성공!
   내용 : "${toSay}"

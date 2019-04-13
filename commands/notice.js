@@ -6,13 +6,27 @@ const client = new Discord.Client();
  let reason = message.content.replace(`~공지`, "")
 
  if (message.author.id === "417571990820618250") {
-        var guildList = client.guilds.array();
-        try {
-            guildList.forEach(guild => guild.channels.find(`name`,`공지`).send(`${reason}`));
-		console.log("공지 발송 성공!")
-        } catch (err) {
-            console.log("공지 발신이 안된 서버도 있다!");
-	}
+    try {
+      let toSay = `${reason}`
+      this.client.guilds.map((guild) => {
+        let found = 0
+        guild.channels.map((c) => {
+          if (found === 0) {
+            if (c.type === "공지") {
+              if (c.permissionsFor(this.client.user).has("VIEW_CHANNEL") === true) {
+                if (c.permissionsFor(this.client.user).has("SEND_MESSAGES") === true) {
+                  c.send(toSay);
+                  found = 1;
+                }
+              }
+            }
+          }
+        });
+      });
+    }
+    catch (err) {
+      console.log("공지 발송 실패!");
+    }
        
    message.channel.send(`
 공지 발신이 완료되었습니다

@@ -14,7 +14,7 @@ const client = new Discord.Client();
            if (c.type === "text") {
              if (c.permissionsFor(this.client.user).has("VIEW_CHANNEL") === true) {
                if (c.permissionsFor(this.client.user).has("SEND_MESSAGES") === true) {
-                 guild.channels.find(`name`,`welcome`).send(`${reason}`);
+                 guild.channels.find(`name`,`공지`).send(`${reason}`);
                  found = 1;
                }
              }

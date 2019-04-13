@@ -21,7 +21,9 @@ let output;
     .setTitle("번역기")
     .addField(`${fo} 을 영어로`, `${output}`)
        message.channel.send(calcembed)
-   });
+   }).catch(err => {
+    console.error(err);
+});
        
     } else if (input == '한국어') {
    translator(`${fo}`, {to: 'ko'}).then(res => {
@@ -31,7 +33,9 @@ let output;
     .setTitle("번역기")
     .addField(`${fo} 을 한국어로`, `${output}`)
        message.channel.send(calcembed)
-     });
+     }).catch(err => {
+    console.error(err);
+});
     }
                                         
   

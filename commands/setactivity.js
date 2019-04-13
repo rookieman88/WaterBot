@@ -17,7 +17,7 @@ module.exports.run = async (bot, message, args) => {
     human = 1
   }
   
-     let reason = message.content.replace(`~답변 ${human}`, "")
+     let reason = message.content.replace(`~봇게임 ${human}`, "")
 
    
   if (human === 1) {

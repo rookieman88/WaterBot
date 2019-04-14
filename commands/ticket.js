@@ -41,25 +41,25 @@ let Ran70 = Math.floor(Math.random() * (10)) + 0;
 let itgo = 0
 		
 if (Ran1 === Ran10) {
-	itgo = parseInt(0) + parseInt(1)
+	itgo = parseInt(itgo) + parseInt(1)
 }
 if (Ran2 === Ran20) {
-	itgo = parseInt(0) + parseInt(1)
+	itgo = parseInt(itgo) + parseInt(1)
 }
 if (Ran3 === Ran30) {
-	itgo = parseInt(0) + parseInt(1)
+	itgo = parseInt(itgo) + parseInt(1)
 }
 if (Ran4 === Ran40) {
-	itgo = parseInt(0) + parseInt(1)
+	itgo = parseInt(itgo) + parseInt(1)
 }
 if (Ran5 === Ran50) {
-	itgo = parseInt(0) + parseInt(1)
+	itgo = parseInt(itgo) + parseInt(1)
 }
 if (Ran6 === Ran60) {
-	itgo = parseInt(0) + parseInt(1)
+	itgo = parseInt(itgo) + parseInt(1)
 }
 if (Ran7 === Ran70) {
-	itgo = parseInt(0) + parseInt(1)
+	itgo = parseInt(itgo) + parseInt(1)
 }
 		
 		let mal;

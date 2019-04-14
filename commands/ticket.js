@@ -19,6 +19,7 @@ const superagent = require("superagent");
 		let ddong = 1000
 
   if(sCoins < ddong) return message.reply("복권을 구매하려면 `1000` 원 이상의 돈이 필요합니다.");
+		message.reply(`1000원으로 복권 1개를 구매했다!`)
 		
 		
 let Ran1 = Math.floor(Math.random() * (10)) + 0; 

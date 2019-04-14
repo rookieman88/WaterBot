@@ -105,6 +105,8 @@ if (itgo === 1) {
 	  WatCoin[message.author.id] = {
     WatCoin: sCoins + parseInt(good)
   };
+} else {
+	mal = `0개 당첨! [ 손익 : -1000코인 ]`
 }
 
 	

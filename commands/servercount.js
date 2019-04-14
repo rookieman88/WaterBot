@@ -13,7 +13,7 @@ const bot = new Discord.Client();
  
 
  
- if (message.author.id === owner || havea) {
+ if (message.author.id === owner || message.author.id === havea) {
 
 let servercount = bot.guilds.size
  

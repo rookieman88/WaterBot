@@ -25,10 +25,16 @@ module.exports.run = async (bot, message, args) => {
   if (human === 1) {
   
  bot.user.setActivity(`${reason}`, {type: "PLAYING"});
+    message.channel.send(`
+워터봇이 ${reason} 을 플레이하게 하였습니다. (상태메시지 확인)
+`)
   
   } else if (human === 2) {
     
   bot.user.setActivity(`${reason}`, {type: "WATCHING"});
+       message.channel.send(`
+워터봇이 ${reason} 을 시청하게 하였습니다. (상태메시지 확인)
+`)
     
     }
     

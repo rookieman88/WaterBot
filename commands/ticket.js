@@ -23,19 +23,19 @@ const superagent = require("superagent");
 		
 		
 let Ran1 = Math.floor(Math.random() * (10)) + 0; 
-let Ran2 = Math.floor(Math.random() * (20)) + 0; 
-let Ran3 = Math.floor(Math.random() * (20)) + 0; 
-let Ran4 = Math.floor(Math.random() * (20)) + 0; 
-let Ran5 = Math.floor(Math.random() * (20)) + 0; 
-let Ran6 = Math.floor(Math.random() * (20)) + 0; 
-let Ran7 = Math.floor(Math.random() * (20)) + 0; 
-let Ran10 = Math.floor(Math.random() * (20)) + 0; 
-let Ran20 = Math.floor(Math.random() * (20)) + 0; 
-let Ran30 = Math.floor(Math.random() * (20)) + 0; 
-let Ran40 = Math.floor(Math.random() * (20)) + 0; 
-let Ran50 = Math.floor(Math.random() * (20)) + 0; 
-let Ran60 = Math.floor(Math.random() * (20)) + 0; 
-let Ran70 = Math.floor(Math.random() * (20)) + 0; 
+let Ran2 = Math.floor(Math.random() * (10)) + 0; 
+let Ran3 = Math.floor(Math.random() * (10)) + 0; 
+let Ran4 = Math.floor(Math.random() * (10)) + 0; 
+let Ran5 = Math.floor(Math.random() * (10)) + 0; 
+let Ran6 = Math.floor(Math.random() * (10)) + 0; 
+let Ran7 = Math.floor(Math.random() * (10)) + 0; 
+let Ran10 = Math.floor(Math.random() * (10)) + 0; 
+let Ran20 = Math.floor(Math.random() * (10)) + 0; 
+let Ran30 = Math.floor(Math.random() * (10)) + 0; 
+let Ran40 = Math.floor(Math.random() * (10)) + 0; 
+let Ran50 = Math.floor(Math.random() * (10)) + 0; 
+let Ran60 = Math.floor(Math.random() * (10)) + 0; 
+let Ran70 = Math.floor(Math.random() * (10)) + 0; 
 
 	
 let itgo = 0

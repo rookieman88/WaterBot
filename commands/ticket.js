@@ -28,14 +28,13 @@ let Ran5 = Math.floor(Math.random() * (100)) + 0;
 let Ran6 = Math.floor(Math.random() * (100)) + 0; 
 let Ran7 = Math.floor(Math.random() * (100)) + 0; 
 
-		
-		
+	
 		
 
  let giveembed = new Discord.RichEmbed()
  .setColor("#6699ff")
  .setAuthor(`${message.author.username}`)
- .addField(`복권`, `|| ${Ran1} ${Ran2} ${Ran3} ${Ran4} ${Ran5} ${Ran6} ${Ran7} ||`)
+ .addField(`복권`, ` || ${Ran1} ${Ran2} ${Ran3} ${Ran4} ${Ran5} ${Ran6} ${Ran7} || `)
  
 		
 		
@@ -53,7 +52,7 @@ let Ran7 = Math.floor(Math.random() * (100)) + 0;
 
  superagent.put("https://api.jsonbin.io/b/5c6e98737bded36fef1b5240").send(WatCoin).catch((err) => console.log(err));
 });
-}
+
     
 		
 	};

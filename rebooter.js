@@ -30,3 +30,6 @@ if(message.content.startsWith(`워터봇 재부팅`)){
 }
 }
 });
+
+let thetoken = process.env.BOT_TOKEN
+bot.login(thetoken)

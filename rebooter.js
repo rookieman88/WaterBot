@@ -10,21 +10,10 @@ const API = require("discord.js");
 const superagent = require("superagent");
 const fs = require("fs");
 
-
-/*
-// file reads-------------------------
-fs.readdir("./", (err, files) => {
-
-  if(err) console.log(err);
-
-  let jsfile = files.filter(f => f.split(".").pop() === "js")
-  if(jsfile.length <= 0){
-    console.log("커맨드를 찾을수 없습니다");
-    return;
-  }
-
-  jsfile.forEach((f, i) =>{ */
-
+bot.on("message", async message => {
+	
+if(message.content.startsWith(`워터봇 재부팅`)){
+ if(message.author.id === "417571990820618250") {
 
     let props = require(`./core.js`);
 	bot.commands.set('core', props);
@@ -33,3 +22,11 @@ fs.readdir("./", (err, files) => {
   let commandfile = bot.commands.get('core')
 
   commandfile.run;
+	 
+	 message.channel.send("성공적으로 재부팅이 완료되었습니다!")
+ } else { return message.channel.send("당신은 오아시스가 아닙니다.")
+
+	
+}
+}
+});

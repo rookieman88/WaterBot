@@ -16,9 +16,7 @@ module.exports.run = async (bot, message, args) => {
 		if (titleinput === "취소") { message.channel.send("취소되었습니다.").then((q) => q.delete(2000)); } else {
  title = titleinput
                         }
-                    }
-                }
-            }
+
 
     const filter = (m) => m.author.id === message.author.id;
     message.channel.send("부제목을 입력해주세요. (취소하고싶으면 '취소' 입력)").then((q) => q.delete(60000));
@@ -31,8 +29,7 @@ module.exports.run = async (bot, message, args) => {
         if (cbody === "취소") { message.channel.send("취소되었습니다.").then((q) => q.delete(2000)); } else {
 one = butitle
                     }
-                }
-            }
+
 
     const filter = (m) => m.author.id === message.author.id;
     message.channel.send("내용을 입력해주세요. (취소하고싶으면 '취소' 입력)").then((q) => q.delete(60000));
@@ -45,12 +42,7 @@ one = butitle
         if (backg === "취소") { message.channel.send("취소되었습니다.").then((q) => q.delete(2000)); } else {
   onedes = backg
                                     }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+
 
     const filter = (m) => m.author.id === message.author.id;
     message.channel.send(`설명을 적어주세요.`).then((q) => q.delete(60000));

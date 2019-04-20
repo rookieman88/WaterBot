@@ -15,7 +15,7 @@ module.exports.run = async (bot, message, args) => {
         let titleinput = collected.first().content;
 		if (titleinput === "취소") { message.channel.send("취소되었습니다.").then((q) => q.delete(2000)); } else {
  title = titleinput
-                        }
+                        
 
 
     const filter = (m) => m.author.id === message.author.id;
@@ -26,9 +26,9 @@ module.exports.run = async (bot, message, args) => {
     }).then((collected) => {
         let butitle = collected.first().content;
         collected.delete();
-        if (cbody === "취소") { message.channel.send("취소되었습니다.").then((q) => q.delete(2000)); } else {
+        if (butitle === "취소") { message.channel.send("취소되었습니다.").then((q) => q.delete(2000)); } else {
 one = butitle
-                    }
+                    
 
 
     const filter = (m) => m.author.id === message.author.id;
@@ -41,7 +41,7 @@ one = butitle
         collected.delete();
         if (backg === "취소") { message.channel.send("취소되었습니다.").then((q) => q.delete(2000)); } else {
   onedes = backg
-                                    }
+                                    
 
 
     const filter = (m) => m.author.id === message.author.id;

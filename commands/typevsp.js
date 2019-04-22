@@ -58,8 +58,10 @@ let titleinput = collected.first().content;
         .addField(`빨리 " ${titleinput} " 을(를) 입력하세요!`, `빨리빨리!`)
 	
 	msg.edit(gogo)
-	
- const fillter = (u) => titleinput === message.content
+
+		      setTimeout(() => {
+		     
+ const fillter = (u) => message.content === titleinput
 
 	     message.channel.awaitMessages(fillter, {
 		max: 1
@@ -72,7 +74,7 @@ let titleinput = collected.first().content;
     msg.edit(nvm)
 
 
-
+ }, 5000)
 
 
 });

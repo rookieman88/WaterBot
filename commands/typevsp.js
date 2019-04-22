@@ -25,27 +25,32 @@ let ready = new Discord.RichEmbed()
         
 	 let saram = ranNum = Math.floor(Math.random() * (3)) + 0;
 	 
-	 let itgo;     
+	 let itgo;
+	      let itgo2;
 	      
 	 if(saram === 1) {
-	 itgo = p1
+	 itgo = collected.array()[0].users.array()[1].username
+		 itgo2 = p1
 	 }else if (saram === 2){
-	 itgo = p2 
+	 itgo = collected.array()[0].users.array()[2].username
+		 itgo2 = p2
 	 } else if (saram === 3){
-	 itgo = p3
+	 itgo = collected.array()[0].users.array()[3].username
+		 itgo2 = p3
 	 } else {
-	 itgo = p3
+	 itgo = collected.array()[0].users.array()[4].username
+		 itgo2 = p3
 	 }
 	      
-	      let userr = itgo.username
+
         
         let start = new Discord.RichEmbed()
         .setTitle('시작')
-        .addField(`${userr} 님! 문장을 입력해 주세요`)
+        .addField(` ${itgo} 님! 문장을 입력해 주세요`)
 	
 	msg.edit(start)
 	
-	 const filter = (m) => m.author.id === itgo;
+	 const filter = (m) => m.author.id === itgo2;
 	 
 	     message.channel.awaitMessages(filter, {
 		max: 1,
@@ -59,9 +64,8 @@ let titleinput = collected.first().content;
 	
 	msg.edit(gogo)
 
-		      setTimeout(() => {
 		     
- const fillter = (u) => message.content === titleinput
+ const fillter = (message) => message.content === titleinput
 
 	     message.channel.awaitMessages(fillter, {
 		max: 1
@@ -74,7 +78,6 @@ let titleinput = collected.first().content;
     msg.edit(nvm)
 
 
- }, 5000)
 
 
 });

@@ -53,11 +53,11 @@ let titleinput = collected.first().content;
 
         let gogo = new Discord.RichEmbed()
         .setTitle('짜잔!')
-        .addField(`빨리 ${titleinput} 을 입력하세요!`)
+        .addField(`빨리 " ${titleinput} " 을(를) 입력하세요!`, `빨리빨리!`)
 	
 	msg.edit(gogo)
 	
- const fillter = (u) => titleinput === message.content && u.id !== itgo
+ const fillter = (u) => titleinput === message.content
 
 	     message.channel.awaitMessages(fillter, {
 		max: 1

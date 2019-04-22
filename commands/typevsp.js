@@ -46,7 +46,7 @@ let ready = new Discord.RichEmbed()
         
         let start = new Discord.RichEmbed()
         .setTitle('시작')
-        .addField(` ${itgo} 님! 문장을 입력해 주세요`)
+        .addField(` ${itgo} 님! 문장을 입력해 주세요`, `빨리빨리!`)
 	
 	msg.edit(start)
 	

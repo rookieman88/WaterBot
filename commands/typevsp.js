@@ -36,10 +36,12 @@ let ready = new Discord.RichEmbed()
 	 } else {
 	 itgo = p3
 	 }
+	      
+	      let userr = itgo.username
         
         let start = new Discord.RichEmbed()
         .setTitle('시작')
-        .addField(`<@!${itgo}> 님! 문장을 입력해 주세요`)
+        .addField(`${userr} 님! 문장을 입력해 주세요`)
 	
 	msg.edit(start)
 	

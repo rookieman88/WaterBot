@@ -38,7 +38,7 @@ let ready = new Discord.RichEmbed()
 	 itgo = collected.array()[0].users.array()[3].username
 		 itgo2 = p3
 	 } else {
-	 itgo = collected.array()[0].users.array()[4].username
+	 itgo = collected.array()[0].users.array()[3].username
 		 itgo2 = p3
 	 }
 	      

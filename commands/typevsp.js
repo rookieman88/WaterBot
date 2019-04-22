@@ -23,7 +23,7 @@ let ready = new Discord.RichEmbed()
         let p2 = collected.array()[0].users.array()[2].id
         let p3 = collected.array()[0].users.array()[3].id
         
-	 let saram = let ranNum = Math.floor(Math.random() * (3)) + 0;
+	 let saram = ranNum = Math.floor(Math.random() * (3)) + 0;
 	 
 	 let itgo;     
 	      

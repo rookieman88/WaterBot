@@ -8,6 +8,7 @@ if (message.member.roles.has('570219053071859725')) return message.reply("이미
 
     
 await(message.member.addRole('570219053071859725'));
+await(message.member.removeRole('570218937619578880'));
 
 
 message.channel.send(`

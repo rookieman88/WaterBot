@@ -93,7 +93,7 @@ bot.on('guildMemberAdd', member => {
 	
         let welcomembed = new Discord.RichEmbed()
         .setColor("#2E9AFE")
-        .addField(":bust_in_silhouette: 누가 새로 왔네요 ", `${member.usertag} 이분`)
+        .addField(":bust_in_silhouette: 누가 새로 왔네요 ", `${member.user.tag} 이분`)
 	.setFooter(`ID : ${member.id}`)
 		.setTimestamp()
 		
@@ -111,7 +111,7 @@ bot.on('guildMemberRemove', member => {
 	
         let byembed = new Discord.RichEmbed()
         .setColor("#2E9AFE")
-        .addField(":hand_splayed:  ㅂㅇㅂㅇ ", `${member.usertag}`)
+        .addField(":hand_splayed:  ㅂㅇㅂㅇ ", `${member.user.tag}`)
 	.setFooter(`ID : ${member.id}`)
 		.setTimestamp()
 		

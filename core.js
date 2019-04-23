@@ -37,7 +37,7 @@ fs.readdir("./commands/", (err, files) => {
     let props = require(`./commands/${f}`);
     let filenames = f.split(".");
     let filename = filenames[0];
-    console.log(`${f} loaded!`);
+    console.log(`${f} 로딩됨!`);
 	bot.commands.set(props.help.name, props);
   });
 
@@ -93,7 +93,8 @@ bot.on('guildMemberAdd', member => {
 	
         let welcomembed = new Discord.RichEmbed()
         .setColor("#2E9AFE")
-        .addField(":bust_in_silhouette: 누가 새로 왔네요 ", `${member} 이분`)
+        .addField(":bust_in_silhouette: 누가 새로 왔네요 ", `${member.usertag} 이분`)
+	.setFooter(`ID : ${member.id}`)
 		.setTimestamp()
 		
 		
@@ -110,7 +111,8 @@ bot.on('guildMemberRemove', member => {
 	
         let byembed = new Discord.RichEmbed()
         .setColor("#2E9AFE")
-        .addField(":hand_splayed:  ㅂㅇㅂㅇ ", `${member}`)
+        .addField(":hand_splayed:  ㅂㅇㅂㅇ ", `${member.usertag}`)
+	.setFooter(`ID : ${member.id}`)
 		.setTimestamp()
 		
 		

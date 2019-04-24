@@ -4,7 +4,7 @@ const superagent = require("superagent");
 
 module.exports.run = async (bot, message, args) => {
 
-if (args[0] === 인사) {
+if (args[0] === '인사') {
 
        let welcomechannel;
 	superagent.get("https://api.myjson.com/bins/elh6o").then((res) => {

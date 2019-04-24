@@ -5,16 +5,16 @@ if(message.guild.id === '542295644333801472') {
     
 if (message.member.roles.has('570219053071859725')) return message.reply("이미 인증되셨습니다!");
 
-
+message.channel.send(`
+${message.author}
+인증이 완료되었습니다!
+`)
     
 await(message.member.addRole('570219053071859725'));
 await(message.member.removeRole('570218937619578880'));
 
 
-message.channel.send(`
-${message.author}
-인증이 완료되었습니다!
-`)
+
 
 } else { return }
 

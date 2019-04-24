@@ -29,7 +29,7 @@ fs.readdir("./commands/", (err, files) => {
 
   let jsfile = files.filter(f => f.split(".").pop() === "js")
   if(jsfile.length <= 0){
-    console.log("Couldn't find commands.");
+    console.log("음 인식이 안됨;;");
     return;
   }
 
@@ -93,7 +93,7 @@ bot.on('guildMemberAdd', member => {
 	
         let welcomembed = new Discord.RichEmbed()
         .setColor("#2E9AFE")
-        .addField(":bust_in_silhouette: 누가 새로 왔네요 ", `${member.user.tag} 이분`)
+        .addField(":bust_in_silhouette: 누가 새로 왔네요 ", `${member.user.tag} ( ${member} ) 이분`)
 	.setFooter(`ID : ${member.id}`)
 		.setTimestamp()
 		
@@ -111,7 +111,7 @@ bot.on('guildMemberRemove', member => {
 	
         let byembed = new Discord.RichEmbed()
         .setColor("#2E9AFE")
-        .addField(":hand_splayed:  ㅂㅇㅂㅇ ", `${member.user.tag}`)
+        .addField(":hand_splayed:  ㅂㅇㅂㅇ ", `${member.user.tag} ( ${member} ) `)
 	.setFooter(`ID : ${member.id}`)
 		.setTimestamp()
 		

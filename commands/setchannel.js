@@ -6,16 +6,16 @@ module.exports.run = async (bot, message, args) => {
 
 if (args[0] === '인사') {
 
-       let welcomechannel;
+
 	superagent.get("https://api.myjson.com/bins/elh6o").then((res) => {
-		welcomechannel = res.body;
+		let welcomechannel = res.body;
 
   if(!welcomechannel[message.guild.id]){
         welcomechannel[message.guild.id] = {
       welcomechannel: 0
     };
     
-  let msguild = welcomechannel[message.author.id].welcomechannel;
+let msguild = welcomechannel[message.author.id].welcomechannel;
 let chaid = message.channel.id
 
   welcomechannel[message.guild.id] = {
@@ -37,7 +37,7 @@ let chaid = message.channel.id
   let msguild = welcomechannel[message.author.id].welcomechannel;
 
   welcomechannel[message.guild.id] = {
-    welcomechannel: msguild - msgguild
+    welcomechannel: msguild - msguild
   };
   
   message.channel.send('인사 채널이 초기화되었습니다.')

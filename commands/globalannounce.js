@@ -17,12 +17,13 @@ const bot = new Discord.Client();
 
 bot.guilds.forEach(g => {
 	 let reason = message.content.replace(`~공지 `, "")
-g.channels.find(t => t.name == '공지').send(reason);
-	
-	message.channel.send(`
+	 	message.channel.send(`
 발신이 완료되었습니다!
 공지 내용은 [ ${reason} ] 입니다.
 `)
+g.channels.find(t => t.name == '공지').send(reason);
+	
+
 });
  } else {
 	 message.channel.send('당신은 봇 관리자로 등록되어있지 않습니다.')

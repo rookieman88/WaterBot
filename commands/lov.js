@@ -9,7 +9,7 @@ let rannum2 =  Math.floor(Math.random() * (2)) + 0;
 let rannum;
 let onep = args[0]
 let twop = args[1]
-if (rannum2 === 2) {
+if (rannum2 === 1) {
 	
  rannum =  Math.floor(Math.random() * (50)) + 0;
 	

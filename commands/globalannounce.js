@@ -17,10 +17,7 @@ const bot = new Discord.Client();
 
 bot.guilds.forEach(g => {
 	 let reason = message.content.replace(`~공지 `, "")
-	 	message.channel.send(`
-발신이 완료되었습니다!
-공지 내용은 [ ${reason} ] 입니다.
-`)
+
 	let cha = "570257780783448074"
 	let ann = new Discord.RichEmbed()
 	.addField(`워터봇 공지`, `${reason}`)
@@ -29,6 +26,11 @@ let Ch = bot.channels.get(cha)
 	Ch.sendEmbed(ann)
 
 })
+	 	 let reason = message.content.replace(`~공지 `, "")
+	 	message.channel.send(`
+발신이 완료되었습니다!
+공지 내용은 [ ${reason} ] 입니다.
+`)
  } else {
 	 message.channel.send('당신은 봇 관리자로 등록되어있지 않습니다.')
  }

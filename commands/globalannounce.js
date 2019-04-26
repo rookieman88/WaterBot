@@ -19,7 +19,7 @@ bot.guilds.forEach(guild => {
 	 let reason = message.content.replace(`~공지 `, "")
     let ch = guild.channels.find('name', '공지')
     ch.send(reason);
-})
+});
  } else {
 	 message.channel.send('당신은 봇 관리자로 등록되어있지 않습니다.')
 	 

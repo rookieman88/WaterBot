@@ -23,7 +23,6 @@ bot.guilds.forEach(guild => {
  } else {
 	 message.channel.send('당신은 봇 관리자로 등록되어있지 않습니다.')
  }
-	 
 	};
 	
 module.exports.help = {

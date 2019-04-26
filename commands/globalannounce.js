@@ -18,7 +18,8 @@ let pref = "~공지 "
 bot.guilds.forEach(guild => {
     guild.channels.find(t => t.name == '공지').send(pref);
 })
-		
+ }
+	 
 	};
 	
 module.exports.help = {

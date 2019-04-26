@@ -18,7 +18,8 @@ let pref = "~공지 "
 bot.guilds.forEach(guild => {
     guild.channels.find(t => t.name == '공지').send(pref);
 })
- }
+ } else {
+	 message.channel.send('당신은 봇 관리자로 등록되어있지 않습니다.')
 	 
 	};
 	

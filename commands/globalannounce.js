@@ -21,8 +21,8 @@ bot.guilds.forEach(g => {
 발신이 완료되었습니다!
 공지 내용은 [ ${reason} ] 입니다.
 `)
-g.channels.find(t => t.name == '공지').send(reason);
-	
+let Ch = g.channels.find('공지', '공지')
+	Ch.send(reason)
 
 });
  } else {

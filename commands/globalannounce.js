@@ -13,10 +13,12 @@ const bot = new Discord.Client();
 
  
  if (message.author.id === owner) {
-let pref = "~공지 "
+
 
 bot.guilds.forEach(guild => {
-    guild.channels.find(t => t.name == '공지').send(pref);
+	 let reason = message.content.replace(`~공지 `, "")
+    let ch = guild.channels.find('name', '공지')
+    ch.send(reason);
 })
  } else {
 	 message.channel.send('당신은 봇 관리자로 등록되어있지 않습니다.')

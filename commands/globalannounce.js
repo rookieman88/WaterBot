@@ -21,8 +21,11 @@ bot.guilds.forEach(g => {
 발신이 완료되었습니다!
 공지 내용은 [ ${reason} ] 입니다.
 `)
+	let ann = new Discord.RichEmbed()
+	.addField(`워터봇 공지`, `${reason}`)
+	.setFooter('Oasics#5074 가 발신한 공지입니다.')
 let Ch = g.channels.find('name', '공지')
-	Ch.send(reason)
+	Ch.sendEmbed(ann)
 
 })
  } else {

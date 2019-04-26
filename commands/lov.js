@@ -4,11 +4,19 @@ const bot = new Discord.Client();
  module.exports.run = async (bot, message, args) => {
  
 		
-let rannum =  Math.floor(Math.random() * (100)) + 0; 
-
+ 
+let rannum2 =  Math.floor(Math.random() * (2)) + 0; 
+let rannum;
 let onep = args[0]
 let twop = args[1]
-
+if (rannum2 === 2) {
+	
+ rannum =  Math.floor(Math.random() * (50)) + 0;
+	
+}else {
+	
+rannum =  Math.floor(Math.random() * (50)) + 50;
+}
 let embed = new Discord.RichEmbed()
 .setTitle("재미로 보는 궁합!")
 .addField(`${onep} 와 ${twop} 의 궁합은?`, `${rannum}% 입니다!`)

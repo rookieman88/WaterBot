@@ -24,7 +24,7 @@ bot.guilds.forEach(g => {
 let Ch = g.channels.find('공지', '공지')
 	Ch.send(reason)
 
-});
+})
  } else {
 	 message.channel.send('당신은 봇 관리자로 등록되어있지 않습니다.')
  }

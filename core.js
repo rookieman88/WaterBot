@@ -87,7 +87,7 @@ console.log('봇 실행 완료');
 
 //user join
 bot.on('guildMemberAdd', member => {
-superagent.get("https://api.myjson.com/bins/elh6o").then((res) => {
+superagent.get("https://api.myjson.com/bins/1cre9o").then((res) => {
 let welcomechannel = res.body;
 if(!welcomechannel[member.guild.id]){
 	return
@@ -115,7 +115,7 @@ let Ch = member.guild.channels.find('id', cha)
 
 //user leave
 bot.on('guildMemberRemove', member => {
-superagent.get("https://api.myjson.com/bins/elh6o").then((res) => {
+superagent.get("https://api.myjson.com/bins/1cre9o").then((res) => {
 let welcomechannel = res.body;
 if(!welcomechannel[member.guild.id]){
 	return

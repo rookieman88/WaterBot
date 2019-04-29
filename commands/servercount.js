@@ -12,8 +12,8 @@ const bot = new Discord.Client();
  let havea = "417123204469882890"
  
 
- 
-if (JSON.parse(process.env.owners).includes(message.author.id)) {
+ let owners = process.env.owners
+if (owners.includes(message.author.id)) {
 
 let servercount = bot.guilds.size
  

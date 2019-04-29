@@ -52,7 +52,7 @@ let welcomechannel = res.body;
   .addField("경고를 받은 횟수", warns[wUser.id].warns / 1)
   .addField("사유", reason);
 
-  let warnchannel = message.guild.channels.find(`id`, chaid);
+  let warnchannel = message.guild.channels.find(`id`, msguild);
   if(!warnchannel) return message.reply("체널을 찾을 수 없습니다. 경고 체널을 만들어주세요!");
 
   warnchannel.send(warnEmbed);

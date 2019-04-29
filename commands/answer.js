@@ -7,7 +7,7 @@ const bot = new Discord.Client();
 
 
 
- const owners = proces.env.owners
+ const owners = process.env.owners
 
  
 if (owners.includes(message.author.id)) {

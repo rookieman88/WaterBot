@@ -135,7 +135,7 @@ let Ch = bot.channels.get(why)
 		.setTimestamp()
 		
 		
-        Ch.sendEmbed(byembed);
+        Ch.send(byembed);
 		return;
 });
 });

@@ -87,9 +87,15 @@ console.log('봇 실행 완료');
 
 //user join
 bot.on('guildMemberAdd', member => {
-	let welcomechannel = member.guild.channels.find('name', '인사');
+superagent.get("https://api.myjson.com/bins/elh6o").then((res) => {
+let welcomechannel = res.body;
+if(!welcomechannel[member.guild.id]){
+	return
+}
+	let cha = welcomechannel[member.guild.id].welcomechannel
+	
+let Ch = bot.channels.get(cha)
     let memberavatar = member.user.avatarURL
-    if (!welcomechannel) return;
 	
         let welcomembed = new Discord.RichEmbed()
         .setColor("#2E9AFE")
@@ -101,13 +107,20 @@ bot.on('guildMemberAdd', member => {
         welcomechannel.sendEmbed(welcomembed);
 		return;
 });
+});
 
 
 
 //user leave
 bot.on('guildMemberRemove', member => {
-	let welcomechannel = member.guild.channels.find('name', '인사');
-    if (!welcomechannel) return;
+superagent.get("https://api.myjson.com/bins/elh6o").then((res) => {
+let welcomechannel = res.body;
+if(!welcomechannel[member.guild.id]){
+	return
+}
+	let cha = welcomechannel[member.guild.id].welcomechannel
+	
+let Ch = bot.channels.get(cha)
 	
         let byembed = new Discord.RichEmbed()
         .setColor("#2E9AFE")
@@ -118,6 +131,7 @@ bot.on('guildMemberRemove', member => {
 		
         welcomechannel.sendEmbed(byembed);
 		return;
+});
 });
 
 

@@ -81,7 +81,7 @@ let chaid = message.channel.id
     welcomechannel: 0
   };
 	
-	message.channel.send("인사 채널이 초기화되었습니다")
+	message.channel.send(" 채널이 초기화되었습니다")
 	
 }
 
@@ -125,7 +125,7 @@ let chaid = message.channel.id
     welcomechannel: 0
   };
 	
-	message.channel.send("인사 채널이 초기화되었습니다")
+	message.channel.send("공지 채널이 초기화되었습니다")
 	
 }
 

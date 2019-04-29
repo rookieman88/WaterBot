@@ -22,7 +22,7 @@ if (msguild === 0) {
 let chaid = message.channel.id
 
   welcomechannel[message.guild.id] = {
-    welcomechannel: msguild + chaid
+    welcomechannel: parseInt(msguild) + chaid
   };
   
   message.channel.send('인사 채널이 설정되었습니다.')
@@ -31,7 +31,7 @@ let chaid = message.channel.id
 } else if (msguild > 0) {
 	let chaid = message.channel.id
  welcomechannel[message.guild.id] = {
-    welcomechannel: msguild - chaid
+    welcomechannel: 0
   };
 	
 	message.channel.send("인사 채널이 초기화되었습니다")

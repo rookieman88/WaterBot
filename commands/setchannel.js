@@ -7,7 +7,7 @@ module.exports.run = async (bot, message, args) => {
 if (args[0] === '인사') {
 
 
-	superagent.get("https://api.myjson.com/bins/1cre9o").then((res) => {
+	superagent.get("https://api.myjson.com/bins/z6qiw").then((res) => {
 		let welcomechannel = res.body;
 
   if(!welcomechannel[message.guild.id]){
@@ -39,7 +39,7 @@ let chaid = message.channel.id
 }
 
 
- superagent.put("https://api.myjson.com/bins/1cre9o").send(welcomechannel).catch((err) => console.log(err));
+ superagent.put("https://api.myjson.com/bins/z6qiw").send(welcomechannel).catch((err) => console.log(err));
 
   
   

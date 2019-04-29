@@ -39,7 +39,7 @@ ${wUser} 가 경고되었습니다.
 		      `)
 
 
-	superagent.get("https://api.myjson.com/bins/z6qiw").then((res) => {
+	superagent.get("https://api.myjson.com/bins/15bi20").then((res) => {
 let welcomechannel = res.body;
 		  if(!welcomechannel[message.guild.id]){ return }
 		let msguild = welcomechannel[message.guild.id].welcomechannel	

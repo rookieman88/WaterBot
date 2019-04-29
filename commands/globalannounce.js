@@ -14,11 +14,20 @@ const bot = new Discord.Client();
  
  if (message.author.id === owner) {
 
+	 superagent.get("https://api.myjson.com/bins/sztu0").then((res) => {
+let welcomechannel = res.body;
 
 bot.guilds.forEach(g => {
 	 let reason = message.content.replace(`~공지 `, "")
+	 
+	   if(!welcomechannel[g.id]){
+return
+}
+	let msguild = welcomechannel[g.id].welcomechannel	
+	if (msguild === 0) { return }
 
-	let cha = "570257780783448074"
+	 
+	let cha = msguild
 	let ann = new Discord.RichEmbed()
 	.addField(`워터봇 공지`, `${reason}`)
 	.setFooter('Oasics#5074 가 발신한 공지입니다.')
@@ -31,6 +40,7 @@ let Ch = bot.channels.get(cha)
 발신이 완료되었습니다!
 공지 내용은 [ ${reason} ] 입니다.
 `)
+	 });
  } else {
 	 message.channel.send('당신은 봇 관리자로 등록되어있지 않습니다.')
  }

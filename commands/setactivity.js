@@ -4,7 +4,7 @@ const client = new Discord.Client
 module.exports.run = async (bot, message, args) => {
 
   
- const owners = [405018851399565323, 550876882246303774, 467625748631519244, 417123204469882890, 351303291033878538, 572051155954302976, 461495816142716928, 523282229397422081, 417571990820618250]
+ const owners = process.env.owners
 
  
 if (owners.includes(message.author.id)) {

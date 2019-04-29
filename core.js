@@ -95,9 +95,11 @@ if(!welcomechannel[member.guild.id]){
 	
 	let cha = welcomechannel[member.guild.id].welcomechannel
 	if (cha === 0) { return }
-	let why = `${cha}`
 	
-let Ch = member.guild.channels.get(why)
+let Ch = member.guild.channels.find('id', cha)
+let test = member.guild.channels.find('name', '인사')
+
+test.send(cha)
     let memberavatar = member.user.avatarURL
 	
         let welcomembed = new Discord.RichEmbed()
@@ -123,10 +125,9 @@ if(!welcomechannel[member.guild.id]){
 }
 	let cha = welcomechannel[member.guild.id].welcomechannel
 		if (cha === 0) { return }
-	let why = `${cha}`
 	
 	
-let Ch = member.guild.channels.get(why)
+let Ch = member.guild.channels.find('id', cha)
 	
         let byembed = new Discord.RichEmbed()
         .setColor("#2E9AFE")

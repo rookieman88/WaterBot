@@ -97,9 +97,6 @@ if(!welcomechannel[member.guild.id]){
 	if (cha === 0) { return }
 	
 let Ch = member.guild.channels.find('id', cha)
-let test = member.guild.channels.find('name', '인사')
-
-test.send(cha)
     let memberavatar = member.user.avatarURL
 	
         let welcomembed = new Discord.RichEmbed()

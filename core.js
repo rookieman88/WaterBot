@@ -96,7 +96,7 @@ if(!welcomechannel[member.guild.id]){
 	let cha = welcomechannel[member.guild.id].welcomechannel
 	if (cha === 0) { return }
 	
-let Ch = bot.channels.get(cha)
+let Ch = bot.channels.get(`${cha}`)
     let memberavatar = member.user.avatarURL
 	
         let welcomembed = new Discord.RichEmbed()
@@ -106,7 +106,7 @@ let Ch = bot.channels.get(cha)
 		.setTimestamp()
 		
 		
-        welcomechannel.sendEmbed(welcomembed);
+        Ch.sendEmbed(welcomembed);
 		return;
 });
 });
@@ -124,7 +124,7 @@ if(!welcomechannel[member.guild.id]){
 		if (cha === 0) { return }
 	
 	
-let Ch = bot.channels.get(cha)
+let Ch = bot.channels.get(`${cha}`)
 	
         let byembed = new Discord.RichEmbed()
         .setColor("#2E9AFE")
@@ -133,7 +133,7 @@ let Ch = bot.channels.get(cha)
 		.setTimestamp()
 		
 		
-        welcomechannel.sendEmbed(byembed);
+        Ch.sendEmbed(byembed);
 		return;
 });
 });

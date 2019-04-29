@@ -5,7 +5,8 @@ const superagent = require("superagent");
 module.exports.run = async (bot, message, args) => {
 	 let owner = "417571990820618250"
 	
-	 if(!message.member.hasPermission("MANAGE_MESSAGES") || message.author.id === owner) return message.reply("당신은 관리자가 아닙니다.");
+	 if(!message.member.hasPermission("MANAGE_MESSAGES") || message.author.id === owner) { return message.reply("당신은 관리자가 아닙니다."); }
+	
 
 if (args[0] === '인사') {
 

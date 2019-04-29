@@ -92,7 +92,9 @@ let welcomechannel = res.body;
 if(!welcomechannel[member.guild.id]){
 	return
 }
+	
 	let cha = welcomechannel[member.guild.id].welcomechannel
+	if (cha === 0) { return }
 	
 let Ch = bot.channels.get(cha)
     let memberavatar = member.user.avatarURL
@@ -119,6 +121,8 @@ if(!welcomechannel[member.guild.id]){
 	return
 }
 	let cha = welcomechannel[member.guild.id].welcomechannel
+		if (cha === 0) { return }
+	
 	
 let Ch = bot.channels.get(cha)
 	

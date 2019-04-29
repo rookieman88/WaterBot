@@ -5,7 +5,7 @@ module.exports.run = async (bot, message, args) => {
 
   
   
-  if (message.author.id === "417571990820618250") {
+if (JSON.parse(process.env.owners).includes(message.author.id)) {
     
   let act = args[0]
     

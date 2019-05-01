@@ -10,10 +10,11 @@ const superagent = require('superagent');
 
 		
  let owner = "417571990820618250"
+ let owners = process.env.owners
  
 
  
- if (message.author.id === owner) {
+ if (owners.includes(message.author.id)) {
 	 
 	 if(args[0] === '에브리원') {
 

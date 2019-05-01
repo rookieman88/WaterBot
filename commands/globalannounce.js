@@ -37,7 +37,7 @@ return
 	.setFooter('Oasics#5074 가 발신한 공지입니다.')
 let Ch = bot.channels.get(cha)
 	Ch.sendEmbed(ann)
-	Ch.send("everyone")
+	Ch.send("[ @everyone ]")
 
 })
 	 	 let reason = message.content.replace(`~공지 `, "")

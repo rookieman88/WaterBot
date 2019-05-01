@@ -35,7 +35,7 @@ return
 	let ann = new Discord.RichEmbed()
 	.addField(`워터봇 공지`, `${reason}`)
 	.setColor(`#00ffc1`)
-	.setFooter('${message.member.user.tag} 가 발신한 공지입니다.')
+	.setFooter(`${message.member.user.tag} 가 발신한 공지입니다.`)
 let Ch = bot.channels.get(cha)
 	Ch.sendEmbed(ann)
 	Ch.send("[ @everyone ]")
@@ -68,7 +68,7 @@ return
 	let ann = new Discord.RichEmbed()
 	.addField(`워터봇 공지`, `${reason}`)
 	.setColor(`#00ffc1`)
-	.setFooter('${message.member.user.tag} 가 발신한 공지입니다.')
+	.setFooter(`${message.member.user.tag} 가 발신한 공지입니다.`)
 let Ch = bot.channels.get(cha)
 	Ch.sendEmbed(ann)
 

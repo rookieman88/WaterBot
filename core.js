@@ -14,12 +14,10 @@ console.log("bot.js 시작됨");
 const Discord = require('discord.js');
 const botconfig = require("./botconfig.json");
 const fs = require("fs");
-const bot = new Discord.Client();({disableEveryone: true});
+const bot = new Discord.Client();
 bot.commands = new Discord.Collection();
 const API = require("discord.js");
-let coins = require("./saves/coins.json")
 const superagent = require("superagent");
-let jusic = require("./saves/jusic.json");
 
 
 // file reads-------------------------

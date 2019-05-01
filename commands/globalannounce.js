@@ -21,7 +21,7 @@ const superagent = require('superagent');
 let welcomechannel = res.body;
 
 bot.guilds.forEach(g => {
-	 let reason = message.content.replace(`~공지 `, "")
+	 let reason = message.content.replace(`~공지 에브리원 `, "")
 	 
 	   if(!welcomechannel[g.id]){
 return

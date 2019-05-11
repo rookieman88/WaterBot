@@ -1,2 +1,1 @@
-worker: nodemon core.js
-rebooter: nodemon rebooter.js
+worker: node core.js

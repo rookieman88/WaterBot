@@ -5,7 +5,7 @@ Water Bot 0.9
 */
 
 
-
+}
 console.log("bot.js 시작됨");
 
 

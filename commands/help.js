@@ -3,40 +3,17 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
 	
-    const helpemb = new Discord.RichEmbed({
-		  "title": "워터봇 도움말",
-		  "description": "워터봇의 도움말입니다. [v1.0] \n 워터봇은 오픈소스입니다 [소스보기](https://github.com/rookieman88/WaterBot)\n\n**명령어들\n────────────**",
-		  "color": 122789,
-		  "fields": [
-			{
-			  "name": "서버 관리 명령어",
-			  "value": "**관리자 권한이 필요합니다!**\n\n`유저 신고 : [~신고 <@타겟> <이유>]`\n`유저 경고 : [~경고 <@타겟> <이유>]`\n`유저 킥 : [~추방 <@타겟> <이유>]`\n`유저 벤 : [~차단 <@타겟> <이유>]`\n`유저 뮤트 : [~뮤트 <@타겟>]`",
-			  "inline": true
-			},
-			{
-			  "name": "워터봇 관련 명령어",
-			  "value": "**말그대로 워터봇 관련 명령어 [워터봇 호스팅은 Heroku 를 사용합니다.]**\n\n` 워터봇 서버 핑 : [~핑]`",
-			  "inline": true
-			},
-			{
-			  "name": "게임 명령어",
-			  "value": "**와! 게임!**\n\n` 주사위 : [~주사위]`\n`동전던지기 : [~동전]`\n`올인 : [~올인]`\n`슬롯머신 : [~슬롯머신]`/n`가위바위보 : [~가위바위보 <낼거>]`\n`얼마나 벌었지? : [~지갑]`",
-			  "inline": true
-			},
-			{
-			  "name": "메세지 관련 명령어",
-			  "value": "**워터봇 메시지 관련 커맨드!**\n\n`말 대신하기 : [~말해 <말할것>]`\n`공지발신 [개발자만] : [~공지 <텍스트>]`\n`메시지 삭제 : [~삭제 <삭제하고싶은 메시지 수>]`",
-			  "inline": true
-			},
-			{
-			  "name": "또 많은 재미있는 커맨드들이 있습니다!",
-			  "value": "**일상생활을 편리하게!**\n\n` 나는 선택장애다!! : [~골라 <1> <2>]`\n`날씨가 궁금하다! : [~날씨 <도시>]`",
-			  "inline": true
-			},
-		  ]
-		});
-	message.author.send(helpemb);
-message.channel.send("DM 으로 보냈습니다!");
+    let helpemb = new Discord.RichEmbed()
+    .setTitle('워터봇 도움말')
+    .setDescription('워터봇은 [오픈소스](https://github.com/rookieman88/WaterBot/) 입니다. [워터봇 초대하기](http://short.kro.kr/워터봇초대가즈아!) \n이것은 워터봇 v1의 도움말입니다. v2 (OBT) 의 도움말은 "워터야 도움" 으로 확인하세요.')
+    .setThumbnail(bot.user.avatarURL)
+    .addField('서버 관리 명령어', '와! 규칙을 어기셨네요! 칭찬으로 경고를 드리겠습니다: ~경고 @사람 이유 \n 도배 불-편: ~뮤트 @사람 사유 (삭제를 원하신다면?: ~삭제 <삭제할 만큼 쓰세요>) \n경고 받았는데도 나대네: ~추방 @사람 이유 \n계속 들어오네?: ~차단 @사람 이유')
+    .addField('워터봇 기본 명령어', '음? 워터봇 ||졸라|| 느려 터졌네;; : ~핑 \n아 이봇 어떻게쓰지?: ~도움 \n이렇게 좋은 봇이 얼마나 많은 서버에 있을까?: ~서버 \n이 이봇 불-편 하네: ~문의 <내용> \n안이 나 지금 없어: ~잠수 <사유>')
+    .addField('와! 미니게임!', '음.. 얼마남았지?: ~지갑 \n저분 불쌍해 보이네: ~기부 @사람 <돈> \n와! 도박!: ~슬롯머신 <걸 돈> \n아 슬롯머신 별로 안주네: ~복권 \n빨리빨리!: ~타자대결 \n가위바위보: ~가위바위보 \n:hearts: ~궁합 <사람 1> <사람 2>')
+    .addField('워터봇 정보', '이봇은 이미 v2 (OBT) 가 있으며 v2가 완성이 되었을 시 v1은 없어집니다. 기존의 서버관리는 [파이봇](https://discordapp.com/api/oauth2/authorize?client_id=574826830171734017&permissions=8&scope=bot) 에 옮겨질 예정이며 현재 v2에 추가된 미니게임은 주식투자, 끝말잇기 등 이 있습니다. \n [오아시스의 음악봇: 노트봇](https://discordapp.com/oauth2/authorize?client_id=574765070853210143&permissions=8&scope=bot) \n이 봇은 [팀 멜론](https://invite.gg/melonsupport) 봇입니다')
+    
+    message.channel.send(helpemb);
+	
 }
 
 
